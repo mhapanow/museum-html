@@ -1,0 +1,112 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center">
+    <h2>{{ title }}</h2>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <!-- <div class="row">
+            <div class="col-md-3 col-md-offset-2">
+              IVO TAR0030S SD01
+            </div>
+            <div class="col-md-3">
+              OP: PA10246 QPADEV0034
+            </div>
+            <div class="col-md-3">
+              12/06/17 17:14:29
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 col-md-offset-2">
+              SISTEMA DE CUENTAS
+            </div>
+            <div class="col-md-3">
+              CONSULTA DE CUENTAS
+            </div>
+            <div class="col-md-3">
+            
+            </div>
+          </div> -->
+
+          <div class="row">
+            <div class="col-md-5 col-md-offset-2 form-group">
+              <label class="col-sm-4 control-label">
+                Nro. de cta:
+              </label>
+              <form class="m-t" role="form" #tar0030v2Form="ngForm" (ngSubmit)="onSubmit(tar0030v2Form)">
+                <div class="col-lg-8 input-group">
+                  <input type="text" class="form-control" name="ncuenta" #ncuenta="ngModel" [(ngModel)]="tar0030m02.CUENTA">
+                  <span class="input-group-btn">
+                    <button type="button" type="submit" class="btn btn-primary">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="row ">
+          </div>
+
+          <div class="row ">
+          </div>
+
+          <div class="row ">
+          </div>
+
+          <div class="row ">
+            <div class="col-md-6 col-md-offset-2">
+              Promotor..........................: <strong>{{ tar0030m02.WWPROM }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-6 col-md-offset-2">
+              Canal de venta.................: <strong>{{ tar0030m02.WWCVTA }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-6 col-md-offset-2">
+              Codigo de promocion.....: <strong>{{ tar0030m02.WWCPRO }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-6 col-md-offset-2">
+              Marca de captacion.........: <strong>{{ tar0030m02.WWMCAP }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+          </div>
+
+          <div class="row ">
+          </div>
+          <div class="row "></div>
+
+          
+
+          <div class="row ">
+          </div>
+
+          <div class="row ">
+          </div>
+
+        </div>
+        <div class="ibox-content text-center">
+          <button class="btn btn-primary " type="button" [routerLink]="['/tar0030']">
+            <i class="fa fa-reply"></i>&nbsp; - Pantalla Anterior</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <app-footer></app-footer>
+  </div>
+</div>

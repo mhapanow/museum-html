@@ -1,0 +1,293 @@
+<div class="row  border-bottom white-bg dashboard-header">
+    <div class="alert alert-danger" *ngIf="status_tar0030 !== ''">
+        [Mensaje del servidor] = {{status_tar0030}}
+    </div>
+    <div class="row text-center">
+        <h2>{{ title }}</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <!-- <div class="row">
+            <div class="col-md-3 col-md-offset-2">
+              IVO TAR0030S SD01
+            </div>
+            <div class="col-md-3">
+              OP: PA10246 QPADEV0034
+            </div>
+            <div class="col-md-3">
+              12/06/17 17:14:29
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 col-md-offset-2">
+              SISTEMA DE CUENTAS
+            </div>
+            <div class="col-md-3">
+              CONSULTA DE CUENTAS
+            </div>
+            <div class="col-md-3">
+            
+            </div>
+          </div> -->
+
+                    <div class="row">
+                        <div class="col-md-5 col-md-offset-2 form-group">
+                            <label class="col-sm-4 control-label">
+                Nro. de cta:
+              </label>
+                            <form class="m-t" role="form" #tar0030v1Form="ngForm" (ngSubmit)="onSubmit(tar0030v1Form)">
+                                <div class="col-lg-8 input-group">
+                                    <input type="text" class="form-control" name="ncuenta" #ncuenta="ngModel" [(ngModel)]="tar0030.CUENTA">
+                                    <span class="input-group-btn">
+                    <button type="button" type="submit" class="btn btn-primary">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-2">
+                            Nro. de cta:
+                            <strong>{{ tar0030.CUENTA }}</strong>
+                        </div>
+                        <div class="col-md-2">
+                            Sucursa:
+                            <strong>{{ tar0030.BRANCH }}</strong>
+                        </div>
+                        <div class="col-md-3">
+                            Fec. apertura:
+                            <strong>{{ tar0030.FECAPE }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-3 col-md-offset-2">
+                            Estado:
+                            <strong>{{ tar0030.TIPEST }} {{ tar0030.ESTADO }}</strong>
+                        </div>
+                        <div class="col-md-3">
+                            Mot. Baja
+                            <strong>{{ tar0030.MOTBAJ }} {{ tar0030.DESBAJ }}</strong>
+                        </div>
+                        <div class="col-md-3">
+                            Fec. ult. modif.:
+                            <strong>{{ tar0030.FECULT }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-6 col-md-offset-2">
+                            Tipo producto:
+                            <strong>{{ tar0030.DMTYPE }} {{ tar0030.TYPDES }}</strong>
+                        </div>
+
+                        <div class="col-md-3">
+                            Moneda:
+                            <strong>{{ tar0030.MONEDA }}</strong> Acuerdos: <strong>{{ tar0030.ACUERD }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-3 col-md-offset-2">
+                            Division:
+                            <strong>{{ tar0030.DIVISI }}</strong>
+                        </div>
+                        <div class="col-md-3">
+                            Oficial:
+                            <strong class="pull-right">{{ tar0030.OFICTA }}</strong>
+                        </div>
+                        <div class="col-md-3">
+                            Excepc.:
+                            <strong>{{ tar0030.ALTAEX }}</strong> Plan Int.:
+                            <strong>{{ tar0030.PLANIN }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-3 col-md-offset-2">
+                            Cod. SBS :
+                            <strong>{{ tar0030.TIPBCO }} {{ tar0030.BCRACD }}</strong>
+                        </div>
+                        <div class="col-md-3">
+                            Situacion fiscal :
+                            <strong class="pull-right">{{ tar0030.SITFIS }}</strong>
+                        </div>
+                        <div class="col-md-3">
+                            Paga impuesto debito:
+                            <strong>{{ tar0030.IMPDEB }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-2 col-md-offset-2">
+                            Envio Postal:
+                            <strong>{{ tar0030.ENVPOS }}</strong>
+                        </div>
+                        <div class="col-md-2">
+                            Ciclo de despacho
+                            <strong>{{ tar0030.CICDES }}</strong>
+                        </div>
+                        <div class="col-md-2">
+                            Frecuencia :
+                            <strong class="pull-right">{{ tar0030.FRECUE }}</strong>
+                        </div>
+                        <div class="col-md-3">
+                            Extracto sin movim:
+                            <strong>{{ tar0030.EXSMOV }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-3 col-md-offset-2">
+                            Plan de cargos:
+                            <strong>{{ tar0030.PLANCA }}</strong>
+                        </div>
+                        <div class="col-md-3">
+                            Cod. tasa s/descubierto:
+                            <strong class="pull-right">{{ tar0030.CODTAS }}</strong>
+                        </div>
+                        <div class="col-md-3">
+                            Tipo de Cuenta:
+                            <strong>{{ tar0030.TIPCTA }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-3 col-md-offset-2">
+                            Cta. vinc. CAC:
+                            <strong>{{ tar0030.CTACAC }}</strong>
+                        </div>
+                        <div class="col-md-3 col-md-offset-1">
+                            Cta. vinculada CITIMAS :
+                            <strong class="pull-right">{{ tar0030.CITIMA }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-2 col-md-offset-2">
+                            Sit. I.V.A. :
+                            <strong>{{ tar0030.CATIVA }}</strong>
+                        </div>
+                        <div class="col-md-3">
+                            R:U.C. :
+                            <strong class="pull-right">{{ tar0030.NRRUC }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-6 col-md-offset-2">
+                            Nombre de la cuenta :
+                            <strong>{{ tar0030.NOMCT1 }}</strong>
+                        </div>
+                    </div>
+                    <div class="row "></div>
+
+                    <div class="row ">
+                        <div class="col-md-5 col-md-offset-2">
+                            Domicilio:
+                            <strong class="text-center">{{ tar0030.DOMICI }}</strong>
+                        </div>
+                        <div class="col-md-2 col-md-offset-1">
+                            TE :
+                            <strong class="pull-right">{{ tar0030.TELEFO }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-2 col-md-offset-2">
+                            Codigo Postal:
+                            <strong class="text-center">{{ tar0030.CODPOS }}</strong>
+                        </div>
+                        <div class="col-md-2">
+                            Ciudad :
+                            <strong>{{ tar0030.LOCALI }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-6 col-md-offset-2">
+                            Departam :
+                            <strong class="text-center">{{ tar0030.PROVIN }}</strong>
+                        </div>
+                        <div class="col-md-3">
+                            Extractos :
+                            <strong>{{ tar0030.DMSTCP }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-3 col-md-offset-2 text-center">
+                            Short name
+                        </div>
+                        <div class="col-md-3 text-center">
+                            Short name
+                        </div>
+                        <div class="col-md-3">
+                            Fecha pase pend N/A :
+                            <strong>{{ tar0030.FECPNA }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-3 col-md-offset-2 text-center">
+                            {{ tar0030.NAME1 }}
+                        </div>
+                        <div class="col-md-3 text-center">
+                            {{ tar0030.NAME2 }}
+                        </div>
+                        <div class="col-md-3">
+                            Fecha pase Non Accr :
+                            <strong>{{ tar0030.FECNA }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-3 col-md-offset-2 text-center">
+                            {{ tar0030.NAME3 }}
+                        </div>
+                        <div class="col-md-3 text-center">
+                            {{ tar0030.NAME4 }}
+                        </div>
+                        <div class="col-md-3">
+                            Fecha pase Write off :
+                            <strong>{{ tar0030.FECWO }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-3 col-md-offset-2 text-center">
+                            {{ tar0030.NAME5 }}
+                        </div>
+                        <div class="col-md-3 text-center">
+                            {{ tar0030.NAME6 }}
+                        </div>
+                        <div class="col-md-3">
+                            Fecha últ. ACA activo :
+                            <strong>{{ tar0030.FECUA }}</strong>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="ibox-content text-center">
+                    <button class="btn btn-primary " type="button" [routerLink]="['/tar0030t']">
+            <i class="fa fa-check"></i>&nbsp; - Datos Tracking</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <!-- <div class="wrapper wrapper-content">
+
+    </div> -->
+        <app-footer></app-footer>
+    </div>
+</div>
