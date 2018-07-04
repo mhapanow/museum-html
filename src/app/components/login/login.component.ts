@@ -40,15 +40,15 @@ export class LoginComponent implements OnInit, OnDestroy  {
         // token
         if (response.error_message == null) {
           this.token = response.token;
-          //Guardar al LocalStorage
+          // Guardar al LocalStorage
           localStorage.setItem('token', this.token);
 
-          //Objeto usuario identificado
+          // Objeto usuario identificado
           this._userService.iniciarSesion(this.user, true).subscribe(
             response => {
               this.identity = response;
               localStorage.setItem('identity', JSON.stringify(this.identity));
-              //Redirección
+              // Redirección
               this._router.navigate(['home']);
             },
             error => {
@@ -66,13 +66,9 @@ export class LoginComponent implements OnInit, OnDestroy  {
       });
   }
   logout() {
-    console.log('entro a logout');
-
     this._route.params.subscribe(params => {
-
-      let logout = +params['sure'];
-      console.log('con params ' + logout);
-       if (logout == 1) {
+      const logout = +params['sure'];
+       if (logout === 1) {
          this._userService.cerrarSesion().subscribe(
             response => {
               if (response.error_message != null) {
@@ -88,7 +84,7 @@ export class LoginComponent implements OnInit, OnDestroy  {
         localStorage.removeItem('token');
         this.identity = null;
         this.token = null;
-        //redireccion
+        // redireccion
         this._router.navigate(['login']);
       }
     });

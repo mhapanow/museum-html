@@ -1,0 +1,41 @@
+<div class="conteiner app">
+
+    <div class="row text-center as400Header">
+        <h3>{{title}}</h3>
+    </div>
+
+    <div class="row as400Body">
+
+        <div class="row as400Subtitle">
+            <h3>CONSULTA HISTÓRICA DE RENOVACION DE ACUERDOS</h3>
+        </div>
+
+        <div class="row as400Table">
+            <table class="table table-hover table-stripped" id="cars-list">
+
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Tipo de Registro</th>
+                        <th>Función</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let cacr216_x of cacr216; let i = index">
+                        <td> {{cacr216_x.WSFSEL | date:'MM/dd/yyyy'}} </td>
+                        <td> {{cacr216_x.WSTREG}} </td>
+                        <td> {{cacr216_x.WSFUNC}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="row as400Footer">
+        <div class="col lg-12" style="text-align: center;">
+            <button class="btn btn-primary " type="button" [routerLink]="['/cacc200v1']"> Regresar </button>
+        </div>
+    </div>
+</div>
+<!-- FIn conteiner app-->

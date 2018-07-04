@@ -1,1 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
+
+.app {
+    border-radius: 4px;
+    margin-top: 20px;
+    padding: 30px;
+    background: #fff;
+}
+
+
+/* HEADER */
+
+.as400Header {
+    border-bottom: 1px solid #676a6c;
+}
+
+.as400Header h2 {
+    font-weight: bold;
+}
+
+
+/* BODY */
+
+.as400Body {
+    height: 418px
+}
+
+.as400BodyCenter {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+}
+
+.as400Subtitle {
+    text-align: center;
+    height: 45px;
+    padding-top: 10px;
+}
+
+.as400Table {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+.as400RowItem {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* MENU ITEM */
+
+.as400MenuItem {
+    height: 45px;
+}
+
+.as400MenuItem div {
+    height: 100%;
+}
+
+.as400MenuItem div>label {
+    top: 20%;
+    position: absolute;
+    font-size: 16px;
+}
+
+.as400MenuItem div>button {
+    top: 10%;
+    position: absolute;
+}
+
+
+/* FOOTER */
+
+.as400Footer {
+    border-top: 1px solid #676a6c;
+    padding-top: 10px;
+}

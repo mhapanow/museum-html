@@ -1,0 +1,124 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row as400Body">
+    <div class="row as400Subtitle">
+      <h3>REGISTRO CENTRAL TRANSACTION</h3> 
+    </div>
+    <div class="row">
+
+        <div class="row">
+          <div class="col-md-2 col-md-offset-2">
+            <label class="control-label">
+              Cuenta:
+            </label>
+          </div>
+          <div class="col-md-6">
+            <label class="control-label">
+               {{ ncuenta }} {{ fer1020.NOMBRE }}
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-2 col-md-offset-2">
+            <label class="control-label">
+              Domicilio:
+            </label>
+          </div>
+          <div class="col-md-4">
+            <label class="control-label">
+               {{ fer1020.DOMIC }}
+            </label>
+          </div>
+          <div class="col-md-1">
+            <label class="control-label">
+              T:E.:
+            </label>
+          </div>
+          <div class="col-md-3">
+            <label class="control-label">
+               {{ fer1020.TELEF }}
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-2 col-md-offset-2">
+            <label class="control-label">
+              Días Descubierto::
+            </label>
+          </div>
+          <div class="col-md-2">
+            <label class="control-label">
+               {{ fer1020.WDIAS }}
+            </label>
+          </div>
+          <div class="col-md-2">
+            <label class="control-label">
+              Saldo:
+            </label>
+          </div>
+          <div class="col-md-2">
+            <label class="control-label">
+               {{ fer1020.DMCBAL }}
+            </label>
+          </div>
+          <div class="col-md-1">
+            <label class="control-label">
+              Moneda:
+            </label>
+          </div>
+          <div class="col-md-1">
+            <label class="control-label">
+               {{ fer1020.DMCMCN }}
+            </label>
+          </div>
+        </div>
+
+      <div class="row as400Table">
+        <table class="table table-hover table-stripped" id="cars-list">
+          <tr>
+            <th>Tipo</th>
+            <th>Límite</th>
+            <th>Desde</th>
+            <th>Hasta</th>
+            <th>Numerales</th>
+            <th>Intereses</th>
+          </tr>
+          <tr *ngFor="let fer1020Item of fer1020.data">
+            <td>
+               {{ fer1020Item.DESTIP }}
+            </td>
+            <td>
+               {{ fer1020Item.DOLIMA }}
+            </td>
+            <td>
+               {{ fer1020Item.WSDATC | date:'MM/dd/yyyy' }}
+            </td>
+            <td>
+               {{ fer1020Item.WSAMND | date:'MM/dd/yyyy' }}
+            </td>
+            <td>
+               {{ fer1020Item.DOAGGI }}
+            </td>
+            <td>
+               {{ fer1020Item.WSINTE }}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/fer1020v1']">
+        Regresar
+      </button>
+    </div>
+  </div>
+
+</div>

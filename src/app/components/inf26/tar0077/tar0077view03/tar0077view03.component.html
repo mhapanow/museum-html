@@ -1,0 +1,81 @@
+<div class="row  border-bottom white-bg dashboard-header">
+    <div class="row text-center as400Header">
+        <h2>{{ title }}</h2>
+    </div>
+
+    <div class="row as400Body">
+        <div class="row as400Subtitle">
+            <h3>CONSULTA DE CODIGOS DE TRANSACCIONES</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <div class="row as400RowItem">
+                            <div class="col-md-2 col-md-offset-2">
+                                Cod. de trans.:
+                                <strong>{{ tar0077model.WSCODI }}</strong>
+                            </div>
+                            <div class="col-md-5">
+                                Desrc. corta:
+                                <strong>{{ tar0077model.WSDESC }}</strong>
+                            </div>
+                        </div>
+                        <div class="row as400RowItem">
+                            <div class="col-md-2 col-md-offset-2"></div>
+                            <div class="col-md-4">
+                                Desc. larga:
+                                <strong>{{ tar0077model.WSDESL }}</strong>
+                            </div>
+                        </div>
+                        <div class="row as400RowItem">
+                            <div class="col-md-3 col-md-offset-2">
+                                Cod. trans. externa:
+                                <strong>{{ tar0077model.WSCOTE }}</strong>
+                            </div>
+                            <div class="col-md-3">
+                                Cititronik:
+                                <strong>{{ tar0077model.WSCITI }}</strong>
+                            </div>
+                        </div>
+                        <div class="row as400RowItem">
+                            <div class="col-md-3 col-md-offset-2">
+                                Cod. mnemotécnico:
+                                <strong>{{ tar0077model.WSCOMN }}</strong>
+                            </div>
+                            <div class="col-md-3">
+                                Cantidad de operaciones:
+                                <strong>{{ tar0077model.WSCAOP }}</strong>
+                            </div>
+                        </div>
+                        <div class="row as400RowItem">
+                            <div class="col-md-3 col-md-offset-2">
+                                Cod. equiv. en GL:
+                                <strong>{{ tar0077model.WSCOGL }}</strong>
+                            </div>
+                            <div class="col-md-3">
+                                Nro. de referencia obligatorio:
+                                <strong>{{ tar0077model.WSNREO }}</strong>
+                            </div>
+                        </div>
+                        <div class="row as400RowItem">
+                            <div class="col-md-3 col-md-offset-2">
+                                Transaccion genuina:
+                                <strong>{{ tar0077model.WSGENU }}</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row as400Footer">
+        <div class="col lg-12" style="text-align: center;">
+            <button class="btn btn-primary " type="button" [routerLink]="['/tar0077v2']">
+                Regresar
+            </button>
+        </div>
+    </div>
+
+</div>

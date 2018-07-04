@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { NgForm } from '@angular/forms';
 
 import { UserService } from '../../../../services/user.service';
 import { Tar0030Service } from '../../../../services/inf5/tar0030.service';
@@ -12,18 +14,16 @@ import { Tar0030m01Model } from '../../../../models/tar0030m01.models';
 })
 export class Tar0030view01Component implements OnInit {
   title = 'INF 5 - Pantalla TAR 0030';
-  ncuenta = '636080-012';
   public identity;
   public token;
   public tar0030: Tar0030m01Model;
-  public status_tar0030: string;
-  public mensaje: string;
 
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
     private _userService: UserService,
-    private _tar0030Service: Tar0030Service
+    private _tar0030Service: Tar0030Service,
+    private _toastr: ToastrService
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
@@ -34,29 +34,27 @@ export class Tar0030view01Component implements OnInit {
    }
 
   ngOnInit() {
-    this.status_tar0030 = '';
   }
 
-  onSubmit(form) {
-    this._tar0030Service.getTar0030View01(this.token, this.tar0030.CUENTA).subscribe(
+  onSubmit(form: NgForm) {
+    this._tar0030Service.getTar0030View01(this.token, form.value.ncuenta).subscribe(
       response => {
-        // if (response.status == 'success') {
-        console.log(response.error_message);
-        if (response.error_message !== '') {
-          this.status_tar0030 = response.error_message;
+        if (response.error_message == null) {
+          this.tar0030 = response.data;
         } else {
-          this.tar0030 = response;
+          this._toastr.warning(response.error_message, 'Validación', { timeOut: 3000 });
         }
-        // } else {
-        //   this.status_tar0030 = 'error';
-        // }
       },
       error => {
         console.log(<any>error);
-        this.status_tar0030 = 'error';
+        this._toastr.warning(<any>error, 'Error', { timeOut: 3000 });
       }
 
     );
+  }
+
+  verView2(ncuenta: String ) {
+    this._router.navigate(['/tar0030t', ncuenta]);
   }
 
 }

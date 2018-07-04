@@ -13,6 +13,7 @@ export class AppComponent implements DoCheck  {
   public identity;
   public token;
   constructor(private _userService: UserService, private _router: Router) {
+
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     // if (this.token == null) {

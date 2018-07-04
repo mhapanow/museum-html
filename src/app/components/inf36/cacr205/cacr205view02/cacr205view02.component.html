@@ -1,0 +1,251 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row">
+    <div class="row as400Subtitle">
+      <h3>CONSULTA HISTÓRICA DE RENOVACION DE ACUERDOS</h3>
+    </div>
+    
+    <div class="row">
+
+      <label class="control-label col-md-offset-1">
+        <h3>DETALLE ----------------------------------------------------------------------</h3>
+      </label>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-1">
+          <label class="col-sm-2 control-label">
+            Nro. de cta:
+          </label>
+          <label class="col-sm-10 control-label">
+             {{ cuenta }} {{ cacr205m02.WSTITU }}
+          </label>
+        </div>
+        <div class="col-md-2">
+          <label class="control-label">
+            Estado:
+          </label>
+          <span class="pull-right">
+            {{ cacr205m02.WSDSTA }}
+          </span>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-md-3 col-md-offset-1">
+          Sucursal:
+          <strong>{{ cacr205m02.WSBRCH }}</strong>
+        </div>
+        <div class="col-md-3">
+          División
+          <strong>{{ cacr205m02.WSSF4 }}</strong>
+        </div>
+        <div class="col-md-2">
+          Moneda :
+          <strong class="pull-right">{{ cacr205m02.WSCMCN }}</strong>
+        </div>
+        <div class="col-md-2">
+          Producto:
+          <strong class="pull-right">{{ cacr205m02.WSTYPE }}</strong>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-5 col-md-offset-1">
+          Saldo Contable:
+          <strong>{{ cacr205m02.WSCBAL }}</strong>
+        </div>
+        <div class="col-md-5">
+          Acuerdo Sobregiro:
+          <strong class="pull-right">{{ cacr205m02.WSIODL }}</strong>
+        </div>
+      </div>
+
+      <label class="control-label col-md-offset-1">
+        <h3>ACUERDO ----------------------------------------------------------------------</h3>
+      </label>
+
+      <div class="row ">
+        <div class="col-md-3 col-md-offset-1">
+          Alta:
+          <strong>{{ cacr205m02.WSDATE  | date:'MM/dd/yyyy' }}</strong>
+        </div>
+        <div class="col-md-3">
+          Vencimiento
+          <strong>{{ cacr205m02.WSAMND | date:'MM/dd/yyyy' }}</strong>
+        </div>
+        <div class="col-md-4">
+          Límite :
+          <strong class="pull-right">{{ cacr205m02.WSAAMT }}</strong>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-4 col-md-offset-3">
+          Nuevo Vencimiento:
+          <strong>{{ cacr205m02.WSNVTO | date:'MM/dd/yyyy' }}</strong>
+        </div>
+        <div class="col-md-4">
+          Nuevo Límite :
+          <strong class="pull-right">{{ cacr205m02.WSNLIM }}</strong>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-3 col-md-offset-1">
+           <strong> {{ cacr205m02.WSTIPO }} </strong>
+        </div>
+        <div class="col-md-3">
+          Selección:
+          <strong>{{ cacr205m02.WSFSEL | date:'MM/dd/yyyy' }}</strong>
+        </div>
+        <div class="col-md-4">
+          Ren/Act :
+          <strong class="pull-right">{{ cacr205m02.WSFACT | date:'MM/dd/yyyy' }}</strong>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-3 col-md-offset-1">
+          Estado:
+          <strong>{{ cacr205m02.WSDRES }}</strong>
+        </div>
+        <div class="col-md-7">
+          Mot. Rechazo
+          <strong>{{ cacr205m02.WSMREC }} {{ cacr205m02.WSDMRE }}</strong>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-3 col-md-offset-1">
+          Notificación:
+          <strong>{{ cacr205m02.WSSENT | date:'MM/dd/yyyy' }}</strong>
+        </div>
+        <div class="col-md-3">
+          Cancelación
+          <strong>{{ cacr205m02.WSFCAN | date:'MM/dd/yyyy' }}</strong>
+        </div>
+        <div class="col-md-4">
+          Etapa :
+          <strong class="pull-right">{{ cacr205m02.WSETAD }}</strong>
+        </div>
+      </div>
+
+      <label class="control-label col-md-offset-1">
+        <h3>RECHAZO ----------------------------------------------------------------------</h3>
+      </label>
+
+      <div class="row ">
+        <div class="col-md-5 col-md-offset-1">
+          Suma Límites Actual:
+          <strong>{{ cacr205m02.WSSUML }}</strong>
+        </div>
+        <div class="col-md-5">
+          Días exceso actual
+          <strong>{{ cacr205m02.WSDIEX }}</strong>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-5 col-md-offset-1">
+          Importe exceso Actual:
+          <strong>{{ cacr205m02.WSIMEX }}</strong>
+        </div>
+        <div class="col-md-5">
+          Mes exceso histórico
+          <strong>{{ cacr205m02.WSMEXH }}</strong>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-3 col-md-offset-1">
+          Nuevo estado:
+          <strong>{{ cacr205m02.WSDSTN }}</strong>
+        </div>
+        <div class="col-md-3">
+          Nuevo producto
+          <strong>{{ cacr205m02.WSTYPN }}</strong>
+        </div>
+        <div class="col-md-4">
+          Nuevo vto :
+          <strong class="pull-right">{{ cacr205m02.WSNVT2 | date:'MM/dd/yyyy' }}</strong>
+        </div>
+      </div>
+
+      <label class="control-label col-md-offset-1">
+        <h3>DATOS DE SCORING-----------------------------------------------------------</h3>
+      </label>
+
+
+      <div class="row ">
+        <div class="col-md-5 col-md-offset-1">
+          Score BBR cta:
+          <strong>{{ cacr205m02.WSBHCC }}</strong>
+        </div>
+        <div class="col-md-5">
+          Menor Score Veraz Titulares
+          <strong>{{ cacr205m02.WSASCO }}</strong>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-3 col-md-offset-1">
+          Score BBR DN:
+          <strong>{{ cacr205m02.WSBHDN }}</strong>
+        </div>
+        <div class="col-md-3">
+          Score BBR MC
+          <strong>{{ cacr205m02.WSBHMC }}</strong>
+        </div>
+        <div class="col-md-4">
+          Score BBR VS :
+          <strong class="pull-right">{{ cacr205m02.WSBHVS }}</strong>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-5 col-md-offset-1">
+          Cod. Promocion....:
+          <strong>{{ cacr205m02.WSPMCD }}</strong>
+        </div>
+        <div class="col-md-5">
+          Segmento
+          <strong>{{ cacr205m02.WSSGCD }}</strong>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-10 col-md-offset-1">
+          Cant. Cheques Rechazados Total........ :
+          <strong>{{ cacr205m02.WSCHRT }}</strong>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-10 col-md-offset-1">
+          Cant. Cheques Rechazados Computados........ :
+          <strong>{{ cacr205m02.WSCHRC }}</strong>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-10 col-md-offset-1">
+          Cant. Cheques Rechazados No Computados........ :
+          <strong>{{ cacr205m02.WSCHRN }}</strong>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/cacc200v1']">
+        Regresar
+      </button>
+    </div>
+  </div>
+
+</div>

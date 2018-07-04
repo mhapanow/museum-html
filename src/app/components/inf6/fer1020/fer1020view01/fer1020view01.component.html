@@ -1,0 +1,121 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row as400Body">
+    <div class="row as400Subtitle">
+      <h3>REGISTRO CENTRAL TRANSACTION</h3>
+    </div>
+    <div class="row">
+
+
+      <form class="m-t" role="form" #fer1020v1Form="ngForm" (ngSubmit)="onSubmit(fer1020v1Form)">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-2">
+            <label class="col-sm-4 control-label">
+              Nro. Base:
+            </label>
+            <div class="col-lg-8 input-group">
+              <input type="text" class="form-control" name="base" ngModel>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-2 form-group">
+            <label class="col-sm-4 control-label">
+              Cuenta:
+            </label>
+            <div class="col-lg-8 input-group">
+              <input type="text" class="form-control" name="cuenta" ngModel>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-2">
+            <label class="col-sm-4 control-label">
+              Adelantos:
+            </label>
+            <div class="col-lg-8 input-group">
+              <input type="text" class="form-control" name="adelantos">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-2">
+            <label class="col-sm-4 control-label">
+              Descubierto:
+            </label>
+            <div class="col-lg-8 input-group">
+              <input type="text" class="form-control" name="descubierto">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-2 form-group">
+            <label class="col-sm-4 control-label">
+              Excesos:
+            </label>
+            <div class="col-lg-8 input-group">
+              <input type="text" class="form-control" name="exceso">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-2">
+            <label class="col-sm-4 control-label">
+              Vigencia desde:
+            </label>
+            <div class="col-lg-8 input-group">
+              <input type="text" class="form-control" name="vigenciad">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-2 form-group">
+            <label class="col-sm-4 control-label">
+              Vigencia hasta:
+            </label>
+            <div class="col-lg-8 input-group">
+              <input type="text" class="form-control" name="vigenciah">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-2">
+            <label class="col-sm-4 control-label">
+              Importe desde:
+            </label>
+            <div class="col-lg-8 input-group">
+              <input type="text" class="form-control" name="importe">
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="row text-center">
+          <span class="input-group-btn">
+            <button type="button" type="submit" class="btn btn-primary">
+              <i class="fa fa-search"></i> Buscar
+            </button>
+          </span>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      
+    </div>
+  </div>
+
+</div>

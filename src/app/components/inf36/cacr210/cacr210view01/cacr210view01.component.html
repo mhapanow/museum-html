@@ -1,0 +1,119 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row as400Body">
+    <div class="row as400Subtitle">
+      <h3>CONSULTA HISTÓRICA DE RENOVACIÓN DE ACUERDOS</h3>
+      <h4>Consulta por FECHA SELECCION, SUCURSAL, ESTADO, NVO. RECHAZO</h4>
+    </div>
+    <div class="row">
+      
+        
+      <form class="m-t" role="form" #cacr210v1Form="ngForm" (ngSubmit)="onSubmit(cacr210v1Form)">
+        <div class="row">
+          <div class="col-md-3 col-md-offset-2 form-group">
+            <label class="col-sm-6 control-label">
+              F. Selección:
+            </label>
+            <div class="col-lg-6 input-group">
+              <input type="text" class="form-control" placeholder="dd/mm/yyyy" name="ncuenta">
+            </div>
+          </div>
+
+          <div class="col-md-5 form-group">
+            <label class="col-sm-4 control-label">
+              Suc :
+            </label>
+            <div class="col-lg-8 input-group">
+              <input type="text" placeholder="(999 todas)" class="form-control" name="ncuenta">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-md-offset-2 form-group">
+            <label class="col-sm-6 control-label">
+              Estado:
+            </label>
+            <div class="col-lg-6 input-group">
+              <input type="text" placeholder="(Blancos, C, A, R) " class="form-control" name="ncuenta">
+            </div>
+          </div>
+        
+          <div class="col-md-5 form-group">
+            <label class="col-sm-4 control-label">
+              Mvo. Rechazo :
+            </label>
+            <div class="col-lg-8 input-group">
+              <select name="cacr215" id="cacr215" NgModel>
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option *ngFor="let item of cacr215" [value]="item.WSMREC">{{item.WSDESC}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row text-center">
+          <span class="input-group-btn">
+            <button type="button" type="submit" class="btn btn-primary">
+              <i class="fa fa-search"></i> Buscar
+            </button>
+          </span>
+        </div>
+        
+      </form>
+      <div class="row as400Table">
+        <table class="table table-hover table-stripped" id="cars-list">
+          <tr>
+            <th>Nro Cuenta</th>
+            <th>Tip</th>
+            <th>Fecha Alta.</th>
+            <th>Fecha Vto.</th>
+            <th>Límite</th>
+            <th>Nuevo Vto</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+          <!-- *ngFor="let car of cars"  ['/coche', car.id] {{car.title}} -->
+          <tr>
+            <td>
+              <a [routerLink]=""></a>
+            </td>
+            <td>
+      
+            </td>
+            <td>
+      
+            </td>
+            <td>
+      
+            </td>
+            <td>
+      
+            </td>
+            <td>
+      
+            </td>
+            <td>
+              <span>Si</span>
+              <span>No</span>
+            </td>
+            <td>
+              <a class="btn btn-primary">Ver</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/cacc200v1']">
+        Regresar
+      </button>
+    </div>
+  </div>
+
+</div>

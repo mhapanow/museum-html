@@ -1,0 +1,77 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row as400Body">
+    <div class="row as400Subtitle">
+      <h3>CONSULTA HISTÓRICA DE RENOVACION DE ACUERDOS</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2 form-group">
+        <form class="m-t" role="form" #cacr205v1Form="ngForm" (ngSubmit)="onSubmit(cacr205v1Form)">
+          <label class="col-sm-4 control-label">
+            Nro. de cta:
+          </label>
+          <div class="col-lg-8 input-group">
+            <input type="text" class="form-control" name="ncuenta" ngModel>
+            <span class="input-group-btn">
+              <button type="button" type="submit" class="btn btn-primary">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row as400Table">
+      <table class="table table-hover table-stripped" id="cars-list">
+        <tr>
+          <th>Tip</th>
+          <th>Fecha Alta</th>
+          <th>Fecha Vto.</th>
+          <th>Límite</th>
+          <th>Nuevo Límite</th>
+          <th>Nuevo Vto</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+        <tr *ngFor="let cacr205Item of cacr205m01">
+          <td>
+             {{ cacr205Item.WSDTRE}}
+          </td>
+          <td>
+            {{ cacr205Item.WSDATE | date:'MM/dd/yyyy' }}
+          </td>
+          <td>
+             {{ cacr205Item.WSAMND | date:'MM/dd/yyyy' }}
+          </td>
+          <td>
+             {{ cacr205Item.WSAAMT}}
+          </td>
+          <td>
+             {{ cacr205Item.WSNLIM}}
+          </td>
+          <td>
+             {{ cacr205Item.WSNVTO | date:'MM/dd/yyyy' }}
+          </td>
+          <td>
+             {{ cacr205Item.WSDRES}}
+          </td>
+          <td>
+            <a class="btn btn-primary" [routerLink]="['/cacr205v2', ncuenta, cacr205Item.clave]">Ver</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/cacc200v1']">
+        Regresar
+      </button>
+    </div>
+  </div>
+
+</div>

@@ -1,7 +1,4 @@
 <div class="row  border-bottom white-bg dashboard-header">
-    <div class="alert alert-danger" *ngIf="status_tar0030 !== ''">
-        [Mensaje del servidor] = {{status_tar0030}}
-    </div>
     <div class="row text-center">
         <h2>{{ title }}</h2>
     </div>
@@ -35,17 +32,17 @@
 
                     <div class="row">
                         <div class="col-md-5 col-md-offset-2 form-group">
-                            <label class="col-sm-4 control-label">
-                Nro. de cta:
-              </label>
                             <form class="m-t" role="form" #tar0030v1Form="ngForm" (ngSubmit)="onSubmit(tar0030v1Form)">
+                                <label class="col-sm-4 control-label">
+                                    Nro. de cta:
+                                </label>
                                 <div class="col-lg-8 input-group">
-                                    <input type="text" class="form-control" name="ncuenta" #ncuenta="ngModel" [(ngModel)]="tar0030.CUENTA">
+                                    <input type="text" class="form-control" name="ncuenta" ngModel>
                                     <span class="input-group-btn">
-                    <button type="button" type="submit" class="btn btn-primary">
-                      <i class="fa fa-search"></i>
-                    </button>
-                  </span>
+                                        <button type="button" type="submit" class="btn btn-primary">
+                                        <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
                                 </div>
                             </form>
                         </div>
@@ -273,11 +270,11 @@
                         </div>
                     </div>
 
-
                 </div>
                 <div class="ibox-content text-center">
-                    <button class="btn btn-primary " type="button" [routerLink]="['/tar0030t']">
-            <i class="fa fa-check"></i>&nbsp; - Datos Tracking</button>
+                    <button [ngClass]="{'disabled': tar0030.CUENTA != null }" class="btn btn-primary " type="button" [routerLink]="['/tar0030t', tar0030.CUENTA]">
+                        <i class="fa fa-check"></i>&nbsp; - Datos Tracking
+                    </button>
                 </div>
             </div>
         </div>

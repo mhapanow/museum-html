@@ -1,0 +1,76 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row as400Body">
+    <div class="row as400Subtitle">
+      <h3>REGISTRO CENTRAL TRANSACTION</h3>
+    </div>
+    <div class="row">
+
+      <div class="row">
+        <div class="col-md-2 col-md-offset-2">
+          <label class="control-label">
+            Número Base:
+          </label>
+        </div>
+        <div class="col-md-6">
+          <label class="control-label">
+            {{ nbase }}
+          </label>
+        </div>
+      </div>
+
+      <div class="row as400Table">
+        <table class="table table-hover table-stripped" id="cars-list">
+          <tr>
+            <th>Cuenta</th>
+            <th>Tipo</th>
+            <th>Límite</th>
+            <th>Mon</th>
+            <th>Desde</th>
+            <th>Hasta</th>
+            <th>Intereses</th>
+            <th>Acción</th>
+          </tr>
+          <tr *ngFor="let fer1020Item of fer1020m03">
+            <td>
+              {{ fer1020Item.WCTA1 }}
+            </td>
+            <td>
+              {{ fer1020Item.DESTIP }}
+            </td>
+            <td>
+              {{ fer1020Item.DOLIMA }}
+            </td>
+            <td>
+              {{ fer1020Item.DMCMCN }}
+            </td>
+            <td>
+              {{ fer1020Item.WSDATC | date:'MM/dd/yyyy' }}
+            </td>
+            <td>
+              {{ fer1020Item.WSAMND | date:'MM/dd/yyyy' }}
+            </td>
+            <td>
+              {{ fer1020Item.WSINTE }}
+            </td>
+            <td>
+              <a class="btn btn-primary" [routerLink]="['/fer1020v2', fer1020Item.WCTA1]" >Ver</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/fer1020v1']">
+        Regresar
+      </button>
+    </div>
+  </div>
+
+</div>

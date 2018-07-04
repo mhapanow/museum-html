@@ -1,8 +1,9 @@
 <div class="row  border-bottom white-bg dashboard-header">
-  <div class="row text-center">
+  <div class="row as400Header text-center">
     <h2>{{ title }}</h2>
   </div>
-  <div class="row">
+  <div class="row as400Body">
+  <div class="row as400BodyCenter">
     <div class="col-lg-12">
       <div class="ibox float-e-margins">
         <div class="ibox-content">
@@ -32,19 +33,12 @@
 
           <div class="row">
             <div class="col-md-5 col-md-offset-2 form-group">
-              <label class="col-sm-4 control-label">
-                Nro. de cta:
-              </label>
-              <form class="m-t" role="form" #tar0030v2Form="ngForm" (ngSubmit)="onSubmit(tar0030v2Form)">
-                <div class="col-lg-8 input-group">
-                  <input type="text" class="form-control" name="ncuenta" #ncuenta="ngModel" [(ngModel)]="tar0030m02.CUENTA">
-                  <span class="input-group-btn">
-                    <button type="button" type="submit" class="btn btn-primary">
-                      <i class="fa fa-search"></i>
-                    </button>
-                  </span>
-                </div>
-              </form>
+                <label class="col-sm-4 control-label">
+                  Nro. de cta:
+                </label>
+                <label class="col-sm-8 control-label">
+                   {{ ncuenta }}
+                </label>
             </div>
           </div>
 
@@ -97,16 +91,12 @@
           </div>
 
         </div>
-        <div class="ibox-content text-center">
-          <button class="btn btn-primary " type="button" [routerLink]="['/tar0030']">
-            <i class="fa fa-reply"></i>&nbsp; - Pantalla Anterior</button>
-        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-lg-12">
-    <app-footer></app-footer>
+  </div>
+  <div class="row as400Footer text-center">
+    <button class="btn btn-primary " type="button" [routerLink]="['/tar0030']">
+      <i class="fa fa-reply"></i>&nbsp; - Pantalla Anterior</button>
   </div>
 </div>

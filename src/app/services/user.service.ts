@@ -35,8 +35,8 @@ export class UserService {
     const tokens = this.getToken();
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     // console.log('Logout: ' + (this.url + 'auth?authToken=' + tokens));
-    // return this._http.delete(this.url + 'auth?authToken=' + tokens, { headers } );
-    return this._http.get(this.url + 'auth.json');
+     return this._http.delete(this.url + 'auth?authToken=' + tokens, { headers } );
+    // return this._http.get(this.url + 'auth.json');
   }
 
     getIdentity() {

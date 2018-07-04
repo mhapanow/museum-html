@@ -1,0 +1,37 @@
+<div class="row  border-bottom white-bg dashboard-header">
+    <div class="row text-center as400Header">
+        <h2>{{ title }}</h2>
+    </div>
+
+    <div class="row as400Body">
+        <div class="row as400BodyCenter">
+            <div class="col-md-5 col-md-offset-3 form-group">
+                <form class="m-t" role="form" #tar0077v1Form="ngForm" (ngSubmit)="onSubmit(tar0077v1Form)">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <strong>Ingrese el codigo de la transacción: </strong>
+                        </div>
+                        <div class="col-lg-3 input-group">
+                            <input type="text" class="form-control" name="codigo" #ncuenta="ngModel" [(ngModel)]="S0OPC">
+                            <span class="input-group-btn">
+                            <button type="button" type="submit" class="btn btn-primary">
+                            <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                        </div>
+                    </div>
+                    <div class="row">&nbsp;</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row as400Footer">
+        <div class="col lg-12" style="text-align: center;">
+            <button class="btn btn-primary " type="button" [routerLink]="['/tar0077v2']">
+                    Mostrar Todos
+                </button>
+        </div>
+    </div>
+
+</div>
