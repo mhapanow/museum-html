@@ -18,6 +18,7 @@ export class Cacr205view01Component implements OnInit {
   public token;
   public cacr205m01: Cacr205m01Model[];
   public ncuenta: String = '';
+  public rowsOnPage = 5;
 
   constructor(
     private _route: ActivatedRoute,
@@ -47,7 +48,6 @@ export class Cacr205view01Component implements OnInit {
         console.log(<any>error);
         this._toastr.warning(<any>error, 'Error', { timeOut: 3000 });
       }
-
     );
   }
 

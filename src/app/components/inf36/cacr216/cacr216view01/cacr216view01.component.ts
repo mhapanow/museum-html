@@ -17,6 +17,7 @@ export class Cacr216view01Component implements OnInit {
   public identity;
   public token;
   public cacr216: Cacr216m01Model[];
+  public rowsOnPage = 5;
 
   constructor(
     private _userService: UserService,

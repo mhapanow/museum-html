@@ -22,7 +22,7 @@
 /* BODY */
 
 .as400Body {
-    height: 418px
+    height: 500px
 }
 
 .as400BodyCenter {
@@ -69,6 +69,17 @@
 .as400MenuItem div>button {
     top: 10%;
     position: absolute;
+}
+
+
+/* TABLE */
+
+.as400ButtonInTable {
+    font-size: 12px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    padding-bottom: 4px !important;
+    padding-top: 4px !important;
 }
 
 

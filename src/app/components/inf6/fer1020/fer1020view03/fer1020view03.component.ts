@@ -17,6 +17,7 @@ export class Fer1020view03Component implements OnInit {
   public token;
   public fer1020m03: Fer1020m03Model[];
   public nbase: number;
+  public rowsOnPage = 5;
 
   constructor(
     private _userService: UserService,

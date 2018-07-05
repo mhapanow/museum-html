@@ -25,43 +25,68 @@
       </div>
     </div>
     <div class="row as400Table">
-      <table class="table table-hover table-stripped" id="cars-list">
-        <tr>
-          <th>Tip</th>
-          <th>Fecha Alta</th>
-          <th>Fecha Vto.</th>
-          <th>Límite</th>
-          <th>Nuevo Límite</th>
-          <th>Nuevo Vto</th>
-          <th>Estado</th>
-          <th>Acciones</th>
-        </tr>
-        <tr *ngFor="let cacr205Item of cacr205m01">
-          <td>
-             {{ cacr205Item.WSDTRE}}
-          </td>
-          <td>
-            {{ cacr205Item.WSDATE | date:'MM/dd/yyyy' }}
-          </td>
-          <td>
-             {{ cacr205Item.WSAMND | date:'MM/dd/yyyy' }}
-          </td>
-          <td>
-             {{ cacr205Item.WSAAMT}}
-          </td>
-          <td>
-             {{ cacr205Item.WSNLIM}}
-          </td>
-          <td>
-             {{ cacr205Item.WSNVTO | date:'MM/dd/yyyy' }}
-          </td>
-          <td>
-             {{ cacr205Item.WSDRES}}
-          </td>
-          <td>
-            <a class="btn btn-primary" [routerLink]="['/cacr205v2', ncuenta, cacr205Item.clave]">Ver</a>
-          </td>
-        </tr>
+      <table class="table table-striped" [mfData]="cacr205m01" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+        <thead>
+          <tr>
+            <th>
+              <mfDefaultSorter by="WSDTRE">Tip</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="WSDATE">Fecha Alta</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="WSAMND">Fecha Vto.</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="WSAAMT">Límite</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="WSNLIM">Nuevo Límite</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="WSNVTO">Nuevo Vto</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="WSDRES">Estado</mfDefaultSorter>
+            </th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cacr205Item of mf.data">
+            <td>
+              {{ cacr205Item.WSDTRE}}
+            </td>
+            <td>
+              {{ cacr205Item.WSDATE | date:'dd/MM/yyyy' }}
+            </td>
+            <td>
+              {{ cacr205Item.WSAMND | date:'dd/MM/yyyy' }}
+            </td>
+            <td>
+              {{ cacr205Item.WSAAMT}}
+            </td>
+            <td>
+              {{ cacr205Item.WSNLIM}}
+            </td>
+            <td>
+              {{ cacr205Item.WSNVTO | date:'dd/MM/yyyy' }}
+            </td>
+            <td>
+              {{ cacr205Item.WSDRES}}
+            </td>
+            <td>
+              <a class="btn btn-primary" [routerLink]="['/cacr205v2', ncuenta, cacr205Item.clave]">Ver</a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">
+              <mfBootstrapPaginator></mfBootstrapPaginator>
+            </td>
+          </tr>
+        </tfoot>
       </table>
     </div>
   </div>

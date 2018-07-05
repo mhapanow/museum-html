@@ -18,6 +18,7 @@ export class Tar0077view02Component implements OnInit {
   public identity;
   public token;
   public tar0077list: Tar0077m02Model[];
+  public rowsOnPage = 7;
 
   constructor(
     private _userService: UserService,

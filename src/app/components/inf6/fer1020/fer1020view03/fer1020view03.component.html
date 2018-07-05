@@ -23,43 +23,68 @@
       </div>
 
       <div class="row as400Table">
-        <table class="table table-hover table-stripped" id="cars-list">
-          <tr>
-            <th>Cuenta</th>
-            <th>Tipo</th>
-            <th>Límite</th>
-            <th>Mon</th>
-            <th>Desde</th>
-            <th>Hasta</th>
-            <th>Intereses</th>
-            <th>Acción</th>
-          </tr>
-          <tr *ngFor="let fer1020Item of fer1020m03">
-            <td>
-              {{ fer1020Item.WCTA1 }}
-            </td>
-            <td>
-              {{ fer1020Item.DESTIP }}
-            </td>
-            <td>
-              {{ fer1020Item.DOLIMA }}
-            </td>
-            <td>
-              {{ fer1020Item.DMCMCN }}
-            </td>
-            <td>
-              {{ fer1020Item.WSDATC | date:'MM/dd/yyyy' }}
-            </td>
-            <td>
-              {{ fer1020Item.WSAMND | date:'MM/dd/yyyy' }}
-            </td>
-            <td>
-              {{ fer1020Item.WSINTE }}
-            </td>
-            <td>
-              <a class="btn btn-primary" [routerLink]="['/fer1020v2', fer1020Item.WCTA1]" >Ver</a>
-            </td>
-          </tr>
+        <table class="table table-striped" [mfData]="fer1020m03" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+          <thead>
+            <tr>
+              <th>
+                <mfDefaultSorter by="WCTA1">Cuenta</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="DESTIP">Tipo</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="DOLIMA">Límite</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="DMCMCN">Mon</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WSDATC">Desde</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WSAMND">Hasta</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WSINTE">Intereses</mfDefaultSorter>
+              </th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let fer1020Item of mf.data">
+              <td>
+                {{ fer1020Item.WCTA1 }}
+              </td>
+              <td>
+                {{ fer1020Item.DESTIP }}
+              </td>
+              <td>
+                {{ fer1020Item.DOLIMA }}
+              </td>
+              <td>
+                {{ fer1020Item.DMCMCN }}
+              </td>
+              <td>
+                {{ fer1020Item.WSDATC | date:'dd/MM/yyyy' }}
+              </td>
+              <td>
+                {{ fer1020Item.WSAMND | date:'dd/MM/yyyy' }}
+              </td>
+              <td>
+                {{ fer1020Item.WSINTE }}
+              </td>
+              <td>
+                <a class="btn btn-primary" [routerLink]="['/fer1020v2', fer1020Item.WCTA1]">Ver</a>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">
+                <mfBootstrapPaginator></mfBootstrapPaginator>
+              </td>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </div>
