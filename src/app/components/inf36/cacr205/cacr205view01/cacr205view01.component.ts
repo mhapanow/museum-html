@@ -38,6 +38,7 @@ export class Cacr205view01Component implements OnInit {
     this.ncuenta = form.value.ncuenta;
     this._cacr205Service.getCacr205View01(this.token, this.ncuenta).subscribe(
       response => {
+        console.log(response);
         if (response.error_message == null) {
           this.cacr205m01 = response.data;
         } else {

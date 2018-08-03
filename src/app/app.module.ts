@@ -31,6 +31,13 @@ import { Cacr205view02Component } from './components/inf36/cacr205/cacr205view02
 import { Fer1020view01Component } from './components/inf6/fer1020/fer1020view01/fer1020view01.component';
 import { Fer1020view02Component } from './components/inf6/fer1020/fer1020view02/fer1020view02.component';
 import { Fer1020view03Component } from './components/inf6/fer1020/fer1020view03/fer1020view03.component';
+import { Ccrr0500view01Component } from './components/cre/ccrr0500/ccrr0500view01/ccrr0500view01.component';
+import { Ccrr0500view02Component } from './components/cre/ccrr0500/ccrr0500view02/ccrr0500view02.component';
+import { Ccrr0500view03Component } from './components/cre/ccrr0500/ccrr0500view03/ccrr0500view03.component';
+import { Ccrr0515view01Component } from './components/cre/ccrr0515/ccrr0515view01/ccrr0515view01.component';
+import { Ccrr0580view01Component } from './components/cre/ccrr0580/ccrr0580view01/ccrr0580view01.component';
+import { Ccrr0580view02Component } from './components/cre/ccrr0580/ccrr0580view02/ccrr0580view02.component';
+import { Ccrr1948view01Component } from './components/cre/ccrr1948/ccrr1948view01/ccrr1948view01.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +61,13 @@ import { Fer1020view03Component } from './components/inf6/fer1020/fer1020view03/
     Fer1020view02Component,
     Fer1020view03Component,
     Cacr210view02Component,
+    Ccrr0500view01Component,
+    Ccrr0500view02Component,
+    Ccrr0500view03Component,
+    Ccrr0515view01Component,
+    Ccrr0580view01Component,
+    Ccrr0580view02Component,
+    Ccrr1948view01Component,
   ],
   imports: [
     BrowserModule,

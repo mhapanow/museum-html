@@ -1,0 +1,111 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row as400Body">
+    <div class="row as400Subtitle">
+      <h3>CONSULTA DE CRÉDITOS</h3>
+    </div>
+    <div class="row">
+
+        <div class="row">
+          <div class="col-md-3 col-md-offset-2 form-group">
+            <label class="col-sm-6 control-label">
+              Sucursal:
+            </label>
+            <strong class="col-sm-6 control-label">
+              {{ ccrr0500m02.CRCSUC }}
+            </strong>
+          </div>
+          <div class="col-md-3 col-md-offset-2 form-group">
+            <label class="col-sm-6 control-label">
+              División:
+            </label>
+            <strong class="col-sm-6 control-label">
+              {{ ccrr0500m02.CRCDIV }}
+            </strong>
+          </div>
+          <div class="col-md-3 col-md-offset-2 form-group">
+            <label class="col-sm-6 control-label">
+              Estado Contable:
+            </label>
+            <strong class="col-sm-6 control-label">
+              {{ ccrr0500m02.CRSTCO }} {{ ccrr0500m02.DSSTCO }}
+            </strong>
+          </div>
+        </div>
+
+
+      <div class="row as400Table">
+        <table class="table table-striped" [mfData]="ccrr0500m02" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+          <thead>
+            <tr>
+              <th>
+                <mfDefaultSorter by="NOMCLI">Nombre del Titular</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="CRNUCR">Nro. Cred.</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="CRSTCR">Est.</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="FECALT">Fecha Otorgado</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="FECVTO">Fecha Vencimie.</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="SALDO">Saldo Deuda</mfDefaultSorter>
+              </th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ccrr0500Item of mf.data">
+              <td>
+                {{ ccrr0500Item.NOMCLI }}
+              </td>
+              <td>
+                {{ ccrr0500Item.CRNUCR }}
+              </td>
+              <td>
+                {{ ccrr0500Item.CRSTCR }}
+              </td>
+              <td>
+                {{ ccrr0500Item.FECALT | date:'dd/MM/yyyy' }}
+              </td>
+              <td>
+                {{ ccrr0500Item.FECVTO | date:'dd/MM/yyyy' }}
+              </td>
+              <td>
+                {{ ccrr0500Item.SALDO }}
+              </td>
+              <td>
+                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/ccrr0500v1']">Consulta Crédito</a>
+                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/ccrr0580v1', ccrr0500Item.CRNUCR ]">Próximas Cuotas</a>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">
+                <mfBootstrapPaginator></mfBootstrapPaginator>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/ccrr0500v1']">
+        Regresar
+      </button>
+    </div>
+  </div>
+
+</div>

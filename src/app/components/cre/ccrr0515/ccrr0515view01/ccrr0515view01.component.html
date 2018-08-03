@@ -1,0 +1,189 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row as400Body">
+    <div class="row as400Subtitle">
+      <h3>CONSULTA DE PUNITORIOS/COMPENSATORIOS</h3>
+    </div>
+    <div class="row">
+
+      <div class="row">
+        <div class="col-md-3 col-md-offset-2 form-group">
+          <label class="col-sm-3 control-label">
+            Nro. Préstamo.:
+          </label>
+          <strong class="col-sm-9 control-label">
+             {{ ccrr0515m01.WDNUC1 }}
+          </strong>
+        </div>
+        <div class="col-md-6 form-group">
+          <label class="col-sm-3 control-label">
+            Cliente.:
+          </label>
+          <strong class="col-sm-9 control-label">
+             {{ ccrr0515m01.WDCLIE }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Cuota.......:
+          </label>
+          <strong class="col-sm-6 control-label">
+           {{ ccrr0515m01.WDCUCO }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            Imp. Endeudamiento.:
+          </label>
+          <strong class="col-sm-6 control-label">
+             {{ ccrr0515m01.WTIEND }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Int. Punitorios ....:
+          </label>
+          <strong class="col-sm-6 control-label">
+             {{ ccrr0515m01.WTIPUN }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            Fee Cobranza :
+          </label>
+          <strong class="col-sm-6 control-label">
+           {{ ccrr0515m01.WTFEEC }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Int. Compensatorios.:
+          </label>
+          <strong class="col-sm-6 control-label">
+             {{ ccrr0515m01.WTICOM }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            IVA.:
+          </label>
+          <strong class="col-sm-6 control-label">
+             {{ ccrr0515m01.WTIIVA }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-6 form-group">
+          <label class="col-sm-6 control-label">
+            Subtipo de préstamo..:
+          </label>
+          <strong class="col-sm-6 control-label">
+             {{ ccrr0515m01.WTSBTP }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row as400Table">
+        <table class="table table-striped" [mfData]="ccrr0515m01" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+          <thead>
+            <tr>
+              <th>
+                <mfDefaultSorter by="WDCUOT">Nro Cuota</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WDCFEZ">Cod. Fee</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WDDIAT">Días Atraso</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WDTACR">Tasas</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WDIMP1">Punit. Calc.</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WDIMC1">Compens. Calc.</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WDIMF1">Fee. Calc.</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WDIMD1">Imp. Endeud.</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WDIIV1">IVA</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WDITO1">Total</mfDefaultSorter>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ccrr0515Item of mf.data">
+              <td>
+                {{ ccrr0515Item.WDCUOT }}
+              </td>
+              <td>
+                {{ ccrr0515Item.WDCFEZ }}
+              </td>
+              <td>
+                {{ ccrr0515Item.WDDIAT }}
+              </td>
+              <td>
+                {{ ccrr0515Item.WDTACR }}
+              </td>
+              <td>
+                {{ ccrr0515Item.WDIMP1 }}
+              </td>
+              <td>
+                {{ ccrr0515Item.WDIMC1 }}
+              </td>
+              <td>
+                {{ ccrr0515Item.WDIMF1}}
+              </td>
+              <td>
+                {{ ccrr0515Item.WDIMD1}}
+              </td>
+              <td>
+                {{ ccrr0515Item.WDIIV1}}
+              </td>
+              <td>
+                {{ ccrr0515Item.WDITO1}}
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">
+                <mfBootstrapPaginator></mfBootstrapPaginator>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/ccrr0500v1']">
+        Regresar
+      </button>
+    </div>
+  </div>
+
+</div>

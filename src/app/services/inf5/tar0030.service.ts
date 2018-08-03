@@ -16,24 +16,7 @@ export class Tar0030Service {
   }
 
   getTar0030View01(token, tar0030Cuenta): Observable<any> {
-    /*
-    const headers = new HttpHeaders().set('Content-Type', 'application/json')
-                                      .set('authToken', token);
-                                      */
-    /*
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'authToken': token
-      })
-    };
-    */
-    // return this._http.get(this.url + GLOBAL.tar0030view1 + '?ctacta=' + tar0030Cuenta, { headers });
-    // return this._http.get(this.url + GLOBAL.tar0030view1 + '?ctacta=' + tar0030Cuenta, httpOptions);
-    // console.log(this.url + GLOBAL.tar0030view1 + '?authToken=' + token + '&ctacta=' + tar0030Cuenta);
-
     return this._http.get(this.url + GLOBAL.tar0030view1 + '?authToken=' + token + '&ctacta=' + tar0030Cuenta);
-    // return this._http.get(this.url + 'TAR030.json');
   }
 
   getTar0030View02(token, tar0030Cuenta): Observable<any> {

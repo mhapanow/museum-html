@@ -1,0 +1,429 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row ">
+    <div class="row as400Subtitle">
+      <h3>Sistema de Créditos <strong>SITUACIÓN DE UNA CUOTA</strong></h3>
+    </div>
+    <div class="row">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 text-center form-group">
+          <span class="input-group-btn">
+            <button type="button" type="submit" class="btn btn-primary" [routerLink]="['/ccrr0515v1', ccrr0580m02.NUMCRE ]">
+              <i class="fa fa-search"></i> F7
+            </button>
+          </span>
+          <span class="input-group-btn">
+            <button type="button" type="submit" class="btn btn-primary" [routerLink]="['/ccrr1948v1', ccrr0580m02.NUMCRE ]">
+              <i class="fa fa-search"></i> F8
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row">
+        <div class="col-md-3 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Aviso de Vto:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.AVIVTO }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Crédito:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.NUMCRE }}
+          </strong>
+        </div>
+        <div class="col-md-5 form-group">
+          <label class="col-sm-3 control-label">
+            Tipo Cuota:
+          </label>
+          <strong class="col-sm-9 control-label">
+            {{ ccrr0580m02.SCTICU }}
+          </strong>
+        </div>
+        <div class="col-md-2 form-group">
+          <label class="col-sm-6 control-label">
+            Estado:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCSTCU }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Nro de Cuota:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCNCUO }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            Ing. Brutos:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.WSIB }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Moneda:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.MONEDA }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            Valor Tasa:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCTACR }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Amortización:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCIMAM }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            Índice Base:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCIBAS }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Balloon:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCIMBA }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            Ind. Actual:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCIACT }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Intereses:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCICIN }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            Fact. Correc.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.FACCOR }}
+          </strong>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Ajustes:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCICAJ }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            IVA Interés:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.WSIVA1 }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Seg. de Vida:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCISVI }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            IVA seg. bien:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.WSIVA2 }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Impuestos:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCIISE }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            IVA pun. Cal.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.WSIVA3 }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Cargo X Canc.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCICCA }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            IVA Pun. Con.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.WSIVA4 }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Total Punit.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.TOTPUN }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            IVA Int. Cal.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.WSIVA5 }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Seguro Bien:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SBIEN }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            IVA Int. Con.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.WSIVA6 }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Fecha de Vto:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.FECVTO | date:'dd/MM/yyyy' }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            IVA Can. Ant.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.WSIVA7 }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Fecha de Pago:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.FECPAG | date:'dd/MM/yyyy' }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            TOTAL CUOTA:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.TOTAL }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Portes:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCCAR1 }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            Forma de Pag:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCFPCU }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Int. Punit. Calc.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCIIPD }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            Sucur. de Pag.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCCSUP }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Int. Comp. Calc:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCIICD }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            Pun. Condona:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCIIPC }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+             IVA Portes:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCI8C1 }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            Comp. Condona:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCIICC }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Fecha de Rever.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.FECREV | date:'dd/MM/yyyy' }}
+          </strong>
+        </div>
+        <div class="col-md-4 form-group">
+          <label class="col-sm-6 control-label">
+            Ajus. Condona:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.WSICAC }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-6 form-group">
+          <label class="col-sm-6 control-label">
+            Autorización:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m02.SCACON }}
+          </strong>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/ccrr0500v1']">
+        Regresar
+      </button>
+    </div>
+  </div>
+
+</div>

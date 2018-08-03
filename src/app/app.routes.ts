@@ -18,7 +18,14 @@ import {
     Cacr216view01Component,
     Fer1020view01Component,
     Fer1020view02Component,
-    Fer1020view03Component
+    Fer1020view03Component,
+    Ccrr0500view01Component,
+    Ccrr0500view02Component,
+    Ccrr0500view03Component,
+    Ccrr0515view01Component,
+    Ccrr0580view01Component,
+    Ccrr0580view02Component,
+    Ccrr1948view01Component
 } from './components/index.paginas';
 
 const app_routes: Routes = [
@@ -39,6 +46,13 @@ const app_routes: Routes = [
     { path: 'fer1020v1', component: Fer1020view01Component },
     { path: 'fer1020v2/:ncuenta', component: Fer1020view02Component },
     { path: 'fer1020v3/:nbase', component: Fer1020view03Component },
+    { path: 'ccrr0500v1', component: Ccrr0500view01Component },
+    { path: 'ccrr0500v2/:nsucursal/:ndivision/:nestado', component: Ccrr0500view02Component },
+    { path: 'ccrr0500v3/:nreferencia', component: Ccrr0500view03Component },
+    { path: 'ccrr0515v1/:ncredito', component: Ccrr0515view01Component },
+    { path: 'ccrr0580v1/:ncredito', component: Ccrr0580view01Component },
+    { path: 'ccrr0580v2/:ncredito', component: Ccrr0580view02Component },
+    { path: 'ccrr1948v1/:ncredito', component: Ccrr1948view01Component },
     { path: 'logout/:sure', component: LoginComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];

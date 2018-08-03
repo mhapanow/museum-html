@@ -1,0 +1,167 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row as400Body">
+    <div class="row as400Subtitle">
+      <h3>PLAN DE PAGOS DE UN CRÉDITO</h3>
+    </div>
+    <div class="row">
+
+      <div class="row">
+        <div class="col-md-3 col-md-offset-2 form-group">
+          <label class="col-sm-3 control-label">
+            Crédito.:
+          </label>
+          <strong class="col-sm-9 control-label">
+            {{ ccrr0580m01.NUMCRE }}
+          </strong>
+        </div>
+        <div class="col-md-3 form-group">
+          <label class="col-sm-6 control-label">
+            Sucursal.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m01.CRCSUC }}
+          </strong>
+        </div>
+        <div class="col-md-3 form-group">
+          <label class="col-sm-6 control-label">
+            División.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m01.CRCDIV }}
+          </strong>
+        </div>        
+      </div>
+
+      <div class="row">
+        <div class="col-md-9 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Producto/Nombre.......:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m01.ORCAPI }} {{ ccrr0580m01.CLAVE }} {{ ccrr0580m01.NOMPRO }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Cliente/Nombre.......:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m01.NOMCLI }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Moneda:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m01.MONEDA }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Tasa:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ ccrr0580m01.CRTACR }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row as400Table">
+        <table class="table table-striped" [mfData]="ccrr0580m01" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+          <thead>
+            <tr>
+              <th>
+                <mfDefaultSorter by="FECVTO">Fec. Vto</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="AMORT">Amort.</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="INTERE">Interés</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="AJUSTE">Ajuste</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="TASA">Tasa</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="FECPAG">Fec. Pag.</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="SCNCUO">NCu</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="SCSTCU">Est.</mfDefaultSorter>
+              </th>
+              <th>
+                Acciones
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ccrr0580Item of mf.data">
+              <td>
+                {{ ccrr0580Item.FECVTO | date:'dd/MM/yyyy' }}
+              </td>
+              <td>
+                {{ ccrr0580Item.AMORT }}
+              </td>
+              <td>
+                {{ ccrr0580Item.INTERE }}
+              </td>
+              <td>
+                {{ ccrr0580Item.AJUSTE }}
+              </td>
+              <td>
+                {{ ccrr0580Item.TASA }}
+              </td>
+              <td>
+                {{ ccrr0580Item.FECPAG | date:'dd/MM/yyyy' }}
+              </td>
+              <td>
+                {{ ccrr0580Item.SCNCUO }}
+              </td>
+              <td>
+                {{ ccrr0580Item.SCSTCU }}
+              </td>
+              <td>
+                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/ccrr0580v2', ccrr0580m01.NUMCRE]">Ver</a>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">
+                <mfBootstrapPaginator></mfBootstrapPaginator>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/ccrr0500v1']">
+        Regresar
+      </button>
+    </div>
+  </div>
+
+</div>
