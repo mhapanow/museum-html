@@ -8,23 +8,24 @@
             <h3>CONSULTA DE CODIGOS DE TRANSACCIONES</h3>
         </div>
         <div class="row as400Table">
-            <table class="table table-striped" [mfData]="tar0077list" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+            <!-- <table class="table table-striped" [mfData]="tar0077list" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage"> -->
+            <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="5">
                 <thead>
                     <tr>
                         <th>
-                            <mfDefaultSorter by="WSCODI">Cod.</mfDefaultSorter>
+                            Cod.
                         </th>
                         <th>
-                            <mfDefaultSorter by="WSDESC">Descripcion corta</mfDefaultSorter>
+                            Descripcion corta
                         </th>
                         <th>
-                            <mfDefaultSorter by="WSDESL">Descripcion larga</mfDefaultSorter>
+                            Descripcion larga
                         </th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let x of mf.data">
+                    <tr *ngFor="let x of tar0077list">
                         <td>{{x.WSCODI}}</td>
                         <td>{{x.WSDESC}}</td>
                         <td>{{x.WSDESL}}</td>
@@ -33,14 +34,15 @@
                         </td>
                     </tr>
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="4">
-                            <mfBootstrapPaginator></mfBootstrapPaginator>
-                        </td>
-                    </tr>
-                </tfoot>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <ul class="pagination pull-right"></ul>
+                    </td>
+                </tr>
+            </tfoot>
             </table>
+        <!-- <table class="table" data-paging="true"></table> -->
         </div>
     </div>
 

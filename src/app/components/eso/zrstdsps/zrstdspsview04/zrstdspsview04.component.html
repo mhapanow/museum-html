@@ -1,0 +1,222 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row as400Body">
+    <div class="row as400Subtitle">
+      <h3>RESUMEN ON-LINE</h3>
+    </div>
+    <div class="row">
+
+      <div class="row">
+        <div class="col-md-9 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Cuenta.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ zrstdspsm04.MEORGND }} {{ zrstdspsm04.MELOGOD }} {{ zrstdspsm04.MEACNBD }} {{ zrstdspsm04.MENAMED }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 form-group">
+          <label class="col-sm-3 control-label">
+            Ciclo :
+          </label>
+          <strong class="col-sm-9 control-label pull-right">
+            {{ zrstdspsm04.MEAAFCD }} / {{ zrstdspsm04.MEBICYD }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5 col-md-offset-2 form-group">
+          <label class="col-sm-3 control-label text-center">
+            Actividad de Bonus Programs
+          </label>
+        </div>
+      </div>
+   
+
+      <div class="row as400Table">
+        <table class="table table-striped" [mfData]="zrstdspsm04.data" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+          <thead>
+            <tr>
+              <th>
+                <mfDefaultSorter by="W4RRRED">Descripción del Programa</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="W4ORGN">Org.</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="W4REAR">Puntos Ganados</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="W4RPRE">Puntos Usados</mfDefaultSorter>
+              </th>
+              <th>
+                Acciones
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let zrstdspsItem of mf.data">
+              <td>
+                {{ zrstdspsItem.W4RRRED }}
+              </td>
+              <td>
+                {{ zrstdspsItem.W4ORGN }}
+              </td>
+              <td>
+                {{ zrstdspsItem.W4REAR }}
+              </td>
+              <td>
+                {{ zrstdspsItem.W4RPRE }}
+              </td>
+              <td>
+                <a class="btn btn-primary as400ButtonInTable">Ver</a>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">
+                <mfBootstrapPaginator></mfBootstrapPaginator>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/home']">
+        Regresar
+      </button>
+    </div>
+
+    <div class="col lg-12" style="text-align: center;">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" (click)='zrstdspsv08(zrstdspsm04.MEORGND)'>
+        Launch demo modal
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">{{ title2 }}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+        
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-9 control-label">
+                DETALLE DE BONUS PROGRAM.:
+              </label>
+              <strong class="col-sm-3 control-label">
+                {{ zrstdspsm08.W4RPGI }} {{ zrstdspsm08.W4RBPI }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <strong class="col-sm-11 control-label">
+                {{ zrstdspsm08.W4RRRE28 }}
+              </strong>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Inicio.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm08.W4RBEG }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Ganadas.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm08.W4REAR }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Usadas.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm08.W4RPRE }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Expiradas.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm08.W4RRED }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Ajustadas.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm08.W4RPAD }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Actuales.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm08.W4RAVA }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Millas AA.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm08.W4RRMP }}
+              </strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

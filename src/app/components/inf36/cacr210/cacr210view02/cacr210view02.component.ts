@@ -33,10 +33,18 @@ export class Cacr210view02Component implements OnInit {
     this.cargarDatos();
   }
 
+  lPads(valor: String) {
+    if (valor.length === 0 || valor.length >= 10) {
+      return valor;
+    } else {
+      return new Array(1 + 10 - valor.length).join('0') + valor;
+    }
+  }
+
   cargarDatos() {
     this._route.params.subscribe(params => {
       const clave = params['clave'];
-      this.cuenta = params['ncuenta'];
+      this.cuenta = this.lPads( params['ncuenta'] );
 
       this._cacr210Service.getCacr210View02(this.token, this.cuenta, clave).subscribe(
           response => {

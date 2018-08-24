@@ -37,7 +37,7 @@
                                     Nro. de cta:
                                 </label>
                                 <div class="col-lg-8 input-group">
-                                    <input type="text" class="form-control" name="ncuenta" ngModel>
+                                    <input type="text" class="form-control" name="ncuenta" [(ngModel)]='ncuenta'>
                                     <span class="input-group-btn">
                                         <button type="button" type="submit" class="btn btn-primary">
                                         <i class="fa fa-search"></i>
@@ -51,7 +51,7 @@
                     <div class="row">
                         <div class="col-md-4 col-md-offset-2">
                             Nro. de cta:
-                            <strong>{{ tar0030.CUENTA }}</strong>
+                            <strong>{{ tar0030.CUENTA | formcuenta }}</strong>
                         </div>
                         <div class="col-md-2">
                             Sucursa:
@@ -272,7 +272,7 @@
 
                 </div>
                 <div class="ibox-content text-center">
-                    <button [ngClass]="{'disabled': tar0030.CUENTA != null }" class="btn btn-primary " type="button" [routerLink]="['/tar0030t', tar0030.CUENTA]">
+                    <button [disabled]="bandera" class="btn btn-primary " type="button" [routerLink]="['/tar0030t', tar0030.CUENTA]">
                         <i class="fa fa-check"></i>&nbsp; - Datos Tracking
                     </button>
                 </div>
@@ -283,7 +283,7 @@
 <div class="row">
     <div class="col-lg-12">
         <!-- <div class="wrapper wrapper-content">
-
+[ngClass]="{'disabled': tar0030.CUENTA != null }"
     </div> -->
         <app-footer></app-footer>
     </div>

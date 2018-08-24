@@ -13,8 +13,9 @@ export class Cacr215Service {
     this.endpointV1 = GLOBAL.cacr215view1;
   }
 
-  getCacr215View01(token): Observable<any> {
-    return this._http.get(this.url + this.endpointV1 + '?authToken=' + token);
+  getCacr215View01(token, order): Observable<any> {
+    // console.log(this.url + this.endpointV1 + '?authToken=' + token + '&ORDER=' + order);
+    return this._http.get(this.url + this.endpointV1 + '?authToken=' + token + '&ORDER=' + order);
   }
 
 }

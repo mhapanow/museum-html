@@ -7,11 +7,12 @@ import { GLOBAL } from '../global';
 export class Tar0077Service {
   public url: string;
 
-  constructor(public _http: HttpClient) { 
+  constructor(public _http: HttpClient) {
     this.url = GLOBAL.url;
   }
 
   getTar0077View02(token): Observable<any> {
+    // console.log(this.url + GLOBAL.tar0077view2 + '?authToken=' + token);
     return this._http.get(this.url + GLOBAL.tar0077view2 + '?authToken=' + token);
   }
 

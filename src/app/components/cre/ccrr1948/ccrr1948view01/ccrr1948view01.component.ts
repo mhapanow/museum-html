@@ -41,7 +41,7 @@ export class Ccrr1948view01Component implements OnInit {
           if (response.error_message == null) {
             this.ccrr1948m01 = response.data;
           } else {
-            this._toastr.warning(response.error_message, 'Validación', { timeOut: 3000 });
+            this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }
         },
         error => {

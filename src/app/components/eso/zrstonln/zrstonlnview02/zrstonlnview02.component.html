@@ -1,0 +1,90 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row as400Body">
+    <div class="row as400Subtitle">
+      <h3>SELECCIÓN DE RESUMENES ON-LINE</h3>
+    </div>
+    <div class="row">
+
+      <div class="row as400Table">
+        <table class="table table-striped" [mfData]="zrstonlnm02" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+          <thead>
+            <tr>
+              <th>
+                <mfDefaultSorter by="WSAFAC">Año</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WSCIFA">Cic</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WSAGIG">Ag</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WSORGN">Org</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WSLOGO">Logo</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WSACNB">Cuenta</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WSNAME">Titular</mfDefaultSorter>
+              </th>
+              <th>
+                Acciones
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let zrstonlnItem of mf.data">
+              <td>
+                {{ zrstonlnItem.WSAFAC }}
+              </td>
+              <td>
+                {{ zrstonlnItem.WSCIFA }}
+              </td>
+              <td>
+                {{ zrstonlnItem.WSAGIG }}
+              </td>
+              <td>
+                {{ zrstonlnItem.WSORGN }}
+              </td>
+              <td>
+                {{ zrstonlnItem.WSLOGO }}
+              </td>
+              <td>
+                {{ zrstonlnItem.WSACNB }}
+              </td>
+              <td>
+                {{ zrstonlnItem.WSNAME }}
+              </td>
+              <td>
+                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstdspsview1', zrstonlnItem.WSACNB]">Moneda1</a>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">
+                <mfBootstrapPaginator></mfBootstrapPaginator>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/home']">
+        Regresar
+      </button>
+    </div>
+  </div>
+
+</div>

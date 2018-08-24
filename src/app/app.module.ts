@@ -38,6 +38,22 @@ import { Ccrr0515view01Component } from './components/cre/ccrr0515/ccrr0515view0
 import { Ccrr0580view01Component } from './components/cre/ccrr0580/ccrr0580view01/ccrr0580view01.component';
 import { Ccrr0580view02Component } from './components/cre/ccrr0580/ccrr0580view02/ccrr0580view02.component';
 import { Ccrr1948view01Component } from './components/cre/ccrr1948/ccrr1948view01/ccrr1948view01.component';
+import { Zrstdspsview01Component } from './components/eso/zrstdsps/zrstdspsview01/zrstdspsview01.component';
+import { Zrstdspsview02Component } from './components/eso/zrstdsps/zrstdspsview02/zrstdspsview02.component';
+import { Zrstdspsview03Component } from './components/eso/zrstdsps/zrstdspsview03/zrstdspsview03.component';
+import { Zrstdspsview04Component } from './components/eso/zrstdsps/zrstdspsview04/zrstdspsview04.component';
+import { Zrstdspsview05Component } from './components/eso/zrstdsps/zrstdspsview05/zrstdspsview05.component';
+import { Zrstdspsview06Component } from './components/eso/zrstdsps/zrstdspsview06/zrstdspsview06.component';
+import { Zrstonlnview01Component } from './components/eso/zrstonln/zrstonlnview01/zrstonlnview01.component';
+import { Zrstonlnview02Component } from './components/eso/zrstonln/zrstonlnview02/zrstonlnview02.component';
+import { Zrstreclview01Component } from './components/eso/zrstrecl/zrstreclview01/zrstreclview01.component';
+import { Zrstreclview02Component } from './components/eso/zrstrecl/zrstreclview02/zrstreclview02.component';
+import { Zrstrecmview01Component } from './components/eso/zrstrecm/zrstrecmview01/zrstrecmview01.component';
+import { Zrstrecmview02Component } from './components/eso/zrstrecm/zrstrecmview02/zrstrecmview02.component';
+import { LpadPipe } from './pipes/lpad.pipe';
+import { VacioPipe } from './pipes/vacio.pipe';
+import { FormcuentaPipe } from './pipes/formcuenta.pipe';
+import { FormmonedaPipe } from './pipes/formmoneda.pipe';
 
 @NgModule({
   declarations: [
@@ -68,6 +84,22 @@ import { Ccrr1948view01Component } from './components/cre/ccrr1948/ccrr1948view0
     Ccrr0580view01Component,
     Ccrr0580view02Component,
     Ccrr1948view01Component,
+    Zrstdspsview01Component,
+    Zrstdspsview02Component,
+    Zrstdspsview03Component,
+    Zrstdspsview04Component,
+    Zrstdspsview05Component,
+    Zrstdspsview06Component,
+    Zrstonlnview01Component,
+    Zrstonlnview02Component,
+    Zrstreclview01Component,
+    Zrstreclview02Component,
+    Zrstrecmview01Component,
+    Zrstrecmview02Component,
+    LpadPipe,
+    VacioPipe,
+    FormcuentaPipe,
+    FormmonedaPipe,
   ],
   imports: [
     BrowserModule,

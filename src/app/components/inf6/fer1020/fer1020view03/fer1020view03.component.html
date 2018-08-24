@@ -23,37 +23,37 @@
       </div>
 
       <div class="row as400Table">
-        <table class="table table-striped" [mfData]="fer1020m03" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+        <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="5">
           <thead>
             <tr>
               <th>
-                <mfDefaultSorter by="WCTA1">Cuenta</mfDefaultSorter>
+                Cuenta
               </th>
               <th>
-                <mfDefaultSorter by="DESTIP">Tipo</mfDefaultSorter>
+                Tipo
               </th>
               <th>
-                <mfDefaultSorter by="DOLIMA">Límite</mfDefaultSorter>
+                Límite
               </th>
               <th>
-                <mfDefaultSorter by="DMCMCN">Mon</mfDefaultSorter>
+                Mon
               </th>
               <th>
-                <mfDefaultSorter by="WSDATC">Desde</mfDefaultSorter>
+                Desde
               </th>
               <th>
-                <mfDefaultSorter by="WSAMND">Hasta</mfDefaultSorter>
+                Hasta
               </th>
               <th>
-                <mfDefaultSorter by="WSINTE">Intereses</mfDefaultSorter>
+                Intereses
               </th>
               <th>Acción</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let fer1020Item of mf.data">
+            <tr *ngFor="let fer1020Item of fer1020m03">
               <td>
-                {{ fer1020Item.WCTA1 }}
+                {{ fer1020Item.WCTA1 | lpad:10 | formcuenta }}
               </td>
               <td>
                 {{ fer1020Item.DESTIP }}
@@ -62,7 +62,7 @@
                 {{ fer1020Item.DOLIMA }}
               </td>
               <td>
-                {{ fer1020Item.DMCMCN }}
+                {{ fer1020Item.DMCMCN | lpad:3:true }}
               </td>
               <td>
                 {{ fer1020Item.WSDATC | date:'dd/MM/yyyy' }}
@@ -71,7 +71,7 @@
                 {{ fer1020Item.WSAMND | date:'dd/MM/yyyy' }}
               </td>
               <td>
-                {{ fer1020Item.WSINTE }}
+                {{ fer1020Item.WSINTE | vacio }}
               </td>
               <td>
                 <a class="btn btn-primary" [routerLink]="['/fer1020v2', fer1020Item.WCTA1]">Ver</a>
@@ -80,8 +80,8 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="4">
-                <mfBootstrapPaginator></mfBootstrapPaginator>
+              <td colspan="5">
+                <ul class="pagination pull-right"></ul>
               </td>
             </tr>
           </tfoot>

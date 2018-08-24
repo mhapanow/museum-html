@@ -1,6 +1,6 @@
 import { calcBindingFlags } from '@angular/core/src/view/util';
 export const GLOBAL = {
-  url: 'http://192.168.1.27:8080/museum/api/',
+  url: 'http://192.168.1.20:8080/museum/api/',
   auth: 'auth',
   // INF-5
   tar0030view1: 'legacy/tar0030/view1',
@@ -29,6 +29,24 @@ export const GLOBAL = {
   ccrr0580view02: 'legacy/ccrr0580/view2',
 
   ccrr1948view01: 'legacy/ccrr1948/view1',
+  // ESO
+  Zrstdspsview01: 'legacy/zrstdsps/view1',
+  Zrstdspsview02: 'legacy/zrstdsps/view2',
+  Zrstdspsview03: 'legacy/zrstdsps/view3',
+  Zrstdspsview04: 'legacy/zrstdsps/view4',
+  Zrstdspsview05: 'legacy/zrstdsps/view5',
+  Zrstdspsview06: 'legacy/zrstdsps/view6',
+  Zrstdspsview07: 'legacy/zrstdsps/view7',
+  Zrstdspsview08: 'legacy/zrstdsps/view8',
+
+  Zrstonlnview01: 'legacy/zrstonln/view1',
+  Zrstonlnview02: 'legacy/zrstonln/view2',
+
+  Zrstreclview01: 'legacy/zrstrecl/view1',
+  Zrstreclview02: 'legacy/zrstrecl/view2',
+
+  Zrstrecmview01: 'legacy/zrstrecm/view1',
+  Zrstrecmview02: 'legacy/zrstrecm/view2',
 
 // auth.json
 //  url: 'https://museum-9446c.firebaseio.com/'

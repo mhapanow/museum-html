@@ -1,0 +1,468 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center as400Header">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="row as400Body">
+    <div class="row as400Subtitle">
+      <h3>RESUMEN ON-LINE</h3>
+    </div>
+    <div class="row">
+
+      <div class="row">
+        <div class="col-md-9 col-md-offset-2 form-group">
+          <label class="col-sm-6 control-label">
+            Cuenta.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ zrstdspsm01.MEORGND }} {{ zrstdspsm01.MELOGOD }} {{ zrstdspsm01.MEACNBD }} {{ zrstdspsm01.MENAMED }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5 col-md-offset-2 form-group">
+          <label class="col-sm-3 control-label">
+            Saldo Unificado.: $
+          </label>
+          <strong class="col-sm-9 control-label pull-right">
+            {{ zrstdspsm01.MESUNSD }}
+          </strong>
+        </div>
+        <div class="col-md-5 form-group">
+          <label class="col-sm-3 control-label">
+            u$s
+          </label>
+          <strong class="col-sm-9 control-label pull-right">
+            {{ zrstdspsm01.MESUNUD }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5 col-md-offset-2 form-group">
+          <label class="col-sm-3 control-label">
+            Saldo.: $
+          </label>
+          <strong class="col-sm-9 control-label pull-right">
+            {{ zrstdspsm01.MESTLCD }}
+          </strong>
+        </div>
+        <div class="col-md-5 form-group">
+          <label class="col-sm-3 control-label">
+            u$s
+          </label>
+          <strong class="col-sm-9 control-label pull-right">
+            {{ zrstdspsm01.MESTICD }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5 col-md-offset-2 form-group">
+          <label class="col-sm-3 control-label">
+            Pago Mínimo.: $
+          </label>
+          <strong class="col-sm-9 control-label pull-right">
+            {{ zrstdspsm01.MEPMIND }}
+          </strong>
+        </div>
+        <div class="col-md-5 form-group">
+          <label class="col-sm-3 control-label">
+            u$s
+          </label>
+          <strong class="col-sm-9 control-label pull-right">
+            {{ zrstdspsm01.MEPMIDD }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-md-offset-2 form-group">
+          <label class="col-sm-3 control-label">
+            L. Unif.:
+          </label>
+          <strong class="col-sm-9 control-label">
+            {{ zrstdspsm01.MEMLICD }}
+          </strong>
+        </div>
+        <div class="col-md-3 form-group">
+          <label class="col-sm-6 control-label">
+            L. Comp.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ zrstdspsm01.MEMLCOD }}
+          </strong>
+        </div>
+        <div class="col-md-3 form-group">
+          <label class="col-sm-6 control-label">
+            Ciclo.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ zrstdspsm01.MEBICYD }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-md-offset-2 form-group">
+          <label class="col-sm-3 control-label">
+            Cot. Compra.:
+          </label>
+          <strong class="col-sm-9 control-label">
+            {{ zrstdspsm01.MECOCOD }}
+          </strong>
+        </div>
+        <div class="col-md-3 form-group">
+          <label class="col-sm-6 control-label">
+            Cot. Venta.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ zrstdspsm01.MECOVED }}
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2 col-md-offset-2 form-group">
+          <label class="col-sm-3 control-label">
+            Cierre.:
+          </label>
+          <strong class="col-sm-9 control-label">
+            {{ zrstdspsm01.MEFECIED | date:'dd/MM/yyyy' }}
+          </strong>
+        </div>
+        <div class="col-md-2 form-group">
+          <label class="col-sm-6 control-label">
+            Vence.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ zrstdspsm01.MEFEVTOD | date:'dd/MM/yyyy' }}
+          </strong>
+        </div>
+        <div class="col-md-2 form-group">
+          <label class="col-sm-6 control-label">
+            Prox. Cierre.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ zrstdspsm01.MEFEPCIED | date:'dd/MM/yyyy' }}
+          </strong>
+        </div>
+        <div class="col-md-2 form-group">
+          <label class="col-sm-6 control-label">
+            Prox. Vto.:
+          </label>
+          <strong class="col-sm-6 control-label">
+            {{ zrstdspsm01.MEFEPVTOD | date:'dd/MM/yyyy' }}
+          </strong>
+        </div>
+      </div>
+
+      
+
+      <div class="row as400Table">
+        <table class="table table-striped" [mfData]="zrstdspsm01" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+          <thead>
+            <tr>
+              <th>
+                <mfDefaultSorter by="W1DESC">Descripción</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="W1AMNT">Importe.</mfDefaultSorter>
+              </th>
+              <th>
+                Acciones
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let zrstdspsItem of mf.data">
+              <td>
+                {{ zrstdspsItem.W1DESC }}
+              </td>
+              <td>
+                {{ zrstdspsItem.W1AMNT }}
+              </td>
+              <td>
+                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstdspsv4', zrstdspsm01.MEORGND]">F14 - Bonus</a>
+                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstrecmv1', zrstdspsm01.MEORGND]">F8 - Mailings</a>
+                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstreclv1', zrstdspsm01.MEORGND]">F10 - Leyenda</a>
+                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstdspsv5', zrstdspsm01.MEORGND]">F15 - Locales</a>
+                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstdspsv6', zrstdspsm01.MEORGND]">F16 - ECS</a>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">
+                <mfBootstrapPaginator></mfBootstrapPaginator>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/home']">
+        Regresar
+      </button>
+      <button class="btn btn-primary " type="button" [routerLink]="['/zrstdspsview2', zrstdspsm01.MEORGND]">
+        Dolares
+      </button>
+    </div>
+
+    <div class="col lg-12" style="text-align: center;">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3" (click)='zrstdspsv03(zrstdspsm01.MEORGND)'>
+        Launch demo modal
+      </button>
+    </div>
+
+    <div class="col lg-12" style="text-align: center;">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal7" (click)='zrstdspsv07(zrstdspsm01.MEORGND)'>
+        Launch demo modal
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- Modal3 -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">{{ title2 }}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Categoría de Cliente:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm03.MECACLB }}
+              </strong>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                BLock Code.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm03.MECBCDB }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Hold Flag.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm03.MEHOFLB }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Ending Balance $.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm03.MEENBAB }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Ending Balance U$$.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm03.MEENBUB }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Saldo Vertical $.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm03.MESTLCB }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Saldo Vertical U$$.:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm03.MESTICB }}
+              </strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Estado Contable:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm03.MEESTCB }}
+              </strong>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Estado Cont. Anterior:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm03.MEESTAB }}
+              </strong>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Corporate Flag:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm03.MEACOFB }}
+              </strong>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Marca de Funcionario:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm03.MEFUNCB }}
+              </strong>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Bolsa Asignada:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm03.MEOBOLB }}
+              </strong>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal7 -->
+<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">{{ title2 }}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-12 control-label text-center">
+                DETALLE DEL MOVIMIENTO:
+              </label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Descripción:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm07.WSDESCD }}
+              </strong>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                Fecha:
+              </label>
+              <strong class="col-sm-3 control-label">
+                {{ zrstdspsm07.WSFMOVD }}
+              </strong>
+              <label class="col-sm-2 control-label">
+                Importe:
+              </label>
+              <strong class="col-sm-3 control-label">
+                {{ zrstdspsm07.WSAMNTD }}
+              </strong>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">
+                TEM:
+              </label>
+              <strong class="col-sm-3 control-label">
+                {{ zrstdspsm07.WSTEFMD }}
+              </strong>
+              <label class="col-sm-2 control-label">
+                TNA:
+              </label>
+              <strong class="col-sm-3 control-label">
+                {{ zrstdspsm07.WSTNOAD }}
+              </strong>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">
+                Importe Base:
+              </label>
+              <strong class="col-sm-9 control-label">
+                {{ zrstdspsm07.WSIORGD }}
+              </strong>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

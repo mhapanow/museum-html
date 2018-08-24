@@ -6,6 +6,9 @@ import { UserService } from '../../../../services/user.service';
 import { Fer1020Service } from '../../../../services/inf6/fer1020.service';
 import { Fer1020m02Model } from '../../../../models/fer1020m02.models';
 
+// Declaramos las variables para jQuery
+declare var jQuery: any;
+
 @Component({
   selector: 'app-fer1020view02',
   templateUrl: './fer1020view02.component.html',
@@ -16,13 +19,18 @@ export class Fer1020view02Component implements OnInit {
   public identity;
   public token;
   public fer1020: Fer1020m02Model;
-  public ncuenta: number;
-  public rowsOnPage = 5;
+  public ncuenta: String;
+  public adelanto: String;
+  public descubierto: String;
+  public exceso: String;
+  public vdesde: String;
+  public vhasta: String;
+  public nimporte: number;
+
 
   constructor(
     private _userService: UserService,
     private _route: ActivatedRoute,
-    private _router: Router,
     private _toastr: ToastrService,
     private _fer1020Service: Fer1020Service
   ) {
@@ -37,14 +45,27 @@ export class Fer1020view02Component implements OnInit {
 
   fer1020v2() {
     this._route.params.subscribe(params => {
-      this.ncuenta = +params['ncuenta'];
-      if (this.ncuenta > 0) {
-        this._fer1020Service.getFer1020View02(this.token, this.ncuenta).subscribe(
+      this.ncuenta = params['ncuenta'];
+      this.adelanto = params['waca'];
+      this.descubierto = params['wpto'];
+      this.exceso = params['wtod'];
+      this.vdesde = (params['wvigd'] === '') ? '0' : params['wvigd'];
+      this.vhasta = (params['wvigh'] === '') ? '0' : params['wvigh'];
+      this.nimporte = params['wimp'];
+      this._fer1020Service.getFer1020View02(this.token, this.ncuenta, this.adelanto, this.descubierto, this.exceso,
+         this.vdesde, this.vhasta, this.nimporte).subscribe(
           response => {
             if (response.error_message == null) {
               this.fer1020 = response;
+              setTimeout(() => {
+                jQuery(function ($) {
+                  $('.table').footable({
+                    'rows': $.get(this.fer1020)
+                  });
+                });
+              }, 300);
             } else {
-              this._toastr.warning(response.error_message, 'Validación', { timeOut: 3000 });
+              this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
             }
           },
           error => {
@@ -53,7 +74,6 @@ export class Fer1020view02Component implements OnInit {
           }
         );
 
-      }
     });
   }
 

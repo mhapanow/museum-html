@@ -41,7 +41,7 @@ export class Ccrr0580view02Component implements OnInit {
           if (response.error_message == null) {
             this.ccrr0580m02 = response.data;
           } else {
-            this._toastr.warning(response.error_message, 'Validación', { timeOut: 3000 });
+            this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }
         },
         error => {

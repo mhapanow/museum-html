@@ -9,6 +9,10 @@ import { Cacr215Service } from '../../../../services/inf36/cacr215.service';
 import { Cacr210m01Model } from '../../../../models/cacr210m01.models';
 import { Cacr215m01Model } from '../../../../models/cacr215m01.models';
 
+// Declaramos las variables para jQuery
+declare var jQuery: any;
+ declare var $: any;
+
 @Component({
   selector: 'app-cacr210view01',
   templateUrl: './cacr210view01.component.html',
@@ -21,7 +25,7 @@ export class Cacr210view01Component implements OnInit {
   public token;
   public cacr215: Cacr215m01Model[];
   public cacr210m01: Cacr210m01Model[];
-  public rowsOnPage = 4;
+
 
   public FechaSeleccion: String = '';
   public CodigoSucursal: String = '';
@@ -35,19 +39,30 @@ export class Cacr210view01Component implements OnInit {
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
-  }
-
-  ngOnInit() {
     this.carcr215v1Lis();
   }
 
+  ngOnInit() {
+    $(document).ready(function () {
+      $('#data_1 .input-group.date').datepicker({
+        format: 'dd/mm/yyyy',
+        todayBtn: 'linked',
+        language: 'es',
+        keyboardNavigation: false,
+        forceParse: false,
+        autoclose: true
+      });
+    });
+  }
+
   carcr215v1Lis() {
-    this._cacr215Service.getCacr215View01(this.token).subscribe(
+    this.cacr215 = null;
+    this._cacr215Service.getCacr215View01(this.token, 'mrmrec').subscribe(
       response => {
          if (response.error_message == null ) {
            this.cacr215 = response.data;
          } else {
-           this._toastr.warning(response.error_message, 'Validación', { timeOut: 3000 });
+           this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
          }
       },
       error => {
@@ -62,27 +77,53 @@ export class Cacr210view01Component implements OnInit {
     this.CodigoSucursal = form.value.codigoSucursal;
     this.CodigoEstado = form.value.codigoEstado;
     this.CodigoMotivoRechazo = form.value.codigoMotivoRechazo;
+
+    this.cacr210m01 = null;
+
     if (this.FechaSeleccion === '' || this.CodigoSucursal === '' || this.CodigoEstado === '' || this.CodigoMotivoRechazo === '') {
       this._toastr.warning('Debe ingresar todos los campos', 'Validación', { timeOut: 3000 });
     } else {
-      this._cacr210Service.getCacr210View01(this.token, this.FechaSeleccion, this.CodigoSucursal, this.CodigoEstado, 
-        this.CodigoMotivoRechazo).subscribe(
-        response => {
-          if (response.error_message == null) {
-            if (response.data.length === 0) {
-              this._toastr.warning('No se han encontado datos', 'Respuesta', { timeOut: 3000 });
-            } else {
-              this.cacr210m01 = response.data;
-            }
-          } else {
-            this._toastr.warning(response.error_message, 'Se ha producido un error', { timeOut: 3000 });
-          }
-        },
-        error => {
-          console.log(<any>error);
-          this._toastr.warning(<any>error, 'Error', { timeOut: 3000 });
-        }
-      );
+      this.CodigoEstado = 'R';
+      form.value.CodigoEstado = 'R';
+      // form.value.codigoEstado = '34';
+      // promesa
+      const promesa = new Promise( (resolve, reject) => {
+            this._cacr210Service.getCacr210View01(this.token, this.FechaSeleccion, this.CodigoSucursal, this.CodigoEstado,
+              this.CodigoMotivoRechazo, 'HIFSEL,HIBRCH,HIDATE,HIACCT').subscribe(
+              response => {
+                if (response.error_message == null) {
+                  if (response.data.length === 0) {
+                    this._toastr.warning('No se han encontado datos', 'Respuesta', { timeOut: 3000 });
+                    reject();
+                  } else {
+                    this.cacr210m01 = response.data;
+
+                    resolve();
+                  }
+                } else {
+                  this._toastr.warning(response.error_message, 'Se ha producido un error', { timeOut: 3000 });
+                  reject();
+                }
+              },
+              error => {
+                console.log(<any>error);
+                this._toastr.warning(<any>error, 'Error', { timeOut: 3000 });
+                reject();
+              }
+            );
+      }); // fin promesa
+      promesa.then(() => {
+        setTimeout(() => {
+          jQuery(function ($) {
+            $('.table').footable({
+              'rows': $.get(this.cacr210m01)
+            });
+          });
+        }, 1500);
+      },
+        function (reason) {
+          console.log('error ', reason);
+        });
     }
   }
 

@@ -15,12 +15,19 @@ export class Cacr210Service {
     this.endpoint02 = GLOBAL.cacr210view2;
   }
 
-  getCacr210View01(token, fechaSeleccion, codigoSucursal, codigoEstado, codigoMotivoRechazo): Observable<any> {
+  getCacr210View01(token, fechaSeleccion, codigoSucursal, codigoEstado, codigoMotivoRechazo, order): Observable<any> {
+    // console.log(this.url + this.endpoint01 + '?authToken=' + token
+    // + '&ssfsel=' + fechaSeleccion
+    //   + '&ssbrch=' + codigoSucursal
+    //   + '&ssresu=' + codigoEstado
+    //   + '&ssmrec=' + codigoMotivoRechazo
+    //   + '&ORDER=' + order);
     return this._http.get(this.url + this.endpoint01 + '?authToken=' + token
                                                     + '&ssfsel=' + fechaSeleccion
                                                     + '&ssbrch=' + codigoSucursal
                                                     + '&ssresu=' + codigoEstado
-                                                    + '&ssmrec=' + codigoMotivoRechazo);
+                                                    + '&ssmrec=' + codigoMotivoRechazo
+                                                    + '&ORDER=' + order);
   }
 
   getCacr210View02(token, cuenta, clave): Observable<any> {

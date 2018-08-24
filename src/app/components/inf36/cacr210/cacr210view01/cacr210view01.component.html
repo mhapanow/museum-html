@@ -13,14 +13,31 @@
 
             <form class="m-t" role="form" #cacr210v1Form="ngForm" (ngSubmit)="onSubmit(cacr210v1Form)">
                 <div class="row">
-                    <div class="col-md-3 col-md-offset-2 form-group">
+
+                    <div class="col-md-3 col-md-offset-2 form-group" id="data_1">
+                        <label class="col-sm-6 control-label">
+                             F. Selección:
+                        </label>
+                        <div class="col-lg-6 input-group date">
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                            <input type="text" class="form-control" name="fechaSeleccion" ngModel>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- <div class="col-md-3 col-md-offset-2 form-group">
                         <label class="col-sm-6 control-label">
                         F. Selección:
                         </label>
                         <div class="col-lg-6 input-group">
                             <input type="text" class="form-control" placeholder="ddmmyyyy" name="fechaSeleccion" ngModel>
                         </div>
-                    </div>
+                    </div> -->
+
                     <div class="col-md-5 form-group">
                         <label class="col-sm-4 control-label">
                         Suc :
@@ -36,7 +53,13 @@
                         Estado:
                         </label>
                         <div class="col-lg-6 input-group">
-                            <input type="text" placeholder="(Blancos, C, A, R) " class="form-control" name="codigoEstado" ngModel>
+                            <!-- <input type="text" placeholder="(Blancos, C, A, R) " class="form-control" name="codigoEstado" ngModel> -->
+                            <select name="codigoEstado" [(ngModel)]="CodigoEstado">
+                                <option value=" ">En Proceso</option>
+                                <option value="C">Cancelado</option>
+                                <option value="A">Aprobado</option>
+                                <option value="R">Rechazado</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-5 form-group">
@@ -45,8 +68,8 @@
                         </label>
                         <div class="col-lg-8 input-group">
                             <select name="codigoMotivoRechazo" id="codigoMotivoRechazo" ngModel>
-                              <option value="" disabled selected>Seleccione una opción</option>
-                              <option *ngFor="let item of cacr215" [value]="item.WSMREC">{{item.WSDESC}}</option>
+                              <option value="00" selected>Seleccione una opción</option>
+                              <option *ngFor="let item of cacr215" [value]="item.WSMREC">{{item.WSMREC | lpad:2}} {{item.WSDESC}}</option>
                             </select>
                         </div>
                     </div>
@@ -61,37 +84,37 @@
             </form>
 
             <div class="row as400Table">
-                <table class="table table-striped" [mfData]="cacr210m01" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+                <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="5">
                     <thead>
                         <tr>
                             <th>
-                                <mfDefaultSorter by="WSACCT">Nro Cuenta</mfDefaultSorter>
+                                Nro Cuenta
                             </th>
                             <th>
-                                <mfDefaultSorter by="WSDTRE">Tip</mfDefaultSorter>
+                                Tip
                             </th>
                             <th>
-                                <mfDefaultSorter by="WSDATE">Fecha Alta.</mfDefaultSorter>
+                                Fecha Alta.
                             </th>
                             <th>
-                                <mfDefaultSorter by="WSAMND">Fecha Vcto.</mfDefaultSorter>
+                                Fecha Vcto.
                             </th>
                             <th>
-                                <mfDefaultSorter by="WSAAMT">Límite</mfDefaultSorter>
+                                Límite
                             </th>
                             <th>
-                                <mfDefaultSorter by="WSNVTO">Nuevo Vto</mfDefaultSorter>
+                                Nuevo Vto
                             </th>
                             <th>
-                                <mfDefaultSorter by="WSDRES">Estado</mfDefaultSorter>
+                                Estado
                             </th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let cacr210Item of mf.data">
+                        <tr *ngFor="let cacr210Item of cacr210m01">
                             <td>
-                                {{ cacr210Item.WSACCT }}
+                                {{ cacr210Item.WSACCT | lpad:10 | formcuenta }}
                             </td>
                             <td>
                                 {{ cacr210Item.WSDTRE }}
@@ -103,7 +126,7 @@
                                 {{ cacr210Item.WSAMND | date:'dd/MM/yyyy' }}
                             </td>
                             <td>
-                                {{ cacr210Item.WSAAMT}}
+                                {{ cacr210Item.WSAAMT | lpad:3:true }}
                             </td>
                             <td>
                                 {{ cacr210Item.WSNVTO | date:'dd/MM/yyyy' }}
@@ -118,8 +141,8 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="4">
-                                <mfBootstrapPaginator></mfBootstrapPaginator>
+                            <td colspan="5">
+                                <ul class="pagination pull-right"></ul>
                             </td>
                         </tr>
                     </tfoot>
@@ -137,3 +160,11 @@
     </div>
 
 </div>
+
+<script>
+    jQuery(function($) {
+        $('.table').footable({
+            'rows': $.get(this.cacr210m01)
+        });
+    });
+</script>

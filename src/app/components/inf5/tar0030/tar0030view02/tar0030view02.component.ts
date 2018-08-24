@@ -48,7 +48,7 @@ export class Tar0030view02Component implements OnInit {
         if (response.error_message == null) {
           this.tar0030m02 = response;
         } else {
-          this._toastr.warning(response.error_message, 'Validación', { timeOut: 3000 });
+          this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
         }
       },
       error => {

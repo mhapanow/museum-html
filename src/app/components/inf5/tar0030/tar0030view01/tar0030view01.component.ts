@@ -17,6 +17,8 @@ export class Tar0030view01Component implements OnInit {
   public identity;
   public token;
   public tar0030: Tar0030m01Model;
+  ncuenta: any;
+  bandera = true;
 
   constructor(
     private _route: ActivatedRoute,
@@ -31,18 +33,29 @@ export class Tar0030view01Component implements OnInit {
                                        '', '', '', '', '', '', '', '', '', '', '', '', '',
                                        '', '', '', '', '', '', '', '', '', '', '', '', '',
                                        '', '', '', '', '', '', '', '', '', '', '');
-   }
+
+     }
 
   ngOnInit() {
   }
 
+  lPads(valor: String) {
+    if ((valor + '').length === 0 || (valor + '').length >= 10) {
+      return valor;
+    } else {
+      return new Array(1 + 10 - (valor + '').length).join('0') + valor;
+    }
+  }
+
   onSubmit(form: NgForm) {
-    this._tar0030Service.getTar0030View01(this.token, form.value.ncuenta).subscribe(
+    this.ncuenta = this.lPads(form.value.ncuenta);
+    this._tar0030Service.getTar0030View01(this.token, this.ncuenta).subscribe(
       response => {
         if (response.error_message == null) {
-          this.tar0030 = response.data;
+          this.tar0030 = response;
+          this.bandera = (this.tar0030 == null);
         } else {
-          this._toastr.warning(response.error_message, 'Validación', { timeOut: 3000 });
+          this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
         }
       },
       error => {

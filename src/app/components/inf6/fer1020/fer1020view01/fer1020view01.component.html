@@ -32,41 +32,68 @@
             </div>
           </div>
         </div>
+        <div class="hr-line-dashed"></div>
 
         <div class="row">
-          <div class="col-md-6 col-md-offset-2">
-            <label class="col-sm-4 control-label">
-              Adelantos:
-            </label>
-            <div class="col-lg-8 input-group">
-              <input type="text" class="form-control" name="adelantos">
+          <div class="col-md-6 col-md-offset-3 form-group">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="adelantos" value="X" id="customCheck1" ngModel>
+              <label class="custom-control-label" for="customCheck1">Adelantos</label>
             </div>
+              <!-- <input type="text" class="form-control" name="adelantos"> -->
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-6 col-md-offset-2">
-            <label class="col-sm-4 control-label">
-              Descubierto:
-            </label>
-            <div class="col-lg-8 input-group">
-              <input type="text" class="form-control" name="descubierto">
-            </div>
+          <div class="col-md-6 col-md-offset-3 form-group">
+              <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                <input type="checkbox" class="custom-control-input" name="descubierto" value="X" id="customCheck2" ngModel>
+                <label class="custom-control-label" for="customCheck2">Descubierto</label>
+              </div>
+              <!-- <input type="text" class="form-control" name="descubierto"> -->
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-6 col-md-offset-2 form-group">
-            <label class="col-sm-4 control-label">
-              Excesos:
-            </label>
-            <div class="col-lg-8 input-group">
-              <input type="text" class="form-control" name="exceso">
+          <div class="col-md-6 col-md-offset-3 form-group">              
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="exceso" value="X" id="customCheck3" ngModel>
+                <label class="custom-control-label" for="customCheck3">Excesos</label>
+              </div>
+              <!-- <input type="text" class="form-control" name="exceso"> -->
             </div>
-          </div>
         </div>
 
-        <div class="row">
+        <div class="hr-line-dashed"></div>
+
+        <div class="row col-md-6 col-md-offset-2 form-group">
+          <div class="col-sm-4">
+            <div>
+              <label class="control-label">
+                Vigencia desde:
+              </label>
+            </div>
+            <div>
+              <label class="control-label">
+                Vigencia hasta:
+              </label>
+            </div>
+          </div>
+
+          <div class="col-lg-8" id="data_range">
+              <div class="input-daterange input-group" id="datepicker">
+                <div>
+                  <input type="text" class="input-sm form-control" name="vigenciad" ngModel/>
+                </div>
+                <div>
+                  <input type="text" class="input-sm form-control" name="vigenciah" ngModel/>
+                </div>
+              </div>
+          </div>
+
+        </div>
+
+        <!-- <div class="row">
           <div class="col-md-6 col-md-offset-2">
             <label class="col-sm-4 control-label">
               Vigencia desde:
@@ -86,7 +113,7 @@
               <input type="text" class="form-control" name="vigenciah">
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="row">
           <div class="col-md-6 col-md-offset-2">
@@ -94,7 +121,7 @@
               Importe desde:
             </label>
             <div class="col-lg-8 input-group">
-              <input type="text" class="form-control" name="importe">
+              <input type="text" class="form-control" name="importe" ngModel>
             </div>
           </div>
         </div>

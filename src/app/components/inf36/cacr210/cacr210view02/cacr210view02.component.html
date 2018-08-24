@@ -19,7 +19,7 @@
               Nro. de cta:
             </label>
                     <label class="col-sm-10 control-label">
-               {{ cuenta }} {{ cacr210m02.WSTITU }}
+               {{ cuenta | formcuenta }} {{ cacr210m02.WSTITU }}
             </label>
                 </div>
                 <div class="col-md-2">
@@ -34,30 +34,30 @@
             <div class="row ">
                 <div class="col-md-3 col-md-offset-1">
                     Sucursal:
-                    <strong>{{ cacr210m02.WSBRCH }}</strong>
+                    <strong>{{ cacr210m02.WSBRCH | lpad:3:true }}</strong>
                 </div>
                 <div class="col-md-3">
                     División
-                    <strong>{{ cacr210m02.WSSF4 }}</strong>
+                    <strong>{{ cacr210m02.WSSF4 | lpad:3:true }}</strong>
                 </div>
                 <div class="col-md-2">
                     Moneda :
-                    <strong class="pull-right">{{ cacr210m02.WSCMCN }}</strong>
+                    <strong class="pull-right">{{ cacr210m02.WSCMCN | lpad:3:true }}</strong>
                 </div>
                 <div class="col-md-2">
                     Producto:
-                    <strong class="pull-right">{{ cacr210m02.WSTYPE }}</strong>
+                    <strong class="pull-right">{{ cacr210m02.WSTYPE | lpad:3:true }}</strong>
                 </div>
             </div>
 
             <div class="row ">
                 <div class="col-md-5 col-md-offset-1">
                     Saldo Contable:
-                    <strong>{{ cacr210m02.WSCBAL }}</strong>
+                    <strong>{{ cacr210m02.WSCBAL | formmoneda:2:'.':',' }}</strong>
                 </div>
                 <div class="col-md-5">
                     Acuerdo Sobregiro:
-                    <strong class="pull-right">{{ cacr210m02.WSIODL }}</strong>
+                    <strong class="pull-right">{{ cacr210m02.WSIODL | formmoneda:2:'.':',' }}</strong>
                 </div>
             </div>
 
@@ -68,11 +68,11 @@
             <div class="row ">
                 <div class="col-md-3 col-md-offset-1">
                     Alta:
-                    <strong>{{ cacr210m02.WSDATE  | date:'MM/dd/yyyy' }}</strong>
+                    <strong>{{ cacr210m02.WSDATE  | date:'dd/MM/yyyy' }}</strong>
                 </div>
                 <div class="col-md-3">
                     Vencimiento
-                    <strong>{{ cacr210m02.WSAMND | date:'MM/dd/yyyy' }}</strong>
+                    <strong>{{ cacr210m02.WSAMND | date:'dd/MM/yyyy' }}</strong>
                 </div>
                 <div class="col-md-4">
                     Límite :
@@ -83,7 +83,7 @@
             <div class="row ">
                 <div class="col-md-4 col-md-offset-3">
                     Nuevo Vencimiento:
-                    <strong>{{ cacr210m02.WSNVTO | date:'MM/dd/yyyy' }}</strong>
+                    <strong>{{ cacr210m02.WSNVTO | date:'dd/MM/yyyy' }}</strong>
                 </div>
                 <div class="col-md-4">
                     Nuevo Límite :
@@ -97,11 +97,11 @@
                 </div>
                 <div class="col-md-3">
                     Selección:
-                    <strong>{{ cacr210m02.WSFSEL | date:'MM/dd/yyyy' }}</strong>
+                    <strong>{{ cacr210m02.WSFSEL | date:'dd/MM/yyyy' }}</strong>
                 </div>
                 <div class="col-md-4">
                     Ren/Act :
-                    <strong class="pull-right">{{ cacr210m02.WSFACT | date:'MM/dd/yyyy' }}</strong>
+                    <strong class="pull-right">{{ cacr210m02.WSFACT | date:'dd/MM/yyyy' }}</strong>
                 </div>
             </div>
 
@@ -119,11 +119,11 @@
             <div class="row ">
                 <div class="col-md-3 col-md-offset-1">
                     Notificación:
-                    <strong>{{ cacr210m02.WSSENT | date:'MM/dd/yyyy' }}</strong>
+                    <strong>{{ cacr210m02.WSSENT | date:'dd/MM/yyyy' }}</strong>
                 </div>
                 <div class="col-md-3">
                     Cancelación
-                    <strong>{{ cacr210m02.WSFCAN | date:'MM/dd/yyyy' }}</strong>
+                    <strong>{{ cacr210m02.WSFCAN | date:'dd/MM/yyyy' }}</strong>
                 </div>
                 <div class="col-md-4">
                     Etapa :
@@ -168,7 +168,7 @@
                 </div>
                 <div class="col-md-4">
                     Nuevo vto :
-                    <strong class="pull-right">{{ cacr210m02.WSNVT2 | date:'MM/dd/yyyy' }}</strong>
+                    <strong class="pull-right">{{ cacr210m02.WSNVT2 | date:'dd/MM/yyyy' }}</strong>
                 </div>
             </div>
 

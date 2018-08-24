@@ -10,7 +10,7 @@
     <div class="row">
 
         <div class="row">
-          <div class="col-md-3 col-md-offset-2 form-group">
+          <div class="col-md-2 col-md-offset-2 form-group">
             <label class="col-sm-6 control-label">
               Sucursal:
             </label>
@@ -18,7 +18,7 @@
               {{ ccrr0500m02.CRCSUC }}
             </strong>
           </div>
-          <div class="col-md-3 col-md-offset-2 form-group">
+          <div class="col-md-2 form-group">
             <label class="col-sm-6 control-label">
               División:
             </label>
@@ -26,7 +26,7 @@
               {{ ccrr0500m02.CRCDIV }}
             </strong>
           </div>
-          <div class="col-md-3 col-md-offset-2 form-group">
+          <div class="col-md-6 form-group">
             <label class="col-sm-6 control-label">
               Estado Contable:
             </label>
@@ -38,32 +38,32 @@
 
 
       <div class="row as400Table">
-        <table class="table table-striped" [mfData]="ccrr0500m02" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+        <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="5">
           <thead>
             <tr>
               <th>
-                <mfDefaultSorter by="NOMCLI">Nombre del Titular</mfDefaultSorter>
+                Nombre del Titular
               </th>
               <th>
-                <mfDefaultSorter by="CRNUCR">Nro. Cred.</mfDefaultSorter>
+                Nro. Cred.
               </th>
               <th>
-                <mfDefaultSorter by="CRSTCR">Est.</mfDefaultSorter>
+                Est.
               </th>
               <th>
-                <mfDefaultSorter by="FECALT">Fecha Otorgado</mfDefaultSorter>
+                Fecha Otorgado
               </th>
               <th>
-                <mfDefaultSorter by="FECVTO">Fecha Vencimie.</mfDefaultSorter>
+                Fecha Vencimie.
               </th>
               <th>
-                <mfDefaultSorter by="SALDO">Saldo Deuda</mfDefaultSorter>
+                Saldo Deuda
               </th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let ccrr0500Item of mf.data">
+            <tr *ngFor="let ccrr0500Item of ccrr0500m02.data">
               <td>
                 {{ ccrr0500Item.NOMCLI }}
               </td>
@@ -90,8 +90,8 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="4">
-                <mfBootstrapPaginator></mfBootstrapPaginator>
+              <td colspan="5">
+                <ul class="pagination pull-right"></ul>
               </td>
             </tr>
           </tfoot>

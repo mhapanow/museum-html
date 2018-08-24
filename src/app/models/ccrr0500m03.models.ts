@@ -5,8 +5,9 @@ export class Ccrr0500m03Model {
                 public NOMCLI: String,
                 public CRNUCR: String,
                 public CRSTCR: String,
-                public FECALT: String,
-                public FECVTO: String,
-                public SALDO: String
+                public FECALT: Date,
+                public FECVTO: Date,
+                public SALDO: String,
+                public data?: any[]
     ) { }
 }

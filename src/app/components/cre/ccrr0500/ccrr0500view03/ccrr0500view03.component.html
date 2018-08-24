@@ -15,39 +15,39 @@
             Referencia:
           </label>
           <strong class="col-sm-9 control-label">
-             {{ ccrr0500m03.CRNTAR }}
+             {{ CRNTAR }}
           </strong>
         </div>
       </div>
 
 
       <div class="row as400Table">
-        <table class="table table-striped" [mfData]="ccrr0500m03" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+        <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="5">
           <thead>
             <tr>
               <th>
-                <mfDefaultSorter by="NOMCLI">Nombre del Titular</mfDefaultSorter>
+                Nombre del Titular
               </th>
               <th>
-                <mfDefaultSorter by="CRNUCR">Nro. Cred.</mfDefaultSorter>
+                Nro. Cred.
               </th>
               <th>
-                <mfDefaultSorter by="CRSTCR">Est.</mfDefaultSorter>
+                Est.
               </th>
               <th>
-                <mfDefaultSorter by="FECALT">Fecha Otorgado</mfDefaultSorter>
+                Fecha Otorgado
               </th>
               <th>
-                <mfDefaultSorter by="FECVTO">Fecha Vencimie.</mfDefaultSorter>
+                Fecha Vencimie.
               </th>
               <th>
-                <mfDefaultSorter by="SALDO">Saldo Deuda</mfDefaultSorter>
+                Saldo Deuda
               </th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let ccrr0500Item of mf.data">
+            <tr *ngFor="let ccrr0500Item of ccrr0500m03">
               <td>
                 {{ ccrr0500Item.NOMCLI }}
               </td>
@@ -58,10 +58,10 @@
                 {{ ccrr0500Item.CRSTCR }}
               </td>
               <td>
-                {{ ccrr0500Item.FECALT | date:'dd/MM/yyyy' }}
+                {{ ccrr0500Item.FECALT  }}
               </td>
               <td>
-                {{ ccrr0500Item.FECVTO | date:'dd/MM/yyyy'}}
+                {{ ccrr0500Item.FECVTO }}
               </td>
               <td>
                 {{ ccrr0500Item.SALDO }}
@@ -73,8 +73,8 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="4">
-                <mfBootstrapPaginator></mfBootstrapPaginator>
+              <td colspan="5">
+                        <ul class="pagination pull-right"></ul>
               </td>
             </tr>
           </tfoot>
