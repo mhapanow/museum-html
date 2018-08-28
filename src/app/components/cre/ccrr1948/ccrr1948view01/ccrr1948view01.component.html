@@ -15,7 +15,7 @@
             Crédito:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1NUCR }}
+            {{ ccrr1948m01.P1NUCR | lpad:10:true }}
           </strong>
         </div>
       </div>
@@ -26,7 +26,7 @@
             Nro de Cuota:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1NCUO }}
+            {{ ccrr1948m01.P1NCUO | lpad:3:true }}
           </strong>
         </div>
       </div>
@@ -48,7 +48,7 @@
             Amortiz. Pagada:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IMAP }}
+            {{ ccrr1948m01.P1IMAP | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-4 form-group">
@@ -56,7 +56,7 @@
             Ing. Brutos Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IBP }}
+            {{ ccrr1948m01.P1IBP | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -67,7 +67,7 @@
             Balloon Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IMBP }}
+            {{ ccrr1948m01.P1IMBP | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-4 form-group">
@@ -75,7 +75,7 @@
             IVA Seg. bien Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IVA2 }}
+            {{ ccrr1948m01.P1IVA2 | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -86,7 +86,7 @@
             Intereses Pagados:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1ICIP }}
+            {{ ccrr1948m01.P1ICIP | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-4 form-group">
@@ -94,7 +94,7 @@
             IVA Intereses Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IVA1 }}
+            {{ ccrr1948m01.P1IVA1 | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -105,7 +105,7 @@
             Ajustes Pagados:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1ICAP }}
+            {{ ccrr1948m01.P1ICAP | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-4 form-group">
@@ -113,7 +113,7 @@
             IVA Punitorio Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IVA3 }}
+            {{ ccrr1948m01.P1IVA3 | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -124,7 +124,7 @@
             Seg. Vida Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1ISVP }}
+            {{ ccrr1948m01.P1ISVP | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-4 form-group">
@@ -132,7 +132,7 @@
             IVA Comp. Pagadp:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IVA5 }}
+            {{ ccrr1948m01.P1IVA5 | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -143,7 +143,7 @@
             Impuestos Pagados:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IISP }}
+            {{ ccrr1948m01.P1IISP | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-4 form-group">
@@ -151,7 +151,7 @@
             IVA Can. Ant. Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IVA7 }}
+            {{ ccrr1948m01.P1IVA7 | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -162,7 +162,7 @@
             Cargo Canc. Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1ICCP }}
+            {{ ccrr1948m01.P1ICCP | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-4 form-group">
@@ -170,7 +170,7 @@
             IVA Ingresos Brutos:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IVA4 }}
+            {{ ccrr1948m01.P1IVA4 | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -181,7 +181,7 @@
             Seguro Bien Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1ISAP }}
+            {{ ccrr1948m01.P1ISAP | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -192,7 +192,7 @@
             Portes Pagados:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1CARP }}
+            {{ ccrr1948m01.P1CARP | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -203,7 +203,7 @@
             Int. Punit. Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IIPP }}
+            {{ ccrr1948m01.P1IIPP | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -214,7 +214,7 @@
             Int. Comp. Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IICP }}
+            {{ ccrr1948m01.P1IICP | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-4 form-group">
@@ -222,7 +222,7 @@
             Total Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1TPAG }}
+            {{ ccrr1948m01.P1TPAG | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -233,7 +233,7 @@
             IVA Portes Pagado:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1IVA6 }}
+            {{ ccrr1948m01.P1IVA6 | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-4 form-group">
@@ -241,7 +241,7 @@
             Total Deuda:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr1948m01.P1TDEU }}
+            {{ ccrr1948m01.P1TDEU | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>

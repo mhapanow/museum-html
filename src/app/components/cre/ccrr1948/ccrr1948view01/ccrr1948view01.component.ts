@@ -14,9 +14,7 @@ export class Ccrr1948view01Component implements OnInit {
   title: 'CRE - Pantalla CCRR 1948';
   public identity;
   public token;
-  public ccrr1948m01: Ccrr1948m01Model[];
-
-  public rowsOnPage = 5;
+  public ccrr1948m01: Ccrr1948m01Model;
 
   constructor(
     private _userService: UserService,
@@ -26,6 +24,8 @@ export class Ccrr1948view01Component implements OnInit {
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
+    this.ccrr1948m01 = new Ccrr1948m01Model('', '', '', '', '', '', '', '', '', '', '', '', '', '',
+                                            '', '', '', '', '', '', '', '', '', '' );
     this.ccrr1948v2();
   }
 
@@ -34,12 +34,18 @@ export class Ccrr1948view01Component implements OnInit {
 
   ccrr1948v2() {
     let ncredito: String;
+    let banco: String;
+    let ncuo: String;
+    let total: String;
     this._route.params.subscribe(params => {
       ncredito = params['ncredito'];
-      this._ccrr1948Service.getCcrr1948View01(this.token, ncredito).subscribe(
+      banco = params['banco'];
+      ncuo = params['ncuo'];
+      total = params['total'];
+      this._ccrr1948Service.getCcrr1948View01(this.token, ncredito, banco, ncuo, total).subscribe(
         response => {
           if (response.error_message == null) {
-            this.ccrr1948m01 = response.data;
+            this.ccrr1948m01 = response;
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }

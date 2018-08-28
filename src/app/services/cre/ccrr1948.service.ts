@@ -15,8 +15,9 @@ export class Ccrr1948Service {
     this.endpointV1 = GLOBAL.ccrr1948view01;
   }
 
-  getCcrr1948View01(token, NUMCRE): Observable<any> {
-    return this._http.get(this.url + this.endpointV1 + '?authToken=' + token + '&NUMCRE=' + NUMCRE);
+  getCcrr1948View01(token, NUMCRE, banco, ncuo, total): Observable<any> {
+    return this._http.get(this.url + this.endpointV1 + '?authToken=' + token + '&dinucr=' + NUMCRE + '&dibanc=' + banco
+      + '&dincuo=' + ncuo + '&ditota=' + total + '&dimodo=*DSP&didmon=1');
   }
 
 }

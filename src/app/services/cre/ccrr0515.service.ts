@@ -15,8 +15,8 @@ export class Ccrr0515Service {
     this.endpointV1 = GLOBAL.ccrr0515view01;
    }
 
-  getCcrr0515View01(token, NUMCRE): Observable<any> {
-    return this._http.get(this.url + this.endpointV1 + '?authToken=' + token + '&NUMCRE=' + NUMCRE);
+  getCcrr0515View01(token, ncuota, npres): Observable<any> {
+    return this._http.get(this.url + this.endpointV1 + '?authToken=' + token + '&ncuot=' + ncuota + '&npres=' + npres + '&codre=1');
   }
 
 }

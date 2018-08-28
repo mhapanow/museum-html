@@ -75,7 +75,7 @@
             Tasa:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ ccrr0580m01.CRTACR }}
+            {{ ccrr0580m01.CRTACR | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -119,7 +119,7 @@
                 {{ ccrr0580Item.FECVTO | date:'dd/MM/yyyy' }}
               </td>
               <td>
-                {{ ccrr0580Item.AMORT }}
+                {{ ccrr0580Item.AMORT | formmoneda:2:',':'.' }}
               </td>
               <td>
                 {{ (ccrr0580Item.INTERE === 'null') ? '' : ccrr0580Item.INTERE }}
@@ -128,7 +128,7 @@
                 {{ ccrr0580Item.AJUSTE }}
               </td>
               <td>
-                {{ ccrr0580Item.TASA }}
+                {{ ccrr0580Item.TASA | formmoneda:2:',':'.' }}
               </td>
               <td>
                 {{ ccrr0580Item.FECPAG | date:'dd/MM/yyyy' }}

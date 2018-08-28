@@ -14,7 +14,7 @@ export class Ccrr0580view02Component implements OnInit {
   title: 'CRE - Pantalla CCRR 0580';
   public identity;
   public token;
-  public ccrr0580m02: Ccrr0580m02Model[];
+  public ccrr0580m02: Ccrr0580m02Model;
 
   public rowsOnPage = 5;
 
@@ -26,6 +26,9 @@ export class Ccrr0580view02Component implements OnInit {
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
+    this.ccrr0580m02 = new Ccrr0580m02Model('', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''
+                              , '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''
+                            , '', '', '', '', '', '', '', '');
     this.ccrr0580v2();
   }
 
@@ -34,13 +37,19 @@ export class Ccrr0580view02Component implements OnInit {
 
   ccrr0580v2() {
     let ncredito: String;
+    let ncuo: String;
+    let arch: String;
     this._route.params.subscribe(params => {
       ncredito = params['ncredito'];
-      this._ccrr0580Service.getCcrr0580View02(this.token, ncredito).subscribe(
+      ncuo = params['ncuo'];
+      arch = params['arch'];
+      this._ccrr0580Service.getCcrr0580View02(this.token, ncredito, ncuo, arch).subscribe(
         response => {
+
           if (response.error_message == null) {
-            this.ccrr0580m02 = response.data;
+            this.ccrr0580m02 = response;
           } else {
+            console.log(response.error_message);
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }
         },

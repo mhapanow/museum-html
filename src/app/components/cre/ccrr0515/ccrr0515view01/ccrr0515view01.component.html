@@ -15,7 +15,7 @@
             Nro. Préstamo.:
           </label>
           <strong class="col-sm-9 control-label">
-             {{ ccrr0515m01.WDNUC1 }}
+             {{ ccrr0515m01.WDNUC1 | lpad:10:true }}
           </strong>
         </div>
         <div class="col-md-6 form-group">
@@ -34,7 +34,7 @@
             Cuota.......:
           </label>
           <strong class="col-sm-6 control-label">
-           {{ ccrr0515m01.WDCUCO }}
+           {{ ccrr0515m01.WDCUCO | lpad:3:true }}
           </strong>
         </div>
         <div class="col-md-4 form-group">
@@ -42,7 +42,7 @@
             Imp. Endeudamiento.:
           </label>
           <strong class="col-sm-6 control-label">
-             {{ ccrr0515m01.WTIEND }}
+             {{ ccrr0515m01.WTIEND | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -53,7 +53,7 @@
             Int. Punitorios ....:
           </label>
           <strong class="col-sm-6 control-label">
-             {{ ccrr0515m01.WTIPUN }}
+             {{ ccrr0515m01.WTIPUN | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-4 form-group">
@@ -61,7 +61,7 @@
             Fee Cobranza :
           </label>
           <strong class="col-sm-6 control-label">
-           {{ ccrr0515m01.WTFEEC }}
+           {{ ccrr0515m01.WTFEEC | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -72,7 +72,7 @@
             Int. Compensatorios.:
           </label>
           <strong class="col-sm-6 control-label">
-             {{ ccrr0515m01.WTICOM }}
+             {{ ccrr0515m01.WTICOM | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-4 form-group">
@@ -80,7 +80,7 @@
             IVA.:
           </label>
           <strong class="col-sm-6 control-label">
-             {{ ccrr0515m01.WTIIVA }}
+             {{ ccrr0515m01.WTIIVA | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
@@ -97,45 +97,45 @@
       </div>
 
       <div class="row as400Table">
-        <table class="table table-striped" [mfData]="ccrr0515m01" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+        <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="5">
           <thead>
             <tr>
               <th>
-                <mfDefaultSorter by="WDCUOT">Nro Cuota</mfDefaultSorter>
+                Nro Cuota
               </th>
               <th>
-                <mfDefaultSorter by="WDCFEZ">Cod. Fee</mfDefaultSorter>
+                Cod. Fee
               </th>
               <th>
-                <mfDefaultSorter by="WDDIAT">Días Atraso</mfDefaultSorter>
+                Días Atraso
               </th>
               <th>
-                <mfDefaultSorter by="WDTACR">Tasas</mfDefaultSorter>
+                Tasas
               </th>
               <th>
-                <mfDefaultSorter by="WDIMP1">Punit. Calc.</mfDefaultSorter>
+                Punit. Calc.
               </th>
               <th>
-                <mfDefaultSorter by="WDIMC1">Compens. Calc.</mfDefaultSorter>
+                Compens. Calc.
               </th>
               <th>
-                <mfDefaultSorter by="WDIMF1">Fee. Calc.</mfDefaultSorter>
+                Fee. Calc.
               </th>
               <th>
-                <mfDefaultSorter by="WDIMD1">Imp. Endeud.</mfDefaultSorter>
+                Imp. Endeud.
               </th>
               <th>
-                <mfDefaultSorter by="WDIIV1">IVA</mfDefaultSorter>
+                IVA
               </th>
               <th>
-                <mfDefaultSorter by="WDITO1">Total</mfDefaultSorter>
+                Total
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let ccrr0515Item of mf.data">
+            <tr *ngFor="let ccrr0515Item of ccrr0515m01.data">
               <td>
-                {{ ccrr0515Item.WDCUOT }}
+                {{ ccrr0515Item.WDCUOT | lpad:3:true }}
               </td>
               <td>
                 {{ ccrr0515Item.WDCFEZ }}
@@ -144,32 +144,32 @@
                 {{ ccrr0515Item.WDDIAT }}
               </td>
               <td>
-                {{ ccrr0515Item.WDTACR }}
+                {{ ccrr0515Item.WDTACR | formmoneda:2:',':'.' }}
               </td>
               <td>
-                {{ ccrr0515Item.WDIMP1 }}
+                {{ ccrr0515Item.WDIMP1 | formmoneda:2:',':'.' }}
               </td>
               <td>
-                {{ ccrr0515Item.WDIMC1 }}
+                {{ ccrr0515Item.WDIMC1 | formmoneda:2:',':'.' }}
               </td>
               <td>
                 {{ ccrr0515Item.WDIMF1}}
               </td>
               <td>
-                {{ ccrr0515Item.WDIMD1}}
+                {{ ccrr0515Item.WDIMD1 | formmoneda:2:',':'.' }}
               </td>
               <td>
-                {{ ccrr0515Item.WDIIV1}}
+                {{ ccrr0515Item.WDIIV1 | formmoneda:2:',':'.' }}
               </td>
               <td>
-                {{ ccrr0515Item.WDITO1}}
+                {{ ccrr0515Item.WDITO1 | formmoneda:2:',':'.' }}
               </td>
             </tr>
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="4">
-                <mfBootstrapPaginator></mfBootstrapPaginator>
+              <td colspan="5">
+                <ul class="pagination pull-right"></ul>
               </td>
             </tr>
           </tfoot>

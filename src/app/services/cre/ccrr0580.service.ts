@@ -19,11 +19,11 @@ export class Ccrr0580Service {
 
   getCcrr0580View01(token, NUMCRE): Observable<any> {
     // console.log(this.url + this.endpointV1 + '?authToken=' + token + '&NUMCRE=' + NUMCRE);
-    return this._http.get(this.url + this.endpointV1 + '?authToken=' + token + '&numcre=' + NUMCRE + "&tplan=1");
+    return this._http.get(this.url + this.endpointV1 + '?authToken=' + token + '&numcre=' + NUMCRE + '&tplan=1');
   }
 
-  getCcrr0580View02(token, NUMCRE): Observable<any> {
-    return this._http.get(this.url + this.endpointV2 + '?authToken=' + token + '&numcre=' + NUMCRE);
+  getCcrr0580View02(token, NUMCRE, ncuo, arch): Observable<any> {
+    return this._http.get(this.url + this.endpointV2 + '?authToken=' + token + '&numcre=' + NUMCRE + '&numcuo=' + ncuo + '&archiv=' + arch);
   }
 
 }

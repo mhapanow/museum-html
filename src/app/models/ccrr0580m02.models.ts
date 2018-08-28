@@ -42,6 +42,7 @@ export class Ccrr0580m02Model {
                 public SCIICC: String,
                 public FECREV: String,
                 public WSICAC: String,
-                public SCACON: String
+                public SCACON: String,
+                public SCBANC: String
     ) { }
 }

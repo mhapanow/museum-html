@@ -30,7 +30,9 @@ export class Cacr210view01Component implements OnInit {
   public FechaSeleccion: String = '';
   public CodigoSucursal: String = '';
   public CodigoEstado: String = '';
-  public CodigoMotivoRechazo; String = '';
+  public CodigoMotivoRechazo: String = '';
+
+  private numero = 0;
 
   constructor(private _userService: UserService,
     private _cacr215Service: Cacr215Service,
@@ -50,7 +52,7 @@ export class Cacr210view01Component implements OnInit {
         language: 'es',
         keyboardNavigation: false,
         forceParse: false,
-        autoclose: true
+        autoclose: false
       });
     });
   }
@@ -87,6 +89,7 @@ export class Cacr210view01Component implements OnInit {
       form.value.CodigoEstado = 'R';
       // form.value.codigoEstado = '34';
       // promesa
+      this.numero = this.numero + 10;
       const promesa = new Promise( (resolve, reject) => {
             this._cacr210Service.getCacr210View01(this.token, this.FechaSeleccion, this.CodigoSucursal, this.CodigoEstado,
               this.CodigoMotivoRechazo, 'HIFSEL,HIBRCH,HIDATE,HIACCT').subscribe(
@@ -98,7 +101,7 @@ export class Cacr210view01Component implements OnInit {
                   } else {
                     this.cacr210m01 = response.data;
 
-                    resolve();
+                    resolve(this.cacr210m01);
                   }
                 } else {
                   this._toastr.warning(response.error_message, 'Se ha producido un error', { timeOut: 3000 });
@@ -112,18 +115,80 @@ export class Cacr210view01Component implements OnInit {
               }
             );
       }); // fin promesa
+
       promesa.then(() => {
         setTimeout(() => {
-          jQuery(function ($) {
-            $('.table').footable({
-              'rows': $.get(this.cacr210m01)
-            });
-          });
-        }, 1500);
+        //   // jQuery(function ($) {
+        //     $('.table').footable({
+        //         'sorted': true,
+        //         'direction': 'DESC'
+
+        //     });
+        //   // });
+          $('.table').footable();
+        //   // var ft = fooTable.init('#append-example');
+        //   // $('.table').footable({
+        //   //   'rows': this.cacr210m01
+        //   // });
+        //   console.log(this.cacr210m01);
+        //    $(document).ready(function () {
+        //   if (this.numero === 10) {
+        //     $('.table').footable();
+        //   }else{
+        //     $('table').footable();
+        //   }
+        // });
+
+        }, 2000);
+        // $(document).ready(function () {
+        //   $('.table').footable();
+        // });
       },
         function (reason) {
           console.log('error ', reason);
         });
+      // console.log(this.numero);
+      setTimeout(() => {
+        // jQuery(function ($) {
+        // $('.table').footable({
+        //   'sorted': true,
+        //   'direction': 'DESC'
+
+        // });
+        // });
+        // $('.table').footable();
+        // var ft = fooTable.init('#append-example');
+        // $('.table').footable({
+        //   'rows': this.cacr210m01
+        // });
+        
+            // $('.table').footable({
+            //   'rows': [{
+            //     'id': {
+            //       'options': {
+            //         'sortValue': 'My Sort Value'
+            //       }
+            //     }
+            //   }]
+            // });
+          
+
+  
+
+      }, 2000);
+      // setTimeout(function () {
+      //   $('table').footable({
+      //     breakpoints: {
+      //       phone: 480 + this.numero,
+      //       tablet: 680
+      //     }
+      //   });
+      //   $('.table').footable({
+      //     'sorting': {
+      //       'enabled': true
+      //     }
+      //   });
+      // }, 3000);
     }
   }
 
