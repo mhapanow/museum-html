@@ -11,17 +11,23 @@
         </div>
 
         <div class="row as400Table">
-            <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="5">
+            <table class="table table-striped" [mfData]="cacr216" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
                 <thead>
                     <tr>
-                        <th>Fecha</th>
-                        <th>Tipo de Registro</th>
-                        <th>Función</th>
+                        <th>
+                            <mfDefaultSorter by="WSFSEL">Fecha</mfDefaultSorter>
+                        </th>
+                        <th>
+                            <mfDefaultSorter by="WSTREG">Tipo de Registro</mfDefaultSorter>
+                        </th>
+                        <th>
+                            <mfDefaultSorter by="WSFUNC">Función</mfDefaultSorter>
+                        </th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr *ngFor="let cacr216_x of cacr216; let i = index">
+                    <tr *ngFor="let cacr216_x of mf.data; let i = index">
                         <td> {{cacr216_x.WSFSEL | date:'dd/MM/yyyy'}} </td>
                         <td> {{cacr216_x.WSTREG}} </td>
                         <td> {{cacr216_x.WSFUNC}}</td>
@@ -29,8 +35,8 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="5">
-                            <ul class="pagination pull-right"></ul>
+                        <td colspan="4">
+                            <mfBootstrapPaginator></mfBootstrapPaginator>
                         </td>
                     </tr>
                 </tfoot>

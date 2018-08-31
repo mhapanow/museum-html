@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 
@@ -10,7 +9,7 @@ import { Cacr210m01Model } from '../../../../models/cacr210m01.models';
 import { Cacr215m01Model } from '../../../../models/cacr215m01.models';
 
 // Declaramos las variables para jQuery
-declare var jQuery: any;
+// declare var jQuery: any;
  declare var $: any;
 
 @Component({
@@ -32,7 +31,7 @@ export class Cacr210view01Component implements OnInit {
   public CodigoEstado: String = '';
   public CodigoMotivoRechazo: String = '';
 
-  private numero = 0;
+  public rowsOnPage = 4;
 
   constructor(private _userService: UserService,
     private _cacr215Service: Cacr215Service,
@@ -79,116 +78,30 @@ export class Cacr210view01Component implements OnInit {
     this.CodigoSucursal = form.value.codigoSucursal;
     this.CodigoEstado = form.value.codigoEstado;
     this.CodigoMotivoRechazo = form.value.codigoMotivoRechazo;
-
     this.cacr210m01 = null;
-
     if (this.FechaSeleccion === '' || this.CodigoSucursal === '' || this.CodigoEstado === '' || this.CodigoMotivoRechazo === '') {
       this._toastr.warning('Debe ingresar todos los campos', 'Validación', { timeOut: 3000 });
     } else {
       this.CodigoEstado = 'R';
       form.value.CodigoEstado = 'R';
-      // form.value.codigoEstado = '34';
-      // promesa
-      this.numero = this.numero + 10;
-      const promesa = new Promise( (resolve, reject) => {
-            this._cacr210Service.getCacr210View01(this.token, this.FechaSeleccion, this.CodigoSucursal, this.CodigoEstado,
-              this.CodigoMotivoRechazo, 'HIFSEL,HIBRCH,HIDATE,HIACCT').subscribe(
-              response => {
-                if (response.error_message == null) {
-                  if (response.data.length === 0) {
-                    this._toastr.warning('No se han encontado datos', 'Respuesta', { timeOut: 3000 });
-                    reject();
-                  } else {
-                    this.cacr210m01 = response.data;
-
-                    resolve(this.cacr210m01);
-                  }
-                } else {
-                  this._toastr.warning(response.error_message, 'Se ha producido un error', { timeOut: 3000 });
-                  reject();
-                }
-              },
-              error => {
-                console.log(<any>error);
-                this._toastr.warning(<any>error, 'Error', { timeOut: 3000 });
-                reject();
-              }
-            );
-      }); // fin promesa
-
-      promesa.then(() => {
-        setTimeout(() => {
-        //   // jQuery(function ($) {
-        //     $('.table').footable({
-        //         'sorted': true,
-        //         'direction': 'DESC'
-
-        //     });
-        //   // });
-          $('.table').footable();
-        //   // var ft = fooTable.init('#append-example');
-        //   // $('.table').footable({
-        //   //   'rows': this.cacr210m01
-        //   // });
-        //   console.log(this.cacr210m01);
-        //    $(document).ready(function () {
-        //   if (this.numero === 10) {
-        //     $('.table').footable();
-        //   }else{
-        //     $('table').footable();
-        //   }
-        // });
-
-        }, 2000);
-        // $(document).ready(function () {
-        //   $('.table').footable();
-        // });
-      },
-        function (reason) {
-          console.log('error ', reason);
-        });
-      // console.log(this.numero);
-      setTimeout(() => {
-        // jQuery(function ($) {
-        // $('.table').footable({
-        //   'sorted': true,
-        //   'direction': 'DESC'
-
-        // });
-        // });
-        // $('.table').footable();
-        // var ft = fooTable.init('#append-example');
-        // $('.table').footable({
-        //   'rows': this.cacr210m01
-        // });
-        
-            // $('.table').footable({
-            //   'rows': [{
-            //     'id': {
-            //       'options': {
-            //         'sortValue': 'My Sort Value'
-            //       }
-            //     }
-            //   }]
-            // });
-          
-
-  
-
-      }, 2000);
-      // setTimeout(function () {
-      //   $('table').footable({
-      //     breakpoints: {
-      //       phone: 480 + this.numero,
-      //       tablet: 680
-      //     }
-      //   });
-      //   $('.table').footable({
-      //     'sorting': {
-      //       'enabled': true
-      //     }
-      //   });
-      // }, 3000);
+      this._cacr210Service.getCacr210View01(this.token, this.FechaSeleccion, this.CodigoSucursal, this.CodigoEstado,
+        this.CodigoMotivoRechazo, 'HIFSEL,HIBRCH,HIDATE,HIACCT').subscribe(
+        response => {
+          if (response.error_message == null) {
+            if (response.data.length === 0) {
+              this._toastr.warning('No se han encontado datos', 'Respuesta', { timeOut: 3000 });
+            } else {
+              this.cacr210m01 = response.data;
+            }
+          } else {
+            this._toastr.warning(response.error_message, 'Se ha producido un error', { timeOut: 3000 });
+          }
+        },
+        error => {
+          console.log(<any>error);
+          this._toastr.warning(<any>error, 'Error', { timeOut: 3000 });
+        }
+      );
     }
   }
 

@@ -79,20 +79,31 @@
         </div>
 
       <div class="row as400Table">
-        <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="5">
+        <table class="table table-striped" [mfData]="fer1020.data" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
           <thead>
             <tr>
               <th>
-                Tipo</th>
-              <th>Límite</th>
-              <th>Desde</th>
-              <th>Hasta</th>
-              <th>Numerales</th>
-              <th>Intereses</th>
+                <mfDefaultSorter by="DESTIP">Tipo</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="DOLIMA">Límite</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WSDATC">Desde</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WSAMND">Hasta</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="DOAGGI">Numerales</mfDefaultSorter>
+              </th>
+              <th>
+                <mfDefaultSorter by="WSINTE">Intereses</mfDefaultSorter>
+              </th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let fer1020Item of fer1020.data">
+            <tr *ngFor="let fer1020Item of mf.data">
               <td>
                 {{ fer1020Item.DESTIP }}
               </td>
@@ -115,8 +126,8 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="5">
-                <ul class="pagination pull-right"></ul>
+              <td colspan="4">
+                <mfBootstrapPaginator></mfBootstrapPaginator>
               </td>
             </tr>
           </tfoot>

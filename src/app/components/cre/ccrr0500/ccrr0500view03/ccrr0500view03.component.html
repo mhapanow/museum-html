@@ -22,37 +22,37 @@
 
 
       <div class="row as400Table">
-        <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="5">
+        <table class="table table-striped" [mfData]="ccrr0500m03" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
           <thead>
             <tr>
               <th>
-                Nombre del Titular
+                <mfDefaultSorter by="NOMCLI">Nombre del Titular</mfDefaultSorter>
               </th>
               <th>
-                Nro. Cred.
+                <mfDefaultSorter by="CRNUCR">Nro. Cred.</mfDefaultSorter>
               </th>
               <th>
-                Est.
+                <mfDefaultSorter by="CRSTCR">Est.</mfDefaultSorter>
               </th>
               <th>
-                Fecha Otorgado
+                <mfDefaultSorter by="FECALT">Fecha Otorgado</mfDefaultSorter>
               </th>
               <th>
-                Fecha Vencimie.
+                <mfDefaultSorter by="FECVTO">Fecha Vencimie.</mfDefaultSorter>
               </th>
               <th>
-                Saldo Deuda
+                <mfDefaultSorter by="SALDO">Saldo Deuda</mfDefaultSorter>
               </th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let ccrr0500Item of ccrr0500m03">
+            <tr *ngFor="let ccrr0500Item of mf.data">
               <td>
                 {{ ccrr0500Item.NOMCLI }}
               </td>
               <td>
-                {{ ccrr0500Item.CRNUCR }}
+                {{ ccrr0500Item.CRNUCR | lpad:10:true }}
               </td>
               <td>
                 {{ ccrr0500Item.CRSTCR }}
@@ -64,7 +64,7 @@
                 {{ ccrr0500Item.FECVTO }}
               </td>
               <td>
-                {{ ccrr0500Item.SALDO }}
+                {{ ccrr0500Item.SALDO | formmoneda:2:',':'.'}}
               </td>
               <td>
                 <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/ccrr0500v1']">Ver</a>
@@ -73,8 +73,8 @@
           </tbody>
           <tfoot>
             <tr>
-              <td colspan="5">
-                        <ul class="pagination pull-right"></ul>
+              <td colspan="4">
+                <mfBootstrapPaginator></mfBootstrapPaginator>
               </td>
             </tr>
           </tfoot>

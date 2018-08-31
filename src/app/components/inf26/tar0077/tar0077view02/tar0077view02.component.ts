@@ -6,9 +6,6 @@ import { UserService } from '../../../../services/user.service';
 import { Tar0077m02Model } from '../../../../models/tar0077m02.models';
 import { Tar0077Service } from '../../../../services/inf26/tar0077.service';
 
-// Declaramos las variables para jQuery
-declare var jQuery: any;
-
 @Component({
   selector: 'app-tar0077view02',
   templateUrl: './tar0077view02.component.html',
@@ -21,6 +18,7 @@ export class Tar0077view02Component implements OnInit {
   public identity;
   public token;
   public tar0077list: Tar0077m02Model[];
+  public rowsOnPage = 7;
 
   constructor(
     private _userService: UserService,
@@ -40,13 +38,6 @@ export class Tar0077view02Component implements OnInit {
         this.tar0077list = null;
         if (response.error_message == null) {
           this.tar0077list = response.data;
-          setTimeout(() => {
-            jQuery(function ($) {
-              $('.table').footable({
-                'rows': $.get(this.tar0077list)
-              });
-            });
-          }, 300);
         } else {
           if (response.error_code === 404) {
             this._toastr.error('Tocken invalido o caducado', 'Se ha producido un error', { timeOut: 3000 });

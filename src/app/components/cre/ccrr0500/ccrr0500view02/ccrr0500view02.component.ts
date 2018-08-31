@@ -6,9 +6,6 @@ import { UserService } from '../../../../services/user.service';
 import { Ccrr0500Service } from '../../../../services/cre/ccrr0500.service';
 import { Ccrr0500m02Model } from '../../../../models/ccrr0500m02.models';
 
-// Declaramos las variables para jQuery
-declare var jQuery: any;
-
 @Component({
   selector: 'app-ccrr0500view02',
   templateUrl: './ccrr0500view02.component.html',
@@ -19,7 +16,7 @@ export class Ccrr0500view02Component implements OnInit {
   public identity;
   public token;
   public ccrr0500m02: Ccrr0500m02Model;
-
+  public rowsOnPage = 5;
 
   constructor(
     private _userService: UserService,
@@ -48,13 +45,6 @@ export class Ccrr0500view02Component implements OnInit {
         response => {
           if (response.error_message == null) {
             this.ccrr0500m02 = response;
-            setTimeout(() => {
-              jQuery(function ($) {
-                $('.table').footable({
-                  'rows': $.get(this.ccrr0500m02)
-                });
-              });
-            }, 300);
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }

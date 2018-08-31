@@ -84,35 +84,35 @@
             </form>
 
             <div class="row as400Table">
-                <table class="table footable" data-page-size="5">
+                <table class="table table-striped" [mfData]="cacr210m01" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
                     <thead>
                         <tr>
                             <th>
-                                Nro Cuenta
+                                <mfDefaultSorter by="WSACCT">Nro Cuenta</mfDefaultSorter>
                             </th>
                             <th>
-                                Tip
+                                <mfDefaultSorter by="WSDTRE">Tip</mfDefaultSorter>
                             </th>
                             <th>
-                                Fecha Alta.
+                                <mfDefaultSorter by="WSDATE">Fecha Alta.</mfDefaultSorter>
                             </th>
                             <th>
-                                Fecha Vcto.
+                                <mfDefaultSorter by="WSAMND">Fecha Vcto.</mfDefaultSorter>
                             </th>
                             <th>
-                                Límite
+                                <mfDefaultSorter by="WSAAMT">Límite</mfDefaultSorter>
                             </th>
                             <th>
-                                Nuevo Vto
+                                <mfDefaultSorter by="WSNVTO">Nuevo Vto</mfDefaultSorter>
                             </th>
                             <th>
-                                Estado
+                                <mfDefaultSorter by="WSDRES">Estado</mfDefaultSorter>
                             </th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let cacr210Item of cacr210m01">
+                        <tr *ngFor="let cacr210Item of mf.data">
                             <td>
                                 {{ cacr210Item.WSACCT | lpad:10 | formcuenta }}
                             </td>
@@ -141,8 +141,8 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="5">
-                                <ul class="pagination pull-right"></ul>
+                            <td colspan="4">
+                                <mfBootstrapPaginator></mfBootstrapPaginator>
                             </td>
                         </tr>
                     </tfoot>

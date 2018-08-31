@@ -53,11 +53,11 @@
       <div class="row ">
         <div class="col-md-5 col-md-offset-1">
           Saldo Contable:
-          <strong>{{ cacr205m02.WSCBAL | formmoneda:2:'.':',' }}</strong>
+          <strong>{{ cacr205m02.WSCBAL | formmoneda:2:',':'.' }}</strong>
         </div>
         <div class="col-md-5">
           Acuerdo Sobregiro:
-          <strong class="pull-right">{{ cacr205m02.WSIODL | formmoneda:2:'.':',' }}</strong>
+          <strong class="pull-right">{{ cacr205m02.WSIODL | formmoneda:2:',':'.' }}</strong>
         </div>
       </div>
 
@@ -138,7 +138,7 @@
       <div class="row ">
         <div class="col-md-5 col-md-offset-1">
           Suma Límites Actual:
-          <strong>{{ cacr205m02.WSSUML | formmoneda:2:'.':',' }}</strong>
+          <strong>{{ cacr205m02.WSSUML | formmoneda:2:',':'.' }}</strong>
         </div>
         <div class="col-md-5">
           Días exceso actual

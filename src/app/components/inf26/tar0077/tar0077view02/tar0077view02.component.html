@@ -8,24 +8,23 @@
             <h3>CONSULTA DE CODIGOS DE TRANSACCIONES</h3>
         </div>
         <div class="row as400Table">
-            <!-- <table class="table table-striped" [mfData]="tar0077list" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage"> -->
-            <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="5">
+            <table class="table table-striped" [mfData]="tar0077list" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
                 <thead>
                     <tr>
                         <th>
-                            Cod.
+                            <mfDefaultSorter by="WSCODI">Cod.</mfDefaultSorter>
                         </th>
                         <th>
-                            Descripcion corta
+                            <mfDefaultSorter by="WSDESC">Descripcion corta</mfDefaultSorter>
                         </th>
                         <th>
-                            Descripcion larga
+                            <mfDefaultSorter by="WSDESL">Descripcion larga</mfDefaultSorter>
                         </th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let x of tar0077list">
+                    <tr *ngFor="let x of mf.data">
                         <td>{{x.WSCODI}}</td>
                         <td>{{x.WSDESC}}</td>
                         <td>{{x.WSDESL}}</td>
@@ -36,13 +35,12 @@
                 </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="5">
-                        <ul class="pagination pull-right"></ul>
+                    <td colspan="4">
+                        <mfBootstrapPaginator></mfBootstrapPaginator>
                     </td>
                 </tr>
             </tfoot>
             </table>
-        <!-- <table class="table" data-paging="true"></table> -->
         </div>
     </div>
 

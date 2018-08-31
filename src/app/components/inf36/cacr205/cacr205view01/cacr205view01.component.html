@@ -25,35 +25,35 @@
       </div>
     </div>
     <div class="row as400Table">
-      <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="5">
+      <table class="table table-striped" [mfData]="cacr205m01" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
         <thead>
           <tr>
             <th>
-              Tip
+              <mfDefaultSorter by="WSDTRE">Tip</mfDefaultSorter>
             </th>
             <th>
-              Fecha Alta
+              <mfDefaultSorter by="WSDATE">Fecha Alta</mfDefaultSorter>
             </th>
             <th>
-              Fecha Vto.
+              <mfDefaultSorter by="WSAMND">Fecha Vto.</mfDefaultSorter>
             </th>
             <th>
-              Límite
+              <mfDefaultSorter by="WSAAMT">Límite</mfDefaultSorter>
             </th>
             <th>
-              Nuevo Límite
+              <mfDefaultSorter by="WSNLIM">Nuevo Límite</mfDefaultSorter>
             </th>
             <th>
-              Nuevo Vto
+              <mfDefaultSorter by="WSNVTO">Nuevo Vto</mfDefaultSorter>
             </th>
             <th>
-              Estado
+              <mfDefaultSorter by="WSDRES">Estado</mfDefaultSorter>
             </th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cacr205Item of cacr205m01">
+          <tr *ngFor="let cacr205Item of mf.data">
             <td>
               {{ cacr205Item.WSDTRE}}
             </td>
@@ -82,8 +82,8 @@
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="5">
-              <ul class="pagination pull-right"></ul>
+            <td colspan="4">
+              <mfBootstrapPaginator></mfBootstrapPaginator>
             </td>
           </tr>
         </tfoot>

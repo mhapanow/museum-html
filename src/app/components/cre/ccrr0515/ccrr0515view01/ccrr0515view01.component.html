@@ -97,43 +97,43 @@
       </div>
 
       <div class="row as400Table">
-        <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="5">
+        <table class="table table-striped" [mfData]="ccrr0515m01.data" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
           <thead>
             <tr>
               <th>
-                Nro Cuota
+                <mfDefaultSorter by="WDCUOT">Nro Cuota</mfDefaultSorter>
               </th>
               <th>
-                Cod. Fee
+                <mfDefaultSorter by="WDCFEZ">Cod. Fee</mfDefaultSorter>
               </th>
               <th>
-                Días Atraso
+                <mfDefaultSorter by="WDDIAT">Días Atraso</mfDefaultSorter>
               </th>
               <th>
-                Tasas
+                <mfDefaultSorter by="WDTACR">Tasas</mfDefaultSorter>
               </th>
               <th>
-                Punit. Calc.
+                <mfDefaultSorter by="WDIMP1">Punit. Calc.</mfDefaultSorter>
               </th>
               <th>
-                Compens. Calc.
+                <mfDefaultSorter by="WDIMC1">Compens. Calc.</mfDefaultSorter>
               </th>
               <th>
-                Fee. Calc.
+                <mfDefaultSorter by="WDIMF1">Fee. Calc.</mfDefaultSorter>
               </th>
               <th>
-                Imp. Endeud.
+                <mfDefaultSorter by="WDIMD1">Imp. Endeud.</mfDefaultSorter>
               </th>
               <th>
-                IVA
+                <mfDefaultSorter by="WDIIV1">IVA</mfDefaultSorter>
               </th>
               <th>
-                Total
+                <mfDefaultSorter by="WDITO1">Total</mfDefaultSorter>
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let ccrr0515Item of ccrr0515m01.data">
+            <tr *ngFor="let ccrr0515Item of mf.data">
               <td>
                 {{ ccrr0515Item.WDCUOT | lpad:3:true }}
               </td>

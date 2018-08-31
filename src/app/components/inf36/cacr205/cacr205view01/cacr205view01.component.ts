@@ -6,9 +6,6 @@ import { UserService } from '../../../../services/user.service';
 import { Cacr205Service } from '../../../../services/inf36/cacr205.service';
 import { Cacr205m01Model } from '../../../../models/cacr205m01.models';
 
-// Declaramos las variables para jQuery
-declare var jQuery: any;
-
 @Component({
   selector: 'app-cacr205view01',
   templateUrl: './cacr205view01.component.html',
@@ -20,6 +17,7 @@ export class Cacr205view01Component implements OnInit {
   public token;
   public cacr205m01: Cacr205m01Model[];
   public ncuenta: String = '';
+  public rowsOnPage = 5;
 
   constructor(
     private _userService: UserService,
@@ -45,16 +43,8 @@ export class Cacr205view01Component implements OnInit {
     this.ncuenta = (form.value.ncuenta);
     this._cacr205Service.getCacr205View01(this.token, this.ncuenta).subscribe(
       response => {
-        console.log(response);
         if (response.error_message == null) {
           this.cacr205m01 = response.data;
-          setTimeout(() => {
-            jQuery(function ($) {
-              $('.table').footable({
-                'rows': $.get(this.cacr205m01)
-              });
-            });
-          }, 300);
         } else {
           this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
         }

@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 import { UserService } from '../../../../services/user.service';
 import { Cacr216m01Model } from '../../../../models/cacr216m01.models';
 import { Cacr216Service } from '../../../../services/inf36/cacr216.service';
-
-// Declaramos las variables para jQuery
-declare var jQuery: any;
 
 @Component({
   selector: 'app-cacr216view01',
@@ -20,7 +16,7 @@ export class Cacr216view01Component implements OnInit {
   public identity;
   public token;
   public cacr216: Cacr216m01Model[];
-
+  public rowsOnPage = 5;
 
   constructor(
     private _userService: UserService,
@@ -40,13 +36,6 @@ export class Cacr216view01Component implements OnInit {
       response => {
         if (response.error_message == null) {
           this.cacr216 = response.data;
-          setTimeout(() => {
-            jQuery(function ($) {
-              $('.table').footable({
-                'rows': $.get(this.cacr216)
-              });
-            });
-          }, 300);
         } else {
           this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
         }

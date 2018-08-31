@@ -23,7 +23,28 @@ export class ZrstonlnService {
 
   getZrstonlnView02(token, w1afac, w1cifa, w1agig, w1orgn, w1prcd, w1acns, w1cans, w1bbad, w1bbah, w1ebad,
 w1ebah, w1cydu, w1obol, w1estc, w1cacl, w1cpos, w1retr, w1func, w1crba, w1logo): Observable<any> {
-    return this._http.get(this.url + this.endpointV2 + '?authToken=' + token + '&MEORGND=' + w1afac);
+    return this._http.get(this.url + this.endpointV2 + '?authToken=' + token
+      + '&w1afac=' + w1afac
+      + '&w1cifa=' + w1cifa
+      + '&w1agig=' + w1agig
+      + '&w1orgn=' + w1orgn
+      + '&w1acns=' + w1acns
+      + '&w1cans=' + w1cans
+      + '&w1logo=' + w1logo
+      + '&w1ebah=' + w1ebah
+      + '&w1ebad=' + w1ebad
+      + '&w1prcd=' + w1prcd
+      + '&w1bbad=' + w1bbad
+      + '&w1bbah=' + w1bbah
+      + '&w1cydu=' + w1cydu
+      + '&w1obol=' + w1obol
+      + '&w1estc=' + w1estc
+      + '&w1cacl=' + w1cacl
+      + '&w1cpos=' + w1cpos
+      + '&w1retr=' + w1retr
+      + '&w1func=' + w1func
+      + '&w1crba=' + w1crba
+      + '&w1badd=1');
   }
 
 }

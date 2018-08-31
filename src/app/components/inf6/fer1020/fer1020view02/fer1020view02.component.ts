@@ -6,9 +6,6 @@ import { UserService } from '../../../../services/user.service';
 import { Fer1020Service } from '../../../../services/inf6/fer1020.service';
 import { Fer1020m02Model } from '../../../../models/fer1020m02.models';
 
-// Declaramos las variables para jQuery
-declare var jQuery: any;
-
 @Component({
   selector: 'app-fer1020view02',
   templateUrl: './fer1020view02.component.html',
@@ -26,6 +23,8 @@ export class Fer1020view02Component implements OnInit {
   public vdesde: String;
   public vhasta: String;
   public nimporte: number;
+
+  public rowsOnPage = 5;
 
 
   constructor(
@@ -57,13 +56,6 @@ export class Fer1020view02Component implements OnInit {
           response => {
             if (response.error_message == null) {
               this.fer1020 = response;
-              setTimeout(() => {
-                jQuery(function ($) {
-                  $('.table').footable({
-                    'rows': $.get(this.fer1020)
-                  });
-                });
-              }, 300);
             } else {
               this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
             }
