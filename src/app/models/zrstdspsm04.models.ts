@@ -8,11 +8,16 @@ export class Zrstdspsm04Model {
                 public MEBICYD: string,
 
                 // Tabla
-                public W4SEOP: string,
-                public W4RRRED: string,
-                public W4ORGN: string,
-                public W4REAR: string,
-                public W4RPRE: string
+                public w4seop: string,
+                public w4rrred: string,
+                public w4orgn: string,
+                public w4rear: string,
+                public w4rpre: string
 
     ) { }
 }
+
+
+
+
+

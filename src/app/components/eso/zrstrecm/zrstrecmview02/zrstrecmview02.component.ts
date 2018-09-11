@@ -14,7 +14,7 @@ export class Zrstrecmview02Component implements OnInit {
   title: 'ESO - Pantalla ZRSTRECM';
   public identity;
   public token;
-  public zrstrecmm02: Zrstrecmm02Model[];
+  public zrstrecmm02: Zrstrecmm02Model;
 
   public rowsOnPage = 5;
 
@@ -26,6 +26,7 @@ export class Zrstrecmview02Component implements OnInit {
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
+    this.zrstrecmm02 = new Zrstrecmm02Model('', '', '', '', '', '', '', '');
   }
 
   ngOnInit() {
@@ -33,13 +34,25 @@ export class Zrstrecmview02Component implements OnInit {
   }
 
   zrstrecmv02() {
-    let numcuenta: String;
+    let meorg: String;
+    let melogo: String;
+    let mencct: String;
+    let meyfac: String;
+    let meaafc: String;
+    let mecifa: String;
+    let meagig: String;
     this._route.params.subscribe(params => {
-      numcuenta = params['ncuenta'];
-      this._zrstrecmService.getZrstrecmView02(this.token, numcuenta).subscribe(
+      meorg = params['meorg'];
+      melogo = params['melogo'];
+      mencct = params['mencct'];
+      meyfac = params['meyfac'];
+      meaafc = params['meaafc'];
+      mecifa = params['mecifa'];
+      meagig = params['meagig'];
+      this._zrstrecmService.getZrstrecmView02(this.token, meorg, melogo, mencct, meyfac, meaafc, mecifa, meagig).subscribe(
         response => {
           if (response.error_message == null) {
-            this.zrstrecmm02 = response.data;
+            this.zrstrecmm02 = response;
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }

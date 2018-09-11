@@ -39,7 +39,7 @@ export class Ccrr0580view01Component implements OnInit {
       numcredito = params['ncredito'];
       this._ccrr0580Service.getCcrr0580View01(this.token, numcredito).subscribe(
           response => {
-            // console.log(response);
+            //console.log(response);
             if (response.error_message == null) {
               this.ccrr0580m01 = response;
             } else {

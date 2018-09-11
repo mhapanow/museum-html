@@ -16,7 +16,7 @@
             Cuenta.:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ zrstreclm01.P1ORGN }} {{ zrstreclm01.P1LOGO }} {{ zrstreclm01.P1ACNB }} {{ zrstreclm01.P1APEN }}
+            {{ zrstrecmm01.p1orgn }} {{ zrstrecmm01.p1logo }} {{ zrstrecmm01.p1acnb }} {{ zrstrecmm01.p1apen }}
           </strong>
         </div>
       </div>
@@ -28,7 +28,7 @@
             Fecha Facturación :
           </label>
           <strong class="col-sm-9 control-label pull-right">
-            {{ zrstreclm01.P1FEC | date:'MM/yyyy' }}
+            {{ zrstrecmm01.p1fec | date:'MM/yyyy' }}
           </strong>
         </div>
         <div class="col-md-3 col-md-offset-2 form-group">
@@ -36,7 +36,7 @@
             Ciclo :
           </label>
           <strong class="col-sm-9 control-label pull-right">
-            {{ zrstreclm01.P1BICY }}
+            {{ zrstrecmm01.p1bicy }}
           </strong>
         </div>
       </div>
@@ -52,7 +52,7 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-2 form-group">
           <span class="input-group-btn">
-            <button type="button" type="submit" class="btn btn-primary" [routerLink]="['/zrstrecmv2', zrstreclm01.P1ORGN ]">
+            <button type="button" type="submit" class="btn btn-primary" [routerLink]="['/zrstrecmv2', zrstrecmm01.p1orgn, zrstrecmm01.p1logo, zrstrecmm01.p1acnb, 20, 09,  zrstrecmm01.p1bicy, 17 ]">
               <i class="fa fa-envelope"></i> Mailing de Marketing
             </button>
           </span>
@@ -62,7 +62,7 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-2 form-group">
           <span class="input-group-btn">
-            <button type="button" type="submit" class="btn btn-primary" [routerLink]="['/zrstrecmv2', zrstreclm01.P1ORGN ]">
+            <button type="button" type="submit" class="btn btn-primary" [routerLink]="['/zrstrecmv2', zrstrecmm01.p1orgn, zrstrecmm01.p1logo, zrstrecmm01.p1acnb, 20, 09,  zrstrecmm01.p1bicy, 17 ]">
               <i class="fa fa-envelope-o"></i> Mailing de Servicios
             </button>
           </span>

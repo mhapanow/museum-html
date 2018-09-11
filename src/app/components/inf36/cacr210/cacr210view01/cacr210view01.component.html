@@ -126,7 +126,7 @@
                                 {{ cacr210Item.WSAMND | date:'dd/MM/yyyy' }}
                             </td>
                             <td>
-                                {{ cacr210Item.WSAAMT | lpad:3:true }}
+                                {{ cacr210Item.WSAAMT | formmoneda:2:'.':',' }}
                             </td>
                             <td>
                                 {{ cacr210Item.WSNVTO | date:'dd/MM/yyyy' }}

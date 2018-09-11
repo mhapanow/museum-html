@@ -40,13 +40,25 @@ export class Zrstdspsview04Component implements OnInit {
   }
 
   zrstdspsv04() {
-    let numcuenta: String;
+    let meyfac: String;
+    let meaafc: String;
+    let mecifa: String;
+    let meagig: String;
+    let melogo: String;
+    let mencct: String;
+
+
     this._route.params.subscribe(params => {
-      numcuenta = params['ncuenta'];
-      this._zrstdspsService.getZrstdspsView04(this.token, numcuenta).subscribe(
+      meyfac = params['meyfac'];
+      meaafc = params['meaafc'];
+      mecifa = params['mecifa'];
+      meagig = params['meagig'];
+      melogo = params['melogo'];
+      mencct = params['mencct'];
+      this._zrstdspsService.getZrstdspsView04(this.token, meyfac, meaafc, mecifa, meagig, melogo, mencct).subscribe(
         response => {
           if (response.error_message == null) {
-            this.zrstdspsm04 = response.data;
+            this.zrstdspsm04 = response;
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }
@@ -59,9 +71,10 @@ export class Zrstdspsview04Component implements OnInit {
     });
   }
 
-  zrstdspsv08(numcuenta) {
+  zrstdspsv08(meyfac, meaafc, mecifa, meagig, melogo, mencct, w4rrred, w4orgn, w4rear, w4rpre ) {
     this.title2 = 'ESO - Pantalla-2';
-      this._zrstdspsService.getZrstdspsView04(this.token, numcuenta).subscribe(
+      this._zrstdspsService.getZrstdspsView08(this.token, meyfac, meaafc, mecifa, meagig, melogo,
+         mencct, w4rrred, w4orgn, w4rear, w4rpre).subscribe(
         response => {
           if (response.error_message == null) {
             this.zrstdspsm08 = response.data;

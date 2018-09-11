@@ -45,16 +45,16 @@
           <thead>
             <tr>
               <th>
-                <mfDefaultSorter by="W4RRRED">Descripción del Programa</mfDefaultSorter>
+                <mfDefaultSorter by="w4rrred">Descripción del Programa</mfDefaultSorter>
               </th>
               <th>
-                <mfDefaultSorter by="W4ORGN">Org.</mfDefaultSorter>
+                <mfDefaultSorter by="w4orgn">Org.</mfDefaultSorter>
               </th>
               <th>
-                <mfDefaultSorter by="W4REAR">Puntos Ganados</mfDefaultSorter>
+                <mfDefaultSorter by="w4rear">Puntos Ganados</mfDefaultSorter>
               </th>
               <th>
-                <mfDefaultSorter by="W4RPRE">Puntos Usados</mfDefaultSorter>
+                <mfDefaultSorter by="w4rpre">Puntos Usados</mfDefaultSorter>
               </th>
               <th>
                 Acciones
@@ -64,19 +64,20 @@
           <tbody>
             <tr *ngFor="let zrstdspsItem of mf.data">
               <td>
-                {{ zrstdspsItem.W4RRRED }}
+                {{ zrstdspsItem.w4rrred }}
               </td>
               <td>
-                {{ zrstdspsItem.W4ORGN }}
+                {{ zrstdspsItem.w4orgn }}
               </td>
               <td>
-                {{ zrstdspsItem.W4REAR }}
+                {{ zrstdspsItem.w4rear }}
               </td>
               <td>
-                {{ zrstdspsItem.W4RPRE }}
+                {{ zrstdspsItem.w4rpre }}
               </td>
               <td>
-                <a class="btn btn-primary as400ButtonInTable">Ver</a>
+                <a class="btn btn-primary as400ButtonInTable" data-toggle="modal" data-target="#myModal"
+                 (click)='zrstdspsv08(0, zrstdspsm04.MEAAFCD, zrstdspsm04.MEBICYD, 14,  zrstdspsm04.MELOGOD , zrstdspsm04.MEACNBD, zrstdspsItem.w4rrred, zrstdspsItem.w4orgn, zrstdspsItem.w4rear, zrstdspsItem.w4rpre)'>Ver</a>
               </td>
             </tr>
           </tbody>

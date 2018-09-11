@@ -161,7 +161,7 @@
       
 
       <div class="row as400Table">
-        <table class="table table-striped" [mfData]="zrstdspsm01" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+        <!-- <table class="table table-striped" [mfData]="zrstdspsm01" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
           <thead>
             <tr>
               <th>
@@ -199,7 +199,7 @@
               </td>
             </tr>
           </tfoot>
-        </table>
+        </table> -->
       </div>
     </div>
   </div>
@@ -212,19 +212,46 @@
       <button class="btn btn-primary " type="button" [routerLink]="['/zrstdspsview2', zrstdspsm01.MEORGND]">
         Dolares
       </button>
+      <button class="btn btn-primary " type="button" [routerLink]="['/zrstdspsv4', 20,16, zrstdspsm01.MEBICYD, 21, zrstdspsm01.MELOGOD, zrstdspsm01.MEACNBD]">
+        F14
+      </button>
+
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal7" (click)='zrstdspsv07(1, 0, 0)'>
+        Vista 07
+      </button>
+      
     </div>
 
     <div class="col lg-12" style="text-align: center;">
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3" (click)='zrstdspsv03(zrstdspsm01.MEORGND)'>
-        Launch demo modal
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3" (click)='zrstdspsv03(zrstdspsm01.MEORGND, zrstdspsm01.MELOGOD, zrstdspsm01.MEACNBD,20,16, zrstdspsm01.MEBICYD, 21)'>
+        F13
       </button>
     </div>
 
     <div class="col lg-12" style="text-align: center;">
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal7" (click)='zrstdspsv07(zrstdspsm01.MEORGND)'>
-        Launch demo modal
+      <button class="btn btn-primary " type="button" [routerLink]="['/zrstrecmv1',  zrstdspsm01.MEORGND, zrstdspsm01.MELOGOD, zrstdspsm01.MEACNBD, 20, 08, zrstdspsm01.MEBICYD, 01]">
+        F8
       </button>
     </div>
+
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/zrstreclv1',  zrstdspsm01.MEORGND, zrstdspsm01.MELOGOD, zrstdspsm01.MEACNBD, 20, 04, zrstdspsm01.MEBICYD, 15, 0]">
+        F10
+      </button>    
+    </div>
+
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/zrstdspsv6',  zrstdspsm01.MEORGND, zrstdspsm01.MELOGOD, zrstdspsm01.MEACNBD, 20, 16, zrstdspsm01.MEBICYD, 10]">
+        F16
+      </button>
+    </div>
+
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" [routerLink]="['/zrstdspsv5',  zrstdspsm01.MEORGND, zrstdspsm01.MELOGOD, zrstdspsm01.MEACNBD, 20, 16, zrstdspsm01.MEBICYD, 10]">
+        F15
+      </button>
+    </div>
+
 
   </div>
 

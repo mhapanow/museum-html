@@ -1,13 +1,13 @@
 export class Zrstrecmm01Model {
     constructor(
-                public P1ORGN: string,
-                public P1LOGO: string,
-                public P1ACNB: string,
-                public P1APEN: string,
-                public P1FEC: string,
-                public P1BICY: string,
-                public P1M: string,
-                public P1S: string
+                public p1orgn: string,
+                public p1logo: string,
+                public p1acnb: string,
+                public p1apen: string,
+                public p1fec: string,
+                public p1bicy: string,
+                public p1m: string,
+                public p1s: string
 
     ) { }
 }

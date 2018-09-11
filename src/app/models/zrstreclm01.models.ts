@@ -1,12 +1,12 @@
 export class Zrstreclm01Model {
     constructor(
-                public C1ORGN: string,
-                public C1LOGO: string,
-                public C1ACNB: string,
-                public C1APEN: string,
-                public C1FEC: string,
-                public C1BICY: string,
-                public SFLEY1: string
+                public c1orgn: string,
+                public c1logo: string,
+                public c1acnb: string,
+                public c1apen: string,
+                public c1fec: string,
+                public c1bicy: string,
+                public sfley1: string
 
     ) { }
 }

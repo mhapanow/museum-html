@@ -38,7 +38,6 @@ export class Zrstonlnview01Component implements OnInit {
                         form.value.ciclo,
                         form.value.aging,
                         form.value.org,
-                        form.value.logo,
                         form.value.procesador,
                         form.value.ncuenta,
                         form.value.ntarjeta,
@@ -53,7 +52,8 @@ export class Zrstonlnview01Component implements OnInit {
                         form.value.cpostal,
                         form.value.rt,
                         form.value.staff,
-                        form.value.cbalance
+                        form.value.cbalance,
+                        form.value.logo
                       ]);
   }
 

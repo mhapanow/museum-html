@@ -15,7 +15,7 @@
             Cuenta.:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ zrstreclm01.C1ORGN }} {{ zrstreclm01.C1LOGO }} {{ zrstreclm01.C1ACNB }} {{ zrstreclm01.C1APEN }}
+            {{ zrstreclm01.c1orgn }} {{ zrstreclm01.c1logo }} {{ zrstreclm01.c1acnb }} {{ zrstreclm01.c1apen }}
           </strong>
         </div>
       </div>
@@ -27,7 +27,7 @@
             Fecha Facturación :
           </label>
           <strong class="col-sm-9 control-label pull-right">
-            {{ zrstreclm01.C1FEC | date:'MM/yyyy' }}
+            {{ zrstreclm01.c1fec | date:'MM/yyyy' }}
           </strong>
         </div>
         <div class="col-md-3 col-md-offset-2 form-group">
@@ -35,7 +35,7 @@
             Ciclo :
           </label>
           <strong class="col-sm-9 control-label pull-right">
-            {{ zrstreclm01.C1BICY }}
+            {{ zrstreclm01.c1bicy }}
           </strong>
         </div>
       </div>
@@ -51,14 +51,14 @@
       <div class="row">
         <div class="col-md-9 col-md-offset-2 form-group">
           <label class="col-sm-12 control-label">
-            {{ zrstreclm01.SFLEY1 }}
+            {{ zrstreclm01.sfley1 }}
           </label>
         </div>
       </div>
 
       <div class="row">
         <div class="col lg-12" style="text-align: center;">
-          <button class="btn btn-primary " type="button" [routerLink]="['/zrstreclv2', zrstreclm01.C1ORGN]">
+          <button class="btn btn-primary " type="button" [routerLink]="['/zrstreclv2', zrstreclm01.c1orgn, zrstreclm01.c1logo, zrstreclm01.c1acnb, 20, 04, zrstreclm01.c1bicy, 15, 0 ]">
             F6 - Siguiente
           </button>
         </div>

@@ -37,28 +37,47 @@ export class ZrstdspsService {
     return this._http.get(this.url + this.endpointV2 + '?authToken=' + token + '&MEORGND=' + ncuenta);
   }
 
-  getZrstdspsView03(token, categoria): Observable<any> {
-    return this._http.get(this.url + this.endpointV3 + '?authToken=' + token + '&MECACLB=' + categoria);
+  getZrstdspsView03(token, dsorg: String, dslogo: String, dscuenta: String, dscent, dsaño, dscic, dsag): Observable<any> {
+    return this._http.get(this.url + this.endpointV3 + '?authToken=' + token
+     + '&dsorg=352&dslogo=302&dscuenta=0005123708220017239&dscent=20&dsaño=16&dscic=03&dsag=21');
+    //  '&dsorg=' + dsorg + '&dslogo='
+    //   + dslogo + '&dscuenta=' + dscuenta + '&dscent=' + dscent + '&dsaño=' + dsaño
+    //                      + '&dscic=' + dscic + '&dsag=' + dsag );
   }
 
-  getZrstdspsView04(token, ncuenta): Observable<any> {
-    return this._http.get(this.url + this.endpointV4 + '?authToken=' + token + '&MEORGND=' + ncuenta);
+  getZrstdspsView04(token, meyfac, meaafc, mecifa, meagig, melogo, mencct): Observable<any> {
+    return this._http.get(this.url + this.endpointV4 + '?authToken=' + token
+     + '&meyfac=20&meaafc=16&mecifa=03&meagig=21&melogo=302&mencct=0005123708220017239');
+     // + '&meyfac=' + meyfac + '&meaafc=' + meaafc + '&mecifa=' + mecifa
+     // + '&meagig=' + meagig + '&melogo=' + melogo + '&mencct=' + mencct);
   }
 
-  getZrstdspsView05(token, ncuenta): Observable<any> {
-    return this._http.get(this.url + this.endpointV5 + '?authToken=' + token + '&MEORGND=' + ncuenta);
+  getZrstdspsView05(token, meorg, melogo, mencct, meyac, meaafc, mecifa, meagig): Observable<any> {
+    return this._http.get(this.url + this.endpointV5 + '?authToken=' + token
+      + '&meorg=354&melogo=601&mencct=0000036466894670000&meyac=20&meaafc=16&mecifa=12&meagig=10');
+      // + '&meorg=' + meorg + '&melogo=' + melogo + '&mencct=' + mencct + '&meyac='
+      // + meyac + '&meaafc=' + meaafc + '&mecifa=' + mecifa + '&meagig=' + meagig);
   }
 
-  getZrstdspsView06(token, ncuenta): Observable<any> {
-    return this._http.get(this.url + this.endpointV6 + '?authToken=' + token + '&MEORGND=' + ncuenta);
+  getZrstdspsView06(token, meorg, melogo, mencct, meyac, meaafc, mecifa, meagig): Observable<any> {
+    return this._http.get(this.url + this.endpointV6 + '?authToken=' + token
+      + '&meorg=354&melogo=601&mencct=0000036466894670000&meyac=20&meaafc=16&mecifa=12&meagig=10');
+      // + '&meorg=' + meorg + '&melogo=' + melogo + '&mencct=' + mencct + '&meyac='
+      // + meyac + '&meaafc=' + meaafc + '&mecifa=' + mecifa + '&meagig=' + meagig);
   }
 
-  getZrstdspsView07(token, descripcion): Observable<any> {
-    return this._http.get(this.url + this.endpointV7 + '?authToken=' + token + '&WSDESCD=' + descripcion);
+  getZrstdspsView07(token, pantalla, wdesc, wfmov): Observable<any> {
+    return this._http.get(this.url + this.endpointV7 + '?authToken=' + token
+      + '&custompantalla=1&w1desc=aplicationpruebasintest&w1fmov=0');
+      // + '&custompantalla=' + pantalla + '&w1desc=' + wdesc + '&w1fmov=' + wfmov);
   }
 
-  getZrstdspsView08(token, detalle): Observable<any> {
-    return this._http.get(this.url + this.endpointV8 + '?authToken=' + token + '&W4RPGI=' + detalle);
+  getZrstdspsView08(token, meyfac, meaafc, mecifa, meagig, melogo, mencct, w4rrred, w4orgn, w4rear, w4rpre): Observable<any> {
+    return this._http.get(this.url + this.endpointV8 + '?authToken=' + token
+      + '&meyfac=0&meaafc=16&mecifa=11&meagig=14&melogo=601&mencct=0000036464930290008' +
+      '&w4rrred=COMAFI%20CASHBACK%2050%%201ER%20COMPRA%20CUOT%20T200&w4orgn=354&w4rear=0&w4rpre=0');
+    // + '&meyfac=' + meyfac + '&meaafc=' + meaafc + '&mecifa=' + mecifa + '&meagig=' + meagig + '&melogo=' + melogo + '&mencct=' + mencct +
+    // '&w4rrred=' + w4rrred + '&w4orgn=' + w4orgn + '&w4rear=' + w4rear + '&w4rpre=' + w4rpre);
   }
 
 }

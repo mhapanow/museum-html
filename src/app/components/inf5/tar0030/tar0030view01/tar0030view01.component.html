@@ -55,7 +55,7 @@
                         </div>
                         <div class="col-md-2">
                             Sucursa:
-                            <strong>{{ tar0030.BRANCH }}</strong>
+                            <strong>{{ tar0030.BRANCH | lpad:3:true }}</strong>
                         </div>
                         <div class="col-md-3">
                             Fec. apertura:
@@ -86,14 +86,14 @@
 
                         <div class="col-md-3">
                             Moneda:
-                            <strong>{{ tar0030.MONEDA }}</strong> Acuerdos: <strong>{{ tar0030.ACUERD }}</strong>
+                            <strong>{{ tar0030.MONEDA | lpad:3:true }}</strong> Acuerdos: <strong>{{ tar0030.ACUERD }}</strong>
                         </div>
                     </div>
 
                     <div class="row ">
                         <div class="col-md-3 col-md-offset-2">
                             Division:
-                            <strong>{{ tar0030.DIVISI }}</strong>
+                            <strong>{{ tar0030.DIVISI | lpad:3:true }}</strong>
                         </div>
                         <div class="col-md-3">
                             Oficial:
@@ -102,13 +102,12 @@
                         <div class="col-md-3">
                             Excepc.:
                             <strong>{{ tar0030.ALTAEX }}</strong> Plan Int.:
-                            <strong>{{ tar0030.PLANIN }}</strong>
+                            <strong>{{ tar0030.PLANIN | lpad:2:true }}</strong>
                         </div>
                     </div>
 
                     <div class="row ">
                         <div class="col-md-3 col-md-offset-2">
-                            Cod. SBS :
                             <strong>{{ tar0030.TIPBCO }} {{ tar0030.BCRACD }}</strong>
                         </div>
                         <div class="col-md-3">
@@ -227,7 +226,7 @@
                         </div>
                         <div class="col-md-3">
                             Fecha pase pend N/A :
-                            <strong>{{ tar0030.FECPNA | date:'dd/MM/yyyy' }}</strong>
+                            <strong>{{ tar0030.FECPNA | date:'dd/MM/yyyy' | sinfecha }}</strong>
                         </div>
                     </div>
 
@@ -240,7 +239,7 @@
                         </div>
                         <div class="col-md-3">
                             Fecha pase Non Accr :
-                            <strong>{{ tar0030.FECNA | date:'dd/MM/yyyy' }}</strong>
+                            <strong>{{ tar0030.FECNA | date:'dd/MM/yyyy' | sinfecha }}</strong>
                         </div>
                     </div>
 
@@ -253,7 +252,7 @@
                         </div>
                         <div class="col-md-3">
                             Fecha pase Write off :
-                            <strong>{{ tar0030.FECWO | date:'dd/MM/yyyy' }}</strong>
+                            <strong>{{ tar0030.FECWO | date:'dd/MM/yyyy' | sinfecha }}</strong>
                         </div>
                     </div>
 
@@ -266,7 +265,7 @@
                         </div>
                         <div class="col-md-3">
                             Fecha últ. ACA activo :
-                            <strong>{{ tar0030.FECUA | date:'dd/MM/yyyy' }}</strong>
+                            <strong>{{ tar0030.FECUA | date:'dd/MM/yyyy' | sinfecha }}</strong>
                         </div>
                     </div>
 

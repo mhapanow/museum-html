@@ -61,12 +61,12 @@ export class Zrstdspsview01Component implements OnInit {
     });
   }
 
-  zrstdspsv03(numcuenta) {
+  zrstdspsv03(dsorg: String, dslogo: String, dscuenta: String, dscent: String, dsaño: String, dscic: String, dsag: String) {
     this.title2 = 'ESO - Pantalla-3';
-    this._zrstdspsService.getZrstdspsView03(this.token, numcuenta).subscribe(
+    this._zrstdspsService.getZrstdspsView03(this.token, dsorg, dslogo, dscuenta, dscent, dsaño, dscic, dsag).subscribe(
       response => {
         if (response.error_message == null) {
-          this.zrstdspsm03 = response.data;
+          this.zrstdspsm03 = response;
         } else {
           this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
         }
@@ -78,9 +78,9 @@ export class Zrstdspsview01Component implements OnInit {
     );
   }
 
-  zrstdspsv07(numcuenta) {
+  zrstdspsv07(pantalla, wdesc, wfmov) {
     this.title2 = 'ESO - Pantalla-7';
-    this._zrstdspsService.getZrstdspsView07(this.token, numcuenta).subscribe(
+    this._zrstdspsService.getZrstdspsView07(this.token, pantalla, wdesc, wfmov).subscribe(
       response => {
         if (response.error_message == null) {
           this.zrstdspsm07 = response.data;

@@ -18,6 +18,8 @@ export class Ccrr0500view03Component implements OnInit {
   // public ccrr0500m03: Ccrr0500m03Model = new Ccrr0500m03Model();
   CRNTAR: String;
   public rowsOnPage = 5;
+  public sortBy = 'NOMCLI';
+  public sortOrder = 'asc';
 
   constructor(
     private _userService: UserService,

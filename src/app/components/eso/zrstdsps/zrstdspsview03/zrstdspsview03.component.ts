@@ -34,21 +34,21 @@ export class Zrstdspsview03Component implements OnInit {
 
   zrstdspsv03() {
     let categoria: String;
-    this._route.params.subscribe(params => {
-      categoria = params['categoria'];
-      this._zrstdspsService.getZrstdspsView03(this.token, categoria).subscribe(
-        response => {
-          if (response.error_message == null) {
-            this.zrstdspsm03 = response.data;
-          } else {
-            this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
-          }
-        },
-        error => {
-          console.log(<any>error);
-          this._toastr.warning('ERROR.: Servidor No Found.', 'Error.', { timeOut: 3000 });
-        }
-      );
-    });
+    // this._route.params.subscribe(params => {
+    //   categoria = params['categoria'];
+    //   this._zrstdspsService.getZrstdspsView03(this.token, categoria).subscribe(
+    //     response => {
+    //       if (response.error_message == null) {
+    //         this.zrstdspsm03 = response.data;
+    //       } else {
+    //         this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
+    //       }
+    //     },
+    //     error => {
+    //       console.log(<any>error);
+    //       this._toastr.warning('ERROR.: Servidor No Found.', 'Error.', { timeOut: 3000 });
+    //     }
+    //   );
+    // });
   }
 }

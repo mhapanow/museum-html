@@ -15,7 +15,7 @@
             Cuenta.:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ zrstreclm02.C2ORGN }} {{ zrstreclm02.C2LOGO }} {{ zrstreclm02.C2ACNB }} {{ zrstreclm02.C2APEN }}
+            {{ zrstreclm02.c2orgn }} {{ zrstreclm02.c2logo }} {{ zrstreclm02.c2acnb }} {{ zrstreclm02.c2apen }}
           </strong>
         </div>
       </div>
@@ -26,7 +26,7 @@
             Fecha Facturación :
           </label>
           <strong class="col-sm-9 control-label pull-right">
-            {{ zrstreclm02.C2FEC | date:'MM/yyyy' }}
+            {{ zrstreclm02.c2fec | date:'MM/yyyy' }}
           </strong>
         </div>
         <div class="col-md-3 col-md-offset-2 form-group">
@@ -34,7 +34,7 @@
             Ciclo :
           </label>
           <strong class="col-sm-9 control-label pull-right">
-            {{ zrstreclm02.C2BICY }}
+            {{ zrstreclm02.c2bicy }}
           </strong>
         </div>
       </div>
@@ -50,7 +50,7 @@
       <div class="row">
         <div class="col-md-9 col-md-offset-2 form-group">
           <label class="col-sm-12 control-label">
-            {{ zrstreclm02.SFLEY2 }}
+            {{ zrstreclm02.sfley2 }}
           </label>
         </div>
       </div>
@@ -60,7 +60,7 @@
 
   <div class="row as400Footer">
     <div class="col lg-12" style="text-align: center;">
-      <button class="btn btn-primary " type="button" [routerLink]="['/zrstreclv1', zrstreclm02.C2ORGN]">
+      <button class="btn btn-primary " type="button" [routerLink]="['/home']">
         Regresar
       </button>
     </div>

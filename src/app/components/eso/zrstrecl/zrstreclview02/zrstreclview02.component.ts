@@ -14,7 +14,7 @@ export class Zrstreclview02Component implements OnInit {
 title: 'ESO - Pantalla ZRSTRECL';
   public identity;
   public token;
-  public zrstreclm02: Zrstreclm02Model[];
+  public zrstreclm02: Zrstreclm02Model;
 
   public rowsOnPage = 5;
 
@@ -26,6 +26,7 @@ title: 'ESO - Pantalla ZRSTRECL';
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
+    this.zrstreclm02 = new Zrstreclm02Model('', '', '', '', '', '', '');
   }
 
   ngOnInit() {
@@ -33,13 +34,27 @@ title: 'ESO - Pantalla ZRSTRECL';
   }
 
   zrstreclv02() {
-    let numcuenta: String;
+    let meorg: String;
+    let melogo: String;
+    let mencct: String;
+    let meyfac: String;
+    let meaafc: String;
+    let mecifa: String;
+    let meagig: String;
+    let cuerpo: String;
     this._route.params.subscribe(params => {
-      numcuenta = params['ncuenta'];
-      this._zrstreclService.getZrstreclView02(this.token, numcuenta).subscribe(
+      meorg = params['meorg'];
+      melogo = params['melogo'];
+      mencct = params['mencct'];
+      meyfac = params['meyfac'];
+      meaafc = params['meaafc'];
+      mecifa = params['mecifa'];
+      meagig = params['meagig'];
+      cuerpo = params['cuerpo'];
+      this._zrstreclService.getZrstreclView02(this.token, meorg, melogo, mencct, meyfac, meaafc, mecifa, meagig, cuerpo).subscribe(
         response => {
           if (response.error_message == null) {
-            this.zrstreclm02 = response.data;
+            this.zrstreclm02 = response;
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }

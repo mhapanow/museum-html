@@ -14,7 +14,7 @@ export class Zrstdspsview06Component implements OnInit {
   title: 'ESO - Pantalla ZRSTDSPS';
   public identity;
   public token;
-  public zrstdspsm06: Zrstdspsm06Model[];
+  public zrstdspsm06: Zrstdspsm06Model;
 
   public rowsOnPage = 5;
 
@@ -26,6 +26,7 @@ export class Zrstdspsview06Component implements OnInit {
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
+    this.zrstdspsm06 = new Zrstdspsm06Model('', '', '', '', '', '', '');
   }
 
   ngOnInit() {
@@ -33,13 +34,25 @@ export class Zrstdspsview06Component implements OnInit {
   }
 
   zrstdspsv06() {
-    let numcuenta: String;
+    let meorg: String;
+    let melogo: String;
+    let mencct: String;
+    let meyac: String;
+    let meaafc: String;
+    let mecifa: String;
+    let meagig: String;
     this._route.params.subscribe(params => {
-      numcuenta = params['ncuenta'];
-      this._zrstdspsService.getZrstdspsView06(this.token, numcuenta).subscribe(
+      meorg = params['meorg'];
+      melogo = params['melogo'];
+      mencct = params['mencct'];
+      meyac = params['meyac'];
+      meaafc = params['meaafc'];
+      mecifa = params['mecifa'];
+      meagig = params['meagig'];
+      this._zrstdspsService.getZrstdspsView06(this.token, meorg, melogo, mencct, meyac, meaafc, mecifa, meagig).subscribe(
         response => {
           if (response.error_message == null) {
-            this.zrstdspsm06 = response.data;
+            this.zrstdspsm06 = response;
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }

@@ -22,7 +22,7 @@
 
 
       <div class="row as400Table">
-        <table class="table table-striped" [mfData]="ccrr0500m03" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+        <table class="table table-striped" [mfData]="ccrr0500m03" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
           <thead>
             <tr>
               <th>
@@ -68,6 +68,7 @@
               </td>
               <td>
                 <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/ccrr0500v1']">Ver</a>
+                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/ccrr0580v1', ccrr0500Item.CRNUCR ]">Próximas Cuotas</a>
               </td>
             </tr>
           </tbody>
