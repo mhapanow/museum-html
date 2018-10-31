@@ -17,6 +17,7 @@ export class Zrstonlnview01Component implements OnInit {
   public token;
 
   public rowsOnPage = 5;
+  ncuenta: any;
 
   constructor(
     private _userService: UserService,
@@ -31,6 +32,13 @@ export class Zrstonlnview01Component implements OnInit {
 
   ngOnInit() {
   }
+  lPads(valor: String) {
+    if ((valor + '').length === 0 || (valor + '').length >= 19) {
+      return valor;
+    } else {
+      return new Array(1 + 19 - (valor + '').length).join('0') + valor;
+    }
+  }
 
   onSubmit(form: NgForm) {
     this._router.navigate(['/zrstonlnv2',
@@ -39,7 +47,7 @@ export class Zrstonlnview01Component implements OnInit {
                         form.value.aging,
                         form.value.org,
                         form.value.procesador,
-                        form.value.ncuenta,
+                        this.lPads(form.value.ncuenta),
                         form.value.ntarjeta,
                         form.value.inicialDesde,
                         form.value.inicialHasta,

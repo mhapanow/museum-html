@@ -24,6 +24,16 @@ export class Zrstdspsview01Component implements OnInit {
 
   public rowsOnPage = 5;
 
+dsano4: String;
+dscent: String;
+dsano: String;
+dscic: String;
+dsag: String;
+dsorg: String;
+dslogo: String;
+dscuenta: String;
+dstitular: String;
+
   constructor(
     private _userService: UserService,
     private _route: ActivatedRoute,
@@ -41,14 +51,22 @@ export class Zrstdspsview01Component implements OnInit {
   }
 
   zrstdspsv01() {
-    let numcuenta: String;
     this._route.params.subscribe(params => {
-      numcuenta = params['ncuenta'];
-      this._zrstdspsService.getZrstdspsView01(this.token, numcuenta).subscribe(
+      this.dsano4 = params['dsano4'];
+      this.dscent = params['dsano4'].substring(0, 2);
+      this.dsano = params['dsano4'].substring(2, 4);
+      this.dscic = params['dscic'];
+      this.dsag = params['dsag'];
+      this.dsorg = params['dsorg'];
+      this.dslogo = params['dslogo'];
+      this.dscuenta = params['dscuenta'];
+      this.dstitular = params['dstitular'];
+      this._zrstdspsService.getZrstdspsView01(this.token, this.dsano4, this.dscent, this.dsano, this.dscic, this.dsag, this.dsorg,
+        this.dslogo, this.dscuenta, this.dstitular).subscribe(
         response => {
           this.zrstdspsm01 = null;
           if (response.error_message == null) {
-            this.zrstdspsm01 = response.data;
+            this.zrstdspsm01 = response;
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }

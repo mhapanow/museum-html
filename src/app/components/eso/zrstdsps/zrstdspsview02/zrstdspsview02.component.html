@@ -22,11 +22,11 @@
 
       <div class="row">
         <div class="col-md-5 col-md-offset-2 form-group">
-          <label class="col-sm-3 control-label">
+          <label class="col-sm-6 control-label">
             Saldo Unificado.: $
           </label>
-          <strong class="col-sm-9 control-label pull-right">
-            {{ zrstdspsm02.MESUNSD }}
+          <strong class="col-sm-6 control-label pull-right">
+            {{ zrstdspsm02.MESUNSD | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-5 form-group">
@@ -34,18 +34,18 @@
             u$s
           </label>
           <strong class="col-sm-9 control-label pull-right">
-            {{ zrstdspsm02.MESUNUD }}
+            {{ zrstdspsm02.MESUNUD | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-5 col-md-offset-2 form-group">
-          <label class="col-sm-3 control-label">
+          <label class="col-sm-6 control-label">
             Saldo.: $
           </label>
-          <strong class="col-sm-9 control-label pull-right">
-            {{ zrstdspsm02.MESTLCD }}
+          <strong class="col-sm-6 control-label pull-right">
+            {{ zrstdspsm02.MESTLCD | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-5 form-group">
@@ -53,18 +53,18 @@
             u$s
           </label>
           <strong class="col-sm-9 control-label pull-right">
-            {{ zrstdspsm02.MESTICD }}
+            {{ zrstdspsm02.MESTICD | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-5 col-md-offset-2 form-group">
-          <label class="col-sm-3 control-label">
+          <label class="col-sm-6 control-label">
             Pago Mínimo.: $
           </label>
-          <strong class="col-sm-9 control-label pull-right">
-            {{ zrstdspsm02.MEPMIND }}
+          <strong class="col-sm-6 control-label pull-right">
+            {{ zrstdspsm02.MEPMIND | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-5 form-group">
@@ -72,18 +72,18 @@
             u$s
           </label>
           <strong class="col-sm-9 control-label pull-right">
-            {{ zrstdspsm02.MEPMIDD }}
+            {{ zrstdspsm02.MEPMIDD | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-3 col-md-offset-2 form-group">
-          <label class="col-sm-3 control-label">
+          <label class="col-sm-6 control-label">
             L. Unif.:
           </label>
-          <strong class="col-sm-9 control-label">
-            {{ zrstdspsm02.MEMLICD }}
+          <strong class="col-sm-6 control-label">
+            {{ zrstdspsm02.MEMLICD | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-3 form-group">
@@ -91,7 +91,7 @@
             L. Comp.:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ zrstdspsm02.MEMLCOD }}
+            {{ zrstdspsm02.MEMLCOD | formmoneda:2:',':'.' }}
           </strong>
         </div>
         <div class="col-md-3 form-group">
@@ -99,18 +99,18 @@
             Ciclo.:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ zrstdspsm02.MEBICYD }}
+            {{ zrstdspsm02.MEBICYD | formmoneda:2:',':'.' }}
           </strong>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-3 col-md-offset-2 form-group">
-          <label class="col-sm-3 control-label">
+          <label class="col-sm-6 control-label">
             Cot. Compra.:
           </label>
-          <strong class="col-sm-9 control-label">
-            {{ zrstdspsm02.MECOCOD }}
+          <strong class="col-sm-6 control-label">
+            {{ zrstdspsm02.MECOCOD | formmoneda:3:',':'.' }}
           </strong>
         </div>
         <div class="col-md-3 form-group">
@@ -118,18 +118,18 @@
             Cot. Venta.:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ zrstdspsm02.MECOVED }}
+            {{ zrstdspsm02.MECOVED | formmoneda:3:',':'.' }}
           </strong>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-2 col-md-offset-2 form-group">
-          <label class="col-sm-3 control-label">
+          <label class="col-sm-6 control-label">
             Cierre.:
           </label>
-          <strong class="col-sm-9 control-label">
-            {{ zrstdspsm02.MEFECIED | date:'dd/MM/yyyy' }}
+          <strong class="col-sm-6 control-label">
+            {{ zrstdspsm02.MEFECIED }}
           </strong>
         </div>
         <div class="col-md-2 form-group">
@@ -137,7 +137,7 @@
             Vence.:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ zrstdspsm02.MEFEVTOD | date:'dd/MM/yyyy' }}
+            {{ zrstdspsm02.MEFEVTOD }}
           </strong>
         </div>
         <div class="col-md-2 form-group">
@@ -145,7 +145,7 @@
             Prox. Cierre.:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ zrstdspsm02.MEFEPCIED | date:'dd/MM/yyyy' }}
+            {{ zrstdspsm02.MEFEPCIED }}
           </strong>
         </div>
         <div class="col-md-2 form-group">
@@ -153,26 +153,26 @@
             Prox. Vto.:
           </label>
           <strong class="col-sm-6 control-label">
-            {{ zrstdspsm02.MEFEPVTOD | date:'dd/MM/yyyy' }}
+            {{ zrstdspsm02.MEFEPVTOD }}
           </strong>
         </div>
       </div>
 
       <div class="row as400Table">
-        <table class="table table-striped" [mfData]="zrstdspsm02" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+        <table class="table table-striped" [mfData]="zrstdspsm02.data" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
           <thead>
             <tr>
               <th>
-                <mfDefaultSorter by="W2DESCI">Descripción</mfDefaultSorter>
+                <mfDefaultSorter by="w2desci">Descripción</mfDefaultSorter>
               </th>
               <th>
-                <mfDefaultSorter by="W2PAIS">País</mfDefaultSorter>
+                <mfDefaultSorter by="w2pais">País</mfDefaultSorter>
               </th>
               <th>
-                <mfDefaultSorter by="W2IORG">Imp. Org.</mfDefaultSorter>
+                <mfDefaultSorter by="w2iorg">Imp. Org.</mfDefaultSorter>
               </th>
               <th>
-                <mfDefaultSorter by="W2AMNT">Imp. U$S</mfDefaultSorter>
+                <mfDefaultSorter by="w2amnt">Imp. U$S</mfDefaultSorter>
               </th>
               <th>
                 Acciones
@@ -182,23 +182,25 @@
           <tbody>
             <tr *ngFor="let zrstdspsItem of mf.data">
               <td>
-                {{ zrstdspsItem.W2DESCI }}
+                {{ zrstdspsItem.w2desci }}
               </td>
               <td>
-                {{ zrstdspsItem.W2PAIS }}
+                {{ zrstdspsItem.w2pais }}
               </td>
               <td>
-                {{ zrstdspsItem.W2IORG }}
+                {{ zrstdspsItem.w2iorg }}
               </td>
               <td>
-                {{ zrstdspsItem.W2AMNT }}
+                {{ zrstdspsItem.w2amnt | formmoneda:2:',':'.' }}
               </td>
               <td>
-                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstdspsv4', zrstdspsm02.MEORGND]">F14 - Bonus</a>
+                <!-- <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstdspsv4', zrstdspsm02.MEORGND]">F14 - Bonus</a>
                 <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstrecmv1', zrstdspsm02.MEORGND]">F8 - Mailings</a>
                 <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstreclv1', zrstdspsm02.MEORGND]">F10 - Leyenda</a>
                 <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstdspsv5', zrstdspsm02.MEORGND]">F15 - Locales</a>
-                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstdspsv6', zrstdspsm02.MEORGND]">F16 - ECS</a>
+                <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstdspsv6', zrstdspsm02.MEORGND]">F16 - ECS</a> -->
+                <a class="btn btn-primary as400ButtonInTable" data-toggle="modal" data-target="#myModal7" (click)='zrstdspsv07(2, zrstdspsItem.w2desci, 0)'>Vista
+        07</a>
               </td>
             </tr>
           </tbody>
@@ -216,12 +218,29 @@
 
   <div class="row as400Footer">
     <div class="col lg-12" style="text-align: center;">
-      <button class="btn btn-primary " type="button" [routerLink]="['/home']">
+      
+      <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstrecmv1', zrstdspsm02.MEORGND, zrstdspsm02.MELOGOD, zrstdspsm02.MEACNBD, dscent, dsano, zrstdspsm02.MEBICYD, dsag]">F8 - Mailings</a>
+
+      <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstreclv1', zrstdspsm02.MEORGND, zrstdspsm02.MELOGOD, zrstdspsm02.MEACNBD, dscent, dsano, zrstdspsm02.MEBICYD, 15, 2]">F10 - Leyenda</a>
+
+      <a class="btn btn-primary as400ButtonInTable" data-toggle="modal" data-target="#myModal3" (click)='zrstdspsv03(zrstdspsm02.MEORGND, zrstdspsm02.MELOGOD, zrstdspsm02.MEACNBD,dscent, dsano, zrstdspsm02.MEBICYD, dsag)'>F13 - </a>
+
+      <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstdspsv4', dscent, dsano, zrstdspsm02.MEBICYD, dsag, zrstdspsm02.MELOGOD, zrstdspsm02.MEACNBD]">F14 - Bonus</a>
+
+      <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstdspsv5', zrstdspsm02.MEORGND, zrstdspsm02.MELOGOD, zrstdspsm02.MEACNBD, dscent, dsano, zrstdspsm02.MEBICYD, dsag]">F15 - Locales</a>
+
+      <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstdspsv6', zrstdspsm02.MEORGND, zrstdspsm02.MELOGOD, zrstdspsm02.MEACNBD, dscent, dsano, zrstdspsm02.MEBICYD, dsag]">F16 - ECS</a>
+      
+    </div>
+    <div class="col lg-12" style="text-align: center;">
+      <br>
+      <button class="btn btn-primary " type="button" [routerLink]="['/zrstonlnv1']">
         Regresar
       </button>
+    
     </div>
 
-    <div class="col lg-12" style="text-align: center;">
+    <!-- <div class="col lg-12" style="text-align: center;">
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3" (click)='zrstdspsv03(zrstdspsm02.MEORGND)'>
         Launch demo modal
       </button>
@@ -231,7 +250,7 @@
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal7" (click)='zrstdspsv07(zrstdspsm02.MEORGND)'>
         Launch demo modal
       </button>
-    </div>
+    </div> -->
 
   </div>
 

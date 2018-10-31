@@ -18,11 +18,20 @@ export class Zrstdspsview02Component implements OnInit {
   title2: String;
   public identity;
   public token;
-  public zrstdspsm02: Zrstdspsm02Model[];
+  public zrstdspsm02: Zrstdspsm02Model = new Zrstdspsm02Model();
   public zrstdspsm03: Zrstdspsm03Model;
   public zrstdspsm07: Zrstdspsm07Model;
 
   public rowsOnPage = 5;
+
+  dscent: String;
+  dsano: String;
+  dscic: String;
+  dsag: String;
+  dsorg: String;
+  dslogo: String;
+  dscuenta: String;
+  dstitular: String;
 
   constructor(
     private _userService: UserService,
@@ -41,13 +50,21 @@ export class Zrstdspsview02Component implements OnInit {
   }
 
   zrstdspsv02() {
-    let numcuenta: String;
+    
     this._route.params.subscribe(params => {
-      numcuenta = params['ncuenta'];
-      this._zrstdspsService.getZrstdspsView02(this.token, numcuenta).subscribe(
+      console.log(params);
+      this.dscent = params['dscent'];
+      this.dsano = params['dsano'];
+      this.dscic = params['dscic'];
+      this.dsag = params['dsag'];
+      this.dsorg = params['dsorg'];
+      this.dslogo = params['dslogo'];
+      this.dscuenta = params['dscuenta'];
+      this.dstitular = params['dstitular'];
+      this._zrstdspsService.getZrstdspsView02(this.token, this.dscent, this.dsano, this.dscic, this.dsag, this.dsorg, this.dslogo, this.dscuenta, this.dstitular).subscribe(
         response => {
           if (response.error_message == null) {
-            this.zrstdspsm02 = response.data;
+            this.zrstdspsm02 = response;
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }

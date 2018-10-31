@@ -22,10 +22,10 @@ export class Zrstdspsm01Model {
                 public TXTAVISO: string;
 
                 // Tabla
-                public W1SEOP: string;
-                public W1DESC: string;
-                public W1AMNT: string;
-                public W1REFC: string;
-                public W1MRCH: string;
+                public w1seop: string;
+                public w1desc: string;
+                public w1amnt: string;
+                public w1refc: string;
+                public w1mrch: string;
 
 }
