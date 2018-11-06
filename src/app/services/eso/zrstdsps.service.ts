@@ -44,7 +44,7 @@ export class ZrstdspsService {
   getZrstdspsView03(token, dsorg: String, dslogo: String, dscuenta: String, dscent, dsaño, dscic, dsag): Observable<any> {
     return this._http.get(this.url + this.endpointV3 + '?authToken=' + token
      //+ '&dsorg=352&dslogo=302&dscuenta=0005123708220017239&dscent=20&dsaño=16&dscic=03&dsag=21');
-     + '&dsorg=' + dsorg + '&dslogo=' + dslogo + '&dscuenta=' + dscuenta + '&dscent=' + dscent + '&dsaño=' + dsaño
+     + '&dsorg=' + dsorg + '&dslogo=' + dslogo + '&dscuenta=' + dscuenta + '&dscent=' + dscent + '&dsano=' + dsaño
      + '&dscic=' + dscic + '&dsag=' + dsag );
   }
 
@@ -69,9 +69,11 @@ export class ZrstdspsService {
       + meyac + '&meaafc=' + meaafc + '&mecifa=' + mecifa + '&meagig=' + meagig);
   }
 
-  getZrstdspsView07(token, pantalla, wdesc, wfmov): Observable<any> {
+  getZrstdspsView07(token, pantalla, w1desc, w1fmov, w1amnt, w1tefm, w1tnoa, w1iorg,w2desc, w2fmov, w2amnt, w2tefm, w2tnoa, w2iorg): Observable<any> {
     return this._http.get(this.url + this.endpointV7 + '?authToken=' + token
-      + '&custompantalla=1&w1desc=aplicationpruebasintest&w1fmov=0');
+    + '&custompantalla=' + pantalla + '&w1desc=' + w1desc + '&w1fmov=' + w1fmov + '&w1amnt=' + w1amnt + '&w1tefm=' + w1tefm + '&w1tnoa=' + w1tnoa + '&w1iorg=' + w1iorg
+    + '&w2desc=' + w2desc + '&w2fmov=' + w2fmov + '&w2amnt=' + w2amnt + '&w2tefm=' + w2tefm + '&w2tnoa=' + w2tnoa + '&w2iorg=' + w2iorg
+    );
       // + '&custompantalla=' + pantalla + '&w1desc=' + wdesc + '&w1fmov=' + wfmov);
   }
 

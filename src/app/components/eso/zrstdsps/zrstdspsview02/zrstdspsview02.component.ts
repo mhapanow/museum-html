@@ -52,7 +52,7 @@ export class Zrstdspsview02Component implements OnInit {
   zrstdspsv02() {
     
     this._route.params.subscribe(params => {
-      console.log(params);
+      //console.log(params);
       this.dscent = params['dscent'];
       this.dsano = params['dsano'];
       this.dscic = params['dscic'];
@@ -82,7 +82,7 @@ export class Zrstdspsview02Component implements OnInit {
     this._zrstdspsService.getZrstdspsView03(this.token, dsorg, dslogo, dscuenta, dscent, dsaño, dscic, dsag).subscribe(
       response => {
         if (response.error_message == null) {
-          this.zrstdspsm03 = response.data;
+          this.zrstdspsm03 = response;
         } else {
           this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
         }
@@ -94,12 +94,12 @@ export class Zrstdspsview02Component implements OnInit {
     );
   }
 
-  zrstdspsv07(pantalla, wdesc, wfmov) {
+  zrstdspsv07(pantalla, wdesc, wfmov, wamnt, wtefm, wtnoa, wiorg) {
     this.title2 = 'ESO - Pantalla-7';
-    this._zrstdspsService.getZrstdspsView07(this.token, pantalla, wdesc, wfmov).subscribe(
+    this._zrstdspsService.getZrstdspsView07(this.token, pantalla, '', '', '', '', '', '', wdesc, wfmov, wamnt, wtefm, wtnoa, wiorg).subscribe(
       response => {
         if (response.error_message == null) {
-          this.zrstdspsm07 = response.data;
+          this.zrstdspsm07 = response;
         } else {
           this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
         }

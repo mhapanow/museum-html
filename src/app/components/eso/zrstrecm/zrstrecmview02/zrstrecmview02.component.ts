@@ -45,9 +45,9 @@ export class Zrstrecmview02Component implements OnInit {
       meorg = params['meorg'];
       melogo = params['melogo'];
       mencct = params['mencct'];
-      meyfac = params['meyfac'];
-      meaafc = params['meaafc'];
-      mecifa = params['mecifa'];
+      meyfac = params['meyfac'].substring(3,3+2);
+      meaafc = params['meyfac'].substring(5,5+2);
+      mecifa = params['meyfac'].substring(0,0+2);
       meagig = params['meagig'];
       this._zrstrecmService.getZrstrecmView02(this.token, meorg, melogo, mencct, meyfac, meaafc, mecifa, meagig).subscribe(
         response => {

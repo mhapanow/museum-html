@@ -24,15 +24,15 @@ export class Zrstdspsview01Component implements OnInit {
 
   public rowsOnPage = 5;
 
-dsano4: String;
-dscent: String;
-dsano: String;
-dscic: String;
-dsag: String;
-dsorg: String;
-dslogo: String;
-dscuenta: String;
-dstitular: String;
+  dsano4: String;
+  dscent: String;
+  dsano: String;
+  dscic: String;
+  dsag: String;
+  dsorg: String;
+  dslogo: String;
+  dscuenta: String;
+  dstitular: String;
 
   constructor(
     private _userService: UserService,
@@ -67,6 +67,7 @@ dstitular: String;
           this.zrstdspsm01 = null;
           if (response.error_message == null) {
             this.zrstdspsm01 = response;
+            //console.log(this.zrstdspsm01);
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }
@@ -81,6 +82,7 @@ dstitular: String;
 
   zrstdspsv03(dsorg: String, dslogo: String, dscuenta: String, dscent: String, dsaño: String, dscic: String, dsag: String) {
     this.title2 = 'ESO - Pantalla-3';
+    //console.log(dsaño);
     this._zrstdspsService.getZrstdspsView03(this.token, dsorg, dslogo, dscuenta, dscent, dsaño, dscic, dsag).subscribe(
       response => {
         if (response.error_message == null) {
@@ -96,12 +98,14 @@ dstitular: String;
     );
   }
 
-  zrstdspsv07(pantalla, wdesc, wfmov) {
+  zrstdspsv07(pantalla, wdesc, wfmov, wamnt, wtefm, wtnoa, wiorg) {
     this.title2 = 'ESO - Pantalla-7';
-    this._zrstdspsService.getZrstdspsView07(this.token, pantalla, wdesc, wfmov).subscribe(
+    console.log(wdesc, wfmov, wamnt, wtefm, wtnoa, wiorg);
+    this._zrstdspsService.getZrstdspsView07(this.token, pantalla, wdesc, wfmov, wamnt, wtefm, wtnoa, wiorg, '', '', '', '', '', '').subscribe(
       response => {
+        //console.log(response);
         if (response.error_message == null) {
-          this.zrstdspsm07 = response.data;
+          this.zrstdspsm07 = response;
         } else {
           this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
         }

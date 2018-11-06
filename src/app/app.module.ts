@@ -56,6 +56,7 @@ import { FormcuentaPipe } from './pipes/formcuenta.pipe';
 import { FormmonedaPipe } from './pipes/formmoneda.pipe';
 import { SinfechaPipe } from './pipes/sinfecha.pipe';
 import { CeroPipe } from './pipes/cero.pipe';
+import { FormmonedaceroPipe } from './pipes/formmonedacero.pipe';
 
 @NgModule({
   declarations: [
@@ -104,6 +105,7 @@ import { CeroPipe } from './pipes/cero.pipe';
     FormmonedaPipe,
     SinfechaPipe,
     CeroPipe,
+    FormmonedaceroPipe,
   ],
   imports: [
     BrowserModule,

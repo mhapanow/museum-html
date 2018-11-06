@@ -6,7 +6,7 @@ export class Zrstdspsm05Model {
                 public MENAMED: string,
                 public FECHFAC: string,
                 public MEBICYD: string,
-                public W6LINEMS: string
+                public w6linems: string
 
     ) { }
 }

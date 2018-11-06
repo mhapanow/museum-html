@@ -20,6 +20,7 @@ export class Zrstdspsm01Model {
                 public MEFEPCIED: string;
                 public MEFEPVTOD: string;
                 public TXTAVISO: string;
+                public MECIFA:string;
 
                 // Tabla
                 public w1seop: string;
@@ -27,5 +28,9 @@ export class Zrstdspsm01Model {
                 public w1amnt: string;
                 public w1refc: string;
                 public w1mrch: string;
+                public w1tefm: string;
+                public w1tnoa: string;
+                public w1iorg: string;
+                public w1fmov: string;
 
 }

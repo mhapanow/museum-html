@@ -1,70 +1,70 @@
 <div class="row  border-bottom white-bg dashboard-header">
-  <div class="row text-center as400Header">
-    <h2>{{ title }}</h2>
-  </div>
-
-  <div class="row as400Body">
-    <div class="row as400Subtitle">
-      <h3>CONSULTA DE LEYENDAS</h3>
+    <div class="row text-center as400Header">
+        <h2>{{ title }}</h2>
     </div>
-    <div class="row">
-       
-      <div class="row">
-        <div class="col-md-9 col-md-offset-2 form-group">
-          <label class="col-sm-6 control-label">
+
+    <div class="row as400Body">
+        <div class="row as400Subtitle">
+            <h3>CONSULTA DE LEYENDAS</h3>
+        </div>
+        <div class="row">
+
+            <div class="row">
+                <div class="col-md-9 col-md-offset-2 form-group">
+                    <label class="col-sm-6 control-label">
             Cuenta.:
           </label>
-          <strong class="col-sm-6 control-label">
+                    <strong class="col-sm-6 control-label">
             {{ zrstrecmm02.c1orgn }} {{ zrstrecmm02.c1logo }} {{ zrstrecmm02.c1acnb }} {{ zrstrecmm02.c1apen }}
           </strong>
-        </div>
-      </div>
+                </div>
+            </div>
 
 
-      <div class="row">
-        <div class="col-md-2 col-md-offset-2 form-group">
-          <label class="col-sm-3 control-label">
+            <div class="row">
+                <div class="col-md-2 col-md-offset-2 form-group">
+                    <label class="col-sm-3 control-label">
             Fecha Facturación :
           </label>
-          <strong class="col-sm-9 control-label pull-right">
-            {{ zrstrecmm02.c1fec | date:'MM/yyyy' }}
+                    <strong class="col-sm-9 control-label pull-right">
+            {{ zrstrecmm02.c1fec }}
           </strong>
-        </div>
-        <div class="col-md-3 col-md-offset-2 form-group">
-          <label class="col-sm-3 control-label">
+                </div>
+                <div class="col-md-3 col-md-offset-2 form-group">
+                    <label class="col-sm-3 control-label">
             Ciclo :
           </label>
-          <strong class="col-sm-9 control-label pull-right">
+                    <strong class="col-sm-9 control-label pull-right">
             {{ zrstrecmm02.c1bicy }}
           </strong>
-        </div>
-      </div>
+                </div>
+            </div>
 
-      <div class="row">
-        <div class="col-md-5 col-md-offset-2 form-group">
-          <label class="col-sm-3 control-label text-center">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-2 form-group">
+                    <label class="col-sm-3 control-label text-center">
              {{ zrstrecmm02.c1titu }}
           </label>
-        </div>
-      </div>
+                </div>
+            </div>
 
-      <div class="row">
-        <div class="col-md-9 col-md-offset-2 form-group">
-          <label class="col-sm-12 control-label">
+            <div class="row">
+                <div class="col-md-9 col-md-offset-2 form-group">
+                    <label class="col-sm-12 control-label">
             {{ zrstrecmm02.sfley1 }}
           </label>
+                </div>
+            </div>
+
         </div>
-      </div>
-
     </div>
-  </div>
 
-  <div class="row as400Footer">
-    <div class="col lg-12" style="text-align: center;">
-      <button class="btn btn-primary " type="button" [routerLink]="['/home']">
+    <div class="row as400Footer">
+        <div class="col lg-12" style="text-align: center;">
+            <button class="btn btn-primary " type="button" [routerLink]="['/home']">
         Regresar
       </button>
+        </div>
     </div>
-  </div>
 
 </div>
