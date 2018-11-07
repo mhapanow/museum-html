@@ -100,3 +100,33 @@
     border-top: 1px solid #676a6c;
     padding-top: 10px;
 }
+
+
+
+.animated {
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+/* SVG Loading*/
+svg path,
+svg rect{
+  fill: black;
+}

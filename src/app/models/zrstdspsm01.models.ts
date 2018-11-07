@@ -21,16 +21,17 @@ export class Zrstdspsm01Model {
                 public MEFEPVTOD: string;
                 public TXTAVISO: string;
                 public MECIFA:string;
+                public MEAPEN:string;
 
                 // Tabla
-                public w1seop: string;
-                public w1desc: string;
-                public w1amnt: string;
-                public w1refc: string;
-                public w1mrch: string;
-                public w1tefm: string;
-                public w1tnoa: string;
-                public w1iorg: string;
-                public w1fmov: string;
+                public w1seop: string = '';
+                public w1desc: string = '';
+                public w1amnt: string = '';
+                public w1refc: string = '';
+                public w1mrch: string = '';
+                public w1tefm: string = '';
+                public w1tnoa: string = '';
+                public w1iorg: string = '';
+                public w1fmov: string = '';
 
 }

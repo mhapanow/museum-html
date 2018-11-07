@@ -9,63 +9,62 @@
         </div>
         <div class="row">
 
+            <div class="row">
+                <div class="col-md-9 col-md-offset-2 form-group">
+                    <label class="col-sm-3 control-label">
+                        Cuenta.:
+                    </label>
+                    <strong class="col-sm-9 control-label">
+                        {{ zrstrecmm01.p1orgn }} {{ zrstrecmm01.p1logo }} {{ zrstrecmm01.p1acnb }} {{ zrstrecmm01.p1apen }}
+                    </strong>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2 form-group">
+                    <label class="col-sm-6 control-label">
+                        Fecha Facturación :
+                    </label>
+                    <strong class="col-sm-6 control-label pull-right">
+                        {{ zrstrecmm01.p1fec }}
+                    </strong>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label class="col-sm-3 control-label">
+                        Ciclo :
+                    </label>
+                    <strong class="col-sm-9 control-label pull-right">
+                        {{ zrstrecmm01.p1bicy }}
+                    </strong>
+                </div>
+            </div>
 
             <div class="row">
                 <div class="col-md-9 col-md-offset-2 form-group">
-                    <label class="col-sm-6 control-label">
-            Cuenta.:
-          </label>
-                    <strong class="col-sm-6 control-label">
-            {{ zrstrecmm01.p1orgn }} {{ zrstrecmm01.p1logo }} {{ zrstrecmm01.p1acnb }} {{ zrstrecmm01.p1apen }}
-          </strong>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-2 col-md-offset-2 form-group">
-                    <label class="col-sm-3 control-label">
-            Fecha Facturación :
-          </label>
-                    <strong class="col-sm-9 control-label pull-right">
-            {{ zrstrecmm01.p1fec }}
-          </strong>
-                </div>
-                <div class="col-md-3 col-md-offset-2 form-group">
-                    <label class="col-sm-3 control-label">
-            Ciclo :
-          </label>
-                    <strong class="col-sm-9 control-label pull-right">
-            {{ zrstrecmm01.p1bicy }}
-          </strong>
+                    <label class="col-sm-12 control-label text-center">
+                        Indique el mailing que desea consultar:
+                    </label>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-5 col-md-offset-2 form-group">
-                    <label class="col-sm-3 control-label text-center">
-            Indique el mailing que desea consultar:
-          </label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 col-md-offset-2 form-group">
+                <div class="col-md-9 col-md-offset-2 form-group">
                     <span class="input-group-btn">
-            <button type="button" type="submit" class="btn btn-primary" [routerLink]="['/zrstrecmv2', zrstrecmm01.p1orgn, zrstrecmm01.p1logo, zrstrecmm01.p1acnb, zrstrecmm01.p1fec, 00,  00, zrstrecmm01.p1bicy ]">
-              <i class="fa fa-envelope"></i> Mailing de Marketing
-            </button>
-          </span>
+                        <button type="button" type="submit" class="btn btn-primary" [routerLink]="['/zrstrecmv2', zrstrecmm01.p1orgn, zrstrecmm01.p1logo, zrstrecmm01.p1acnb, zrstrecmm01.p1fec, zrstrecmm01.p1bicy, zrstrecmm01.p1apen ]">
+                            <i class="fa fa-envelope"></i> Mailing de Marketing
+                        </button>
+                    </span>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-6 col-md-offset-2 form-group">
+                <div class="col-md-9 col-md-offset-2 form-group">
                     <span class="input-group-btn">
-            <button type="button" type="submit" class="btn btn-primary" [routerLink]="['/zrstrecmv2', zrstrecmm01.p1orgn, zrstrecmm01.p1logo, zrstrecmm01.p1acnb, zrstrecmm01.p1fec, 00,  00, zrstrecmm01.p1bicy ]">
-              <i class="fa fa-envelope-o"></i> Mailing de Servicios
-            </button>
-          </span>
+                        <button type="button" type="submit" class="btn btn-primary" [routerLink]="['/zrstrecmv2', zrstrecmm01.p1orgn, zrstrecmm01.p1logo, zrstrecmm01.p1acnb, zrstrecmm01.p1fec, zrstrecmm01.p1bicy, zrstrecmm01.p1apen ]">
+                            <i class="fa fa-envelope-o"></i> Mailing de Servicios
+                        </button>
+                    </span>
                 </div>
             </div>
 

@@ -41,6 +41,7 @@ export class Zrstrecmview02Component implements OnInit {
     let meaafc: String;
     let mecifa: String;
     let meagig: String;
+    let meapen: String;
     this._route.params.subscribe(params => {
       meorg = params['meorg'];
       melogo = params['melogo'];
@@ -49,7 +50,8 @@ export class Zrstrecmview02Component implements OnInit {
       meaafc = params['meyfac'].substring(5,5+2);
       mecifa = params['meyfac'].substring(0,0+2);
       meagig = params['meagig'];
-      this._zrstrecmService.getZrstrecmView02(this.token, meorg, melogo, mencct, meyfac, meaafc, mecifa, meagig).subscribe(
+      meapen = params['meapen'];
+      this._zrstrecmService.getZrstrecmView02(this.token, meorg, melogo, mencct, meyfac, meaafc, mecifa, meagig, meapen).subscribe(
         response => {
           if (response.error_message == null) {
             this.zrstrecmm02 = response;

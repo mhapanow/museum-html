@@ -24,6 +24,8 @@ export class Zrstdspsview02Component implements OnInit {
 
   public rowsOnPage = 5;
 
+  cargando: boolean = true;
+
   dscent: String;
   dsano: String;
   dscic: String;
@@ -79,36 +81,46 @@ export class Zrstdspsview02Component implements OnInit {
 
   zrstdspsv03( dsorg, dslogo, dscuenta, dscent, dsaño, dscic, dsag) {
     this.title2 = 'ESO - Pantalla-3';
-    this._zrstdspsService.getZrstdspsView03(this.token, dsorg, dslogo, dscuenta, dscent, dsaño, dscic, dsag).subscribe(
-      response => {
-        if (response.error_message == null) {
-          this.zrstdspsm03 = response;
-        } else {
-          this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
-        }
-      },
-      error => {
-        console.log(<any>error);
-        this._toastr.warning('ERROR.: Servidor No Found.', 'Error.', { timeOut: 3000 });
-      }
-    );
+    this.cargando = true;
+    let promesa = new Promise ( (resolve, reject) => {
+          this._zrstdspsService.getZrstdspsView03(this.token, dsorg, dslogo, dscuenta, dscent, dsaño, dscic, dsag).subscribe(
+            response => {
+              if (response.error_message == null) {
+                this.cargando = false;
+                this.zrstdspsm03 = response;
+                resolve();
+              } else {
+                this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
+              }
+            },
+            error => {
+              console.log(<any>error);
+              this._toastr.warning('ERROR.: Servidor No Found.', 'Error.', { timeOut: 3000 });
+            }
+          );
+    });
   }
 
   zrstdspsv07(pantalla, wdesc, wfmov, wamnt, wtefm, wtnoa, wiorg) {
     this.title2 = 'ESO - Pantalla-7';
-    this._zrstdspsService.getZrstdspsView07(this.token, pantalla, '', '', '', '', '', '', wdesc, wfmov, wamnt, wtefm, wtnoa, wiorg).subscribe(
-      response => {
-        if (response.error_message == null) {
-          this.zrstdspsm07 = response;
-        } else {
-          this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
-        }
-      },
-      error => {
-        console.log(<any>error);
-        this._toastr.warning('ERROR.: Servidor No Found.', 'Error.', { timeOut: 3000 });
-      }
-    );
+    this.cargando = true;
+    let promesa = new Promise ( (resolve, reject) => {
+          this._zrstdspsService.getZrstdspsView07(this.token, pantalla, '', '', '', '', '', '', wdesc, wfmov, wamnt, wtefm, wtnoa, wiorg).subscribe(
+            response => {
+              if (response.error_message == null) {
+                this.cargando = false;
+                this.zrstdspsm07 = response;
+                resolve();
+              } else {
+                this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
+              }
+            },
+            error => {
+              console.log(<any>error);
+              this._toastr.warning('ERROR.: Servidor No Found.', 'Error.', { timeOut: 3000 });
+            }
+          );
+     });
   }
 
 }
