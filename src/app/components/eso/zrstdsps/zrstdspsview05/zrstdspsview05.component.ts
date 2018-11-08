@@ -5,6 +5,8 @@ import { UserService } from '../../../../services/user.service';
 import { Zrstdspsm05Model } from '../../../../models/zrstdspsm05.models';
 import { ZrstdspsService } from '../../../../services/eso/zrstdsps.service';
 
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-zrstdspsview05',
   templateUrl: './zrstdspsview05.component.html',
@@ -22,7 +24,8 @@ export class Zrstdspsview05Component implements OnInit {
     private _userService: UserService,
     private _route: ActivatedRoute,
     private _toastr: ToastrService,
-    private _zrstdspsService: ZrstdspsService
+    private _zrstdspsService: ZrstdspsService,
+    private _location: Location
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
@@ -31,6 +34,10 @@ export class Zrstdspsview05Component implements OnInit {
 
   ngOnInit() {
     this.zrstdspsv05();
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
   zrstdspsv05() {

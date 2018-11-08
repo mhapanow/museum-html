@@ -8,6 +8,8 @@ import { ZrstdspsService } from '../../../../services/eso/zrstdsps.service';
 import { Zrstdspsm03Model } from '../../../../models/zrstdspsm03.models';
 import { Zrstdspsm07Model } from '../../../../models/zrstdspsm07.models';
 
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-zrstdspsview01',
   templateUrl: './zrstdspsview01.component.html',
@@ -40,7 +42,8 @@ export class Zrstdspsview01Component implements OnInit {
     private _userService: UserService,
     private _route: ActivatedRoute,
     private _toastr: ToastrService,
-    private _zrstdspsService: ZrstdspsService
+    private _zrstdspsService: ZrstdspsService,
+    private _location: Location
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
@@ -50,6 +53,10 @@ export class Zrstdspsview01Component implements OnInit {
 
   ngOnInit() {
     this.zrstdspsv01();
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
   zrstdspsv01() {
@@ -69,7 +76,6 @@ export class Zrstdspsview01Component implements OnInit {
           this.zrstdspsm01 = null;
           if (response.error_message == null) {
             this.zrstdspsm01 = response;
-            //console.log(this.zrstdspsm01);
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }
@@ -84,7 +90,6 @@ export class Zrstdspsview01Component implements OnInit {
 
   zrstdspsv03(dsorg: String, dslogo: String, dscuenta: String, dscent: String, dsaño: String, dscic: String, dsag: String) {
     this.title2 = 'ESO - Pantalla-3';
-    //console.log(dsaño);
     this.cargando = true;
     let promesa = new Promise ( (resolve, reject) => {
         this._zrstdspsService.getZrstdspsView03(this.token, dsorg, dslogo, dscuenta, dscent, dsaño, dscic, dsag).subscribe(
@@ -107,12 +112,10 @@ export class Zrstdspsview01Component implements OnInit {
 
   zrstdspsv07(pantalla, wdesc, wfmov, wamnt, wtefm, wtnoa, wiorg) {
     this.title2 = 'ESO - Pantalla-7';
-    console.log(wdesc, wfmov, wamnt, wtefm, wtnoa, wiorg);
     this.cargando = true;
     let promesa = new Promise ( (resolve, reject) => {
         this._zrstdspsService.getZrstdspsView07(this.token, pantalla, wdesc, wfmov, wamnt, wtefm, wtnoa, wiorg, '', '', '', '', '', '').subscribe(
           response => {
-            console.log(response);
             if (response.error_message == null) {
               this.cargando = false;
               this.zrstdspsm07 = response;

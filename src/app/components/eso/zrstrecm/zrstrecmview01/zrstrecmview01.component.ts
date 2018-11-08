@@ -5,6 +5,8 @@ import { UserService } from '../../../../services/user.service';
 import { Zrstrecmm01Model } from '../../../../models/zrstrecmm01.models';
 import { ZrstrecmService } from '../../../../services/eso/zrstrecm.service';
 
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-zrstrecmview01',
   templateUrl: './zrstrecmview01.component.html',
@@ -22,7 +24,8 @@ export class Zrstrecmview01Component implements OnInit {
     private _userService: UserService,
     private _route: ActivatedRoute,
     private _toastr: ToastrService,
-    private _zrstrecmService: ZrstrecmService
+    private _zrstrecmService: ZrstrecmService,
+    private _location: Location
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
@@ -31,6 +34,10 @@ export class Zrstrecmview01Component implements OnInit {
 
   ngOnInit() {
     this.zrstrecmv01();
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
   zrstrecmv01() {

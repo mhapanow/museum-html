@@ -194,8 +194,12 @@
                                 {{ zrstdspsItem.w2amnt | formmonedacero:2:',':'.' }}
                             </td>
                             <td>
-                                <a class="btn btn-primary as400ButtonInTable" data-toggle="modal" data-target="#myModal7" (click)='zrstdspsv07(2, zrstdspsItem.w2desci, 0)'>Vista
-        07</a>
+                                <a class="btn btn-primary as400ButtonInTable" data-toggle="modal" data-target="#myModal7" (click)='zrstdspsv07(2, zrstdspsItem.w2desci,
+                                (zrstdspsItem.w2fmov == null)?"":zrstdspsItem.w2fmov,
+                                (zrstdspsItem.w2amnt == null)?"":zrstdspsItem.w2amnt, 
+                                (zrstdspsItem.w2tefm == null)?"":zrstdspsItem.w2tefm, 
+                                (zrstdspsItem.w2tnoa == null)?"":zrstdspsItem.w2tnoa, 
+                                (zrstdspsItem.w2iorg == null)?"":zrstdspsItem.w2iorg)'>Vista 07</a>
                             </td>
                         </tr>
                     </tbody>
@@ -229,7 +233,7 @@
         </div>
         <div class="col lg-12" style="text-align: center;">
             <br>
-            <button class="btn btn-primary " type="button" [routerLink]="['/zrstonlnv1']">
+            <button class="btn btn-primary " type="button" (click)="backClicked()">
         Regresar
       </button>
 

@@ -7,6 +7,8 @@ import { ZrstdspsService } from '../../../../services/eso/zrstdsps.service';
 
 import { Zrstdspsm08Model } from '../../../../models/zrstdspsm08.models';
 
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-zrstdspsview04',
@@ -23,11 +25,14 @@ export class Zrstdspsview04Component implements OnInit {
 
   public rowsOnPage = 5;
 
+  cargando: boolean = true;
+
   constructor(
     private _userService: UserService,
     private _route: ActivatedRoute,
     private _toastr: ToastrService,
-    private _zrstdspsService: ZrstdspsService
+    private _zrstdspsService: ZrstdspsService,
+    private _location: Location
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
@@ -37,6 +42,10 @@ export class Zrstdspsview04Component implements OnInit {
 
   ngOnInit() {
     this.zrstdspsv04();
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
   zrstdspsv04() {
@@ -72,12 +81,16 @@ export class Zrstdspsview04Component implements OnInit {
   }
 
   zrstdspsv08(meyfac, meaafc, mecifa, meagig, melogo, mencct, w4rrred, w4orgn, w4rear, w4rpre ) {
-    this.title2 = 'ESO - Pantalla-2';
+    this.title2 = 'ESO - Pantalla-8';
+    this.cargando = true;
+    let promesa = new Promise ( (resolve, reject) => {
       this._zrstdspsService.getZrstdspsView08(this.token, meyfac, meaafc, mecifa, meagig, melogo,
          mencct, w4rrred, w4orgn, w4rear, w4rpre).subscribe(
         response => {
           if (response.error_message == null) {
-            this.zrstdspsm08 = response.data;
+            this.cargando = false;
+            this.zrstdspsm08 = response;
+            resolve();
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }
@@ -87,6 +100,7 @@ export class Zrstdspsview04Component implements OnInit {
           this._toastr.warning('ERROR.: Servidor No Found.', 'Error.', { timeOut: 3000 });
         }
       );
+    });
   }
 
 }

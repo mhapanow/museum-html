@@ -5,6 +5,8 @@ import { UserService } from '../../../../services/user.service';
 import { Zrstreclm02Model } from '../../../../models/zrstreclm02.models';
 import { ZrstreclService } from '../../../../services/eso/zrstrecl.service';
 
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-zrstreclview02',
   templateUrl: './zrstreclview02.component.html',
@@ -22,7 +24,8 @@ title: 'ESO - Pantalla ZRSTRECL';
     private _userService: UserService,
     private _route: ActivatedRoute,
     private _toastr: ToastrService,
-    private _zrstreclService: ZrstreclService
+    private _zrstreclService: ZrstreclService,
+    private _location: Location
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
@@ -31,6 +34,10 @@ title: 'ESO - Pantalla ZRSTRECL';
 
   ngOnInit() {
     this.zrstreclv02();
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
   zrstreclv02() {
@@ -46,9 +53,13 @@ title: 'ESO - Pantalla ZRSTRECL';
       meorg = params['meorg'];
       melogo = params['melogo'];
       mencct = params['mencct'];
-      meyfac = params['meyfac'];
-      meaafc = params['meaafc'];
-      mecifa = params['mecifa'];
+      meyfac = params['meyfac'].substring(3,3+2);
+      meaafc = params['meyfac'].substring(5,5+2);
+      mecifa = params['meyfac'].substring(0,0+2);
+      console.log(params['meyfac']);
+      console.log(meyfac);
+      console.log(meaafc);
+      console.log(mecifa);
       meagig = params['meagig'];
       cuerpo = params['cuerpo'];
       this._zrstreclService.getZrstreclView02(this.token, meorg, melogo, mencct, meyfac, meaafc, mecifa, meagig, cuerpo).subscribe(
