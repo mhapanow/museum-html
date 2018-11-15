@@ -68,7 +68,7 @@ const app_routes: Routes = [
     { path: 'zrstdspsv1/:dsano4/:dscic/:dsag/:dsorg/:dslogo/:dscuenta/:dstitular', component: Zrstdspsview01Component },
     { path: 'zrstdspsv2/:dscent/:dsano/:dscic/:dsag/:dsorg/:dslogo/:dscuenta/:dstitular', component: Zrstdspsview02Component },
     // { path: 'zrstdspsv3:/dsorg:/dslogo:/dscuenta:/dscent:/dsaño:/dscic:/dsag', component: Zrstdspsview03Component },
-    { path: 'zrstdspsv4/:meyfac/:meaafc/:mecifa/:meagig/:melogo/:mencct', component: Zrstdspsview04Component },
+    { path: 'zrstdspsv4/:meyfac/:meaafc/:mecifa/:meagig/:melogo/:mencct/:meorg/:dstitular', component: Zrstdspsview04Component },
     { path: 'zrstdspsv5/:meorg/:melogo/:mencct/:meyac/:meaafc/:mecifa/:meagig', component: Zrstdspsview05Component },
     { path: 'zrstdspsv6/:meorg/:melogo/:mencct/:meyac/:meaafc/:mecifa/:meagig', component: Zrstdspsview06Component },
     { path: 'zrstonlnv1', component: Zrstonlnview01Component },
@@ -77,7 +77,7 @@ const app_routes: Routes = [
     { path: 'zrstrecmv1/:meorg/:melogo/:mencct/:meyfac/:meaafc/:mecifa/:meagig/:meapen', component: Zrstrecmview01Component },
     { path: 'zrstrecmv2/:meorg/:melogo/:mencct/:meyfac/:meagig/:meapen', component: Zrstrecmview02Component },
     { path: 'zrstreclv1/:meorg/:melogo/:mencct/:meyfac/:meaafc/:mecifa/:meagig/:cuerpo', component: Zrstreclview01Component },
-    { path: 'zrstreclv2/:meorg/:melogo/:mencct/:meyfac/:meaafc/:mecifa/:meagig/:cuerpo', component: Zrstreclview02Component },
+    { path: 'zrstreclv2/:meorg/:melogo/:mencct/:meyfac/:meagig/:cuerpo', component: Zrstreclview02Component },
     { path: 'logout/:sure', component: LoginComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];

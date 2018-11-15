@@ -14,7 +14,7 @@
                     <label class="col-sm-2 control-label">
             Cuenta.:
           </label>
-                    <strong class="col-sm-10 control-label">
+                    <strong class="col-sm-10 control-label pull-right">
             {{ zrstdspsm02.MEORGND }} {{ zrstdspsm02.MELOGOD }} {{ zrstdspsm02.MEACNBD }} {{ zrstdspsm02.MENAMED }}
           </strong>
                 </div>
@@ -174,7 +174,7 @@
                             <th>
                                 <mfDefaultSorter by="w2amnt">Imp. U$S</mfDefaultSorter>
                             </th>
-                            <th>
+                            <th class="text-center">
                                 Acciones
                             </th>
                         </tr>
@@ -193,7 +193,7 @@
                             <td style="text-align: right;">
                                 {{ zrstdspsItem.w2amnt | formmonedacero:2:',':'.' }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 <a class="btn btn-primary as400ButtonInTable" data-toggle="modal" data-target="#myModal7" (click)='zrstdspsv07(2, zrstdspsItem.w2desci,
                                 (zrstdspsItem.w2fmov == null)?"":zrstdspsItem.w2fmov,
                                 (zrstdspsItem.w2amnt == null)?"":zrstdspsItem.w2amnt, 
@@ -220,7 +220,7 @@
 
             <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstrecmv1', zrstdspsm02.MEORGND, zrstdspsm02.MELOGOD, zrstdspsm02.MEACNBD, dscent, dsano, zrstdspsm02.MEBICYD, dsag]">F8 - Mailings</a>
 
-            <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstreclv1', zrstdspsm02.MEORGND, zrstdspsm02.MELOGOD, zrstdspsm02.MEACNBD, dscent, dsano, zrstdspsm02.MEBICYD, 15, 2]">F10 - Leyenda</a>
+            <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/zrstreclv1', zrstdspsm02.MEORGND, zrstdspsm02.MELOGOD, zrstdspsm02.MEACNBD, dscent, dsano, zrstdspsm02.MEBICYD, dsag, 2]">F10 - Leyenda</a>
 
             <a class="btn btn-primary as400ButtonInTable" data-toggle="modal" data-target="#myModal3" (click)='zrstdspsv03(zrstdspsm02.MEORGND, zrstdspsm02.MELOGOD, zrstdspsm02.MEACNBD,dscent, dsano, zrstdspsm02.MEBICYD, dsag)'>F13 - Datos Bolsa</a>
 

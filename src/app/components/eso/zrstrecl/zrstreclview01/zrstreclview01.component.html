@@ -14,7 +14,7 @@
                     <label class="col-sm-3 control-label">
             Cuenta.:
           </label>
-                    <strong class="col-sm-9 control-label">
+                    <strong class="col-sm-9 control-label pull-right">
             {{ zrstreclm01.c1orgn }} {{ zrstreclm01.c1logo }} {{ zrstreclm01.c1acnb }} {{ zrstreclm01.c1apen }}
           </strong>
                 </div>
@@ -47,19 +47,21 @@
           </label>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-md-9 col-md-offset-2 form-group" *ngFor="let col of zrstreclm01.sfley1">
-                    {{ col }}
+            <div class="row col-md-offset-1" id="global">
+                <div id="cuerpo">
+                    <div class="col-md-9 col-md-offset-2  form-group" *ngFor="let col of zrstreclm01.sfley1">
+                        {{ col }}
+                    </div>
                 </div>
             </div>
+            
 
         </div>
     </div>
 
     <div class="row as400Footer">
         <div class="col lg-12" style="text-align: center;">
-            <button class="btn btn-primary " type="button" [routerLink]="['/zrstreclv2', zrstreclm01.c1orgn, zrstreclm01.c1logo, zrstreclm01.c1acnb, zrstreclm01.c1fec, 00, 00, zrstreclm01.c1bicy, 2 ]">
+            <button class="btn btn-primary " type="button" [routerLink]="['/zrstreclv2', zrstreclm01.c1orgn, zrstreclm01.c1logo, zrstreclm01.c1acnb, zrstreclm01.c1fec, zrstreclm01.c1bicy, 2 ]">
             F6 - Siguiente
           </button>
             <button class="btn btn-primary " type="button" (click)="backClicked()">

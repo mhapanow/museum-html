@@ -27,6 +27,9 @@ export class Zrstdspsview04Component implements OnInit {
 
   cargando: boolean = true;
 
+  meorg: String;
+  dstitular: String;
+
   constructor(
     private _userService: UserService,
     private _route: ActivatedRoute,
@@ -56,7 +59,6 @@ export class Zrstdspsview04Component implements OnInit {
     let melogo: String;
     let mencct: String;
 
-
     this._route.params.subscribe(params => {
       meyfac = params['meyfac'];
       meaafc = params['meaafc'];
@@ -64,10 +66,14 @@ export class Zrstdspsview04Component implements OnInit {
       meagig = params['meagig'];
       melogo = params['melogo'];
       mencct = params['mencct'];
+      this.meorg = params['meorg'];
+      this.dstitular = params['dstitular'];
+
       this._zrstdspsService.getZrstdspsView04(this.token, meyfac, meaafc, mecifa, meagig, melogo, mencct).subscribe(
         response => {
           if (response.error_message == null) {
             this.zrstdspsm04 = response;
+            //console.log(this.zrstdspsm04);
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
           }
@@ -90,6 +96,8 @@ export class Zrstdspsview04Component implements OnInit {
           if (response.error_message == null) {
             this.cargando = false;
             this.zrstdspsm08 = response;
+           //console.log(response);
+           //console.log(this.zrstdspsm08);
             resolve();
           } else {
             this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });

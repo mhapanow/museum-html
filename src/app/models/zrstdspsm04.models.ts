@@ -1,11 +1,11 @@
 export class Zrstdspsm04Model {
     constructor(
-                public MEORGND: string = '',
-                public MELOGOD: string = '',
-                public MEACNBD: string = '',
-                public MENAMED: string = '',
-                public MEAAFCD: string = '',
-                public MEBICYD: string = '',
+                public meyfac: string = '',
+                public meaafc: string = '',
+                public mecifa: string = '',
+                public meagig: string = '',
+                public melogo: string = '',
+                public mencct: string = '',
 
                 // Tabla
                 public w4seop: string = '',

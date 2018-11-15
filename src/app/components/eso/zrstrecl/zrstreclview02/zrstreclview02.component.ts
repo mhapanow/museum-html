@@ -56,10 +56,6 @@ title: 'ESO - Pantalla ZRSTRECL';
       meyfac = params['meyfac'].substring(3,3+2);
       meaafc = params['meyfac'].substring(5,5+2);
       mecifa = params['meyfac'].substring(0,0+2);
-      console.log(params['meyfac']);
-      console.log(meyfac);
-      console.log(meaafc);
-      console.log(mecifa);
       meagig = params['meagig'];
       cuerpo = params['cuerpo'];
       this._zrstreclService.getZrstreclView02(this.token, meorg, melogo, mencct, meyfac, meaafc, mecifa, meagig, cuerpo).subscribe(

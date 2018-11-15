@@ -50,8 +50,8 @@
 
 .as400TableESO {
     margin-top: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
     margin-bottom: 20px;
 }
 
@@ -129,4 +129,14 @@
 svg path,
 svg rect{
   fill: black;
+}
+
+
+#global {
+  height: 300px;
+  width: 90%;
+  overflow-y: scroll;
+}
+#cuerpo {
+  height: auto;
 }

@@ -1,105 +1,103 @@
 <div class="row  border-bottom white-bg dashboard-header">
-  <div class="row text-center as400Header">
-    <h2>{{ title }}</h2>
-  </div>
-
-  <div class="row as400Body">
-    <div class="row as400Subtitle">
-      <h3>RESUMEN ON-LINE</h3>
+    <div class="row text-center as400Header">
+        <h2>{{ title }}</h2>
     </div>
-    <div class="row">
 
-      <div class="row">
-        <div class="col-md-9 col-md-offset-2 form-group">
-          <label class="col-sm-6 control-label">
-            Cuenta.:
-          </label>
-          <strong class="col-sm-6 control-label">
-            {{ zrstdspsm04.MEORGND }} {{ zrstdspsm04.MELOGOD }} {{ zrstdspsm04.MEACNBD }} {{ zrstdspsm04.MENAMED }}
-          </strong>
+    <div class="row as400Body">
+        <div class="row as400Subtitle">
+            <h3>Actividad de Bonus Programa</h3>
         </div>
-      </div>
+        <div class="row">
 
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 form-group">
-          <label class="col-sm-6 control-label">
-            Ciclo :
-          </label>
-          <strong class="col-sm-6 control-label pull-right">
-            {{ zrstdspsm04.MEAAFCD }} / {{ zrstdspsm04.MEBICYD }}
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 form-group">
+                    <label class="col-sm-2 control-label">
+                      Cuenta.:
+                    </label>
+                    <strong class="col-sm-10 control-label pull-right">{{ meorg }} {{ zrstdspsm04.melogo }} {{ zrstdspsm04.mencct }} {{ dstitular }}
+                    </strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 form-group">
+                    <label class="col-sm-2 control-label">
+                     Ciclo :
+                   </label>
+                    <strong class="col-sm-10 control-label pull-right">
+            {{ zrstdspsm04.meyfac }}{{ zrstdspsm04.meaafc }}/{{ zrstdspsm04.mecifa }}
           </strong>
-        </div>
-      </div>
+                </div>
+            </div>
 
-      <div class="row">
-        <div class="col-md-9 col-md-offset-2 form-group">
-          <label class="col-sm-12 control-label text-center">
+            <div class="row">
+                <div class="col-md-9 col-md-offset-2 form-group">
+                    <label class="col-sm-12 control-label text-center">
             Actividad de Bonus Programs
           </label>
+                </div>
+            </div>
+
+
+            <div class="row as400TableESO">
+                <table class="table table-striped" [mfData]="zrstdspsm04.data" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+                    <thead>
+                        <tr>
+                            <th>
+                                <mfDefaultSorter by="w4rrred">Descripción del Programa</mfDefaultSorter>
+                            </th>
+                            <th>
+                                <mfDefaultSorter by="w4orgn">Org.</mfDefaultSorter>
+                            </th>
+                            <th>
+                                <mfDefaultSorter by="w4rear">Puntos Ganados</mfDefaultSorter>
+                            </th>
+                            <th>
+                                <mfDefaultSorter by="w4rpre">Puntos Usados</mfDefaultSorter>
+                            </th>
+                            <th>
+                                Acciones
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let zrstdspsItem of mf.data">
+                            <td>
+                                {{ zrstdspsItem.w4rrred }}
+                            </td>
+                            <td>
+                                {{ zrstdspsItem.w4orgn }}
+                            </td>
+                            <td>
+                                {{ zrstdspsItem.w4rear }}
+                            </td>
+                            <td>
+                                {{ zrstdspsItem.w4rpre }}
+                            </td>
+                            <td>
+                                <a class="btn btn-primary as400ButtonInTable" data-toggle="modal" data-target="#myModal" (click)='zrstdspsv08(zrstdspsm04.meyfac, zrstdspsm04.meaafc, zrstdspsm04.mecifa, zrstdspsm04.meagig, zrstdspsm04.melogo, zrstdspsm04.mencct, zrstdspsItem.w4rrred, zrstdspsItem.w4orgn, zrstdspsItem.w4rear, zrstdspsItem.w4rpre)'>Ver</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">
+                                <mfBootstrapPaginator></mfBootstrapPaginator>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
-      </div>
-   
-
-      <div class="row as400Table">
-        <table class="table table-striped" [mfData]="zrstdspsm04.data" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
-          <thead>
-            <tr>
-              <th>
-                <mfDefaultSorter by="w4rrred">Descripción del Programa</mfDefaultSorter>
-              </th>
-              <th>
-                <mfDefaultSorter by="w4orgn">Org.</mfDefaultSorter>
-              </th>
-              <th>
-                <mfDefaultSorter by="w4rear">Puntos Ganados</mfDefaultSorter>
-              </th>
-              <th>
-                <mfDefaultSorter by="w4rpre">Puntos Usados</mfDefaultSorter>
-              </th>
-              <th>
-                Acciones
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let zrstdspsItem of mf.data">
-              <td>
-                {{ zrstdspsItem.w4rrred }}
-              </td>
-              <td>
-                {{ zrstdspsItem.w4orgn }}
-              </td>
-              <td>
-                {{ zrstdspsItem.w4rear }}
-              </td>
-              <td>
-                {{ zrstdspsItem.w4rpre }}
-              </td>
-              <td>
-                <a class="btn btn-primary as400ButtonInTable" data-toggle="modal" data-target="#myModal"
-                 (click)='zrstdspsv08(0, zrstdspsm04.MEAAFCD, zrstdspsm04.MEBICYD, 14,  zrstdspsm04.MELOGOD , zrstdspsm04.MEACNBD, zrstdspsItem.w4rrred, zrstdspsItem.w4orgn, zrstdspsItem.w4rear, zrstdspsItem.w4rpre)'>Ver</a>
-              </td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="4">
-                <mfBootstrapPaginator></mfBootstrapPaginator>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
     </div>
-  </div>
 
-  <div class="row as400Footer">
-    <div class="col lg-12" style="text-align: center;">
-      <button class="btn btn-primary " type="button" (click)="backClicked()">
+    <div class="row as400Footer">
+        <div class="col lg-12" style="text-align: center;">
+            <button class="btn btn-primary " type="button" (click)="backClicked()">
         Regresar
       </button>
+        </div>
     </div>
-  </div>
 
 </div>
 
@@ -108,20 +106,19 @@
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title" id="myModalLabel">{{ title2 }}</h4>
-      </div>
-      <div class="modal-body">
-        <div align="center" *ngIf="cargando">
-          <h2>Cargando...</h2>
-          <div class="loader loader--style1" title="0" align="center">
-            <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+                <h4 class="modal-title" id="myModalLabel">{{ title2 }}</h4>
+            </div>
+            <div class="modal-body">
+                <div align="center" *ngIf="cargando">
+                    <h2>Cargando...</h2>
+                    <div class="loader loader--style1" title="0" align="center">
+                        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
               <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
                   s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
                   c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"
@@ -132,106 +129,106 @@
                 />
               </path>
             </svg>
-          </div>
-          <p>
-            Espere por favor...
-          </p>
-        </div>
-        <div class="row" *ngIf="!cargando">
-        
-          <div class="row">
-            <div class="form-group">
-              <label class="col-sm-6 control-label">
+                    </div>
+                    <p>
+                        Espere por favor...
+                    </p>
+                </div>
+                <div class="row" *ngIf="!cargando">
+
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label">
                 DETALLE DE BONUS PROGRAM.:
               </label>
-              <strong class="col-sm-6 control-label">
-                {{ zrstdspsm08.W4RPGI }} {{ zrstdspsm08.W4RBPI }}
+                            <strong class="col-sm-6 control-label">
+                {{ zrstdspsm08.w4rpgi }} {{ zrstdspsm08.w4rbpi }}
               </strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group">
-              <strong class="col-sm-12 control-label">
-                {{ zrstdspsm08.W4RRRE28 }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <strong class="col-sm-12 control-label">
+                {{ zrstdspsm08.w4rrre28 }}
               </strong>
-            </div>
-          </div>
+                        </div>
+                    </div>
 
-          <div class="row">
-            <div class="form-group">
-              <label class="col-sm-6 control-label">
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label">
                 Inicio.:
               </label>
-              <strong class="col-sm-6 control-label">
-                {{ zrstdspsm08.W4RBEG }}
+                            <strong class="col-sm-6 control-label">
+                {{ zrstdspsm08.w4rbeg }}
               </strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group">
-              <label class="col-sm-6 control-label">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label">
                 Ganadas.:
               </label>
-              <strong class="col-sm-6 control-label">
-                {{ zrstdspsm08.W4REAR }}
+                            <strong class="col-sm-6 control-label">
+                {{ zrstdspsm08.w4rear }}
               </strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group">
-              <label class="col-sm-6 control-label">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label">
                 Usadas.:
               </label>
-              <strong class="col-sm-6 control-label">
-                {{ zrstdspsm08.W4RPRE }}
+                            <strong class="col-sm-6 control-label">
+                {{ zrstdspsm08.w4rpre }}
               </strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group">
-              <label class="col-sm-6 control-label">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label">
                 Expiradas.:
               </label>
-              <strong class="col-sm-6 control-label">
-                {{ zrstdspsm08.W4RRED }}
+                            <strong class="col-sm-6 control-label">
+                {{ zrstdspsm08.w4rred }}
               </strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group">
-              <label class="col-sm-6 control-label">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label">
                 Ajustadas.:
               </label>
-              <strong class="col-sm-6 control-label">
-                {{ zrstdspsm08.W4RPAD }}
+                            <strong class="col-sm-6 control-label">
+                {{ zrstdspsm08.w4rpad }}
               </strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group">
-              <label class="col-sm-6 control-label">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label">
                 Actuales.:
               </label>
-              <strong class="col-sm-6 control-label">
-                {{ zrstdspsm08.W4RAVA }}
+                            <strong class="col-sm-6 control-label">
+                {{ zrstdspsm08.w4rava }}
               </strong>
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group">
-              <label class="col-sm-6 control-label">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label">
                 Millas AA.:
               </label>
-              <strong class="col-sm-6 control-label">
-                {{ zrstdspsm08.W4RRMP }}
+                            <strong class="col-sm-6 control-label">
+                {{ zrstdspsm08.w4rrmp }}
               </strong>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
     </div>
-  </div>
 </div>
