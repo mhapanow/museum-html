@@ -57,6 +57,11 @@ import { FormmonedaPipe } from './pipes/formmoneda.pipe';
 import { SinfechaPipe } from './pipes/sinfecha.pipe';
 import { CeroPipe } from './pipes/cero.pipe';
 import { FormmonedaceroPipe } from './pipes/formmonedacero.pipe';
+import { Fer0310view01Component } from './components/inf1/fer0310/fer0310view01/fer0310view01.component';
+import { Fer0310view02Component } from './components/inf1/fer0310/fer0310view02/fer0310view02.component';
+import { Fer0310view03Component } from './components/inf1/fer0310/fer0310view03/fer0310view03.component';
+import { FormnumcuentaPipe } from './pipes/formnumcuenta.pipe';
+import { FormfechadosPipe } from './pipes/formfechados.pipe';
 
 @NgModule({
   declarations: [
@@ -106,6 +111,11 @@ import { FormmonedaceroPipe } from './pipes/formmonedacero.pipe';
     SinfechaPipe,
     CeroPipe,
     FormmonedaceroPipe,
+    Fer0310view01Component,
+    Fer0310view02Component,
+    Fer0310view03Component,
+    FormnumcuentaPipe,
+    FormfechadosPipe,
   ],
   imports: [
     BrowserModule,

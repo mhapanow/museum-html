@@ -1,0 +1,237 @@
+<div class="row  border-bottom white-bg dashboard-header">
+    <div class="row text-center">
+        <h2>{{ title }}</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-4 form-group">
+                            <form class="m-t" role="form" #fer0310v1Form="ngForm" (ngSubmit)="onSubmit(fer0310v1Form)">
+                                <label class="col-sm-6 control-label">
+                                   Ingrese Número de Cuenta:
+                                </label>
+                                <div class="col-lg-6 input-group">
+                                    <input type="text" class="form-control" name="ncuenta" [(ngModel)]='ncuenta'>
+                                    <span class="input-group-btn">
+                                        <button type="button" type="submit" class="btn btn-primary">
+                                        <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-2">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    Banco:
+                                    <strong>{{ fer0310m01.DMBK | lpad:3:true }}</strong>
+                                </div>
+                                <div class="col-md-4">
+                                    Sucursal:
+                                    <strong>{{ fer0310m01.DMBRCH | lpad:3:true }}</strong>
+                                </div>
+                                <div class="col-md-4">
+                                    Moneda:
+                                    <strong>{{ fer0310m01.CODMON | lpad:3:true }}</strong>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    Nro de Cuenta:
+                                    <strong>{{ fer0310m01.ACCTNO | formnumcuenta }}</strong>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <strong>{{ fer0310m01.NA1 }} {{ fer0310m01.NA2 }}</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-7 col-md-offset-2">
+                            Tipo de Cuenta:
+                            <strong>{{ fer0310m01.TIPCTA }}</strong>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-2">
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    División/Ofic:
+                                    <strong>{{ fer0310m01.DIVISI | lpad:2:true  }} / {{ fer0310m01.DMOFF }}</strong>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <strong>{{ fer0310m01.TPBLOQ }}</strong>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <strong>{{ fer0310m01.NA4 }}</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <strong>{{ fer0310m01.NA5 }}</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <strong>{{ fer0310m01.NA6 }}</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-2 col-md-offset-2">
+                            Cat.:
+                            <strong>{{ fer0310m01.WWIDCT }}</strong>
+                        </div>
+
+                        <div class="col-md-2">
+                            Seg.:
+                            <strong>{{ fer0310m01.WWSRDS | lpad:3:true }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-4 col-md-offset-2">
+                            Saldo Contable:
+                            <strong class="pull-right">{{ fer0310m01.WSBAL | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                        <div class="col-md-4">
+                            Intereses a Hoy :
+                            <strong class="pull-right">{{ fer0310m01.WMMACC | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-4 col-md-offset-2">
+                            Créditos Hoy :
+                            <strong class="pull-right">{{ fer0310m01.SCRHOY | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                        <div class="col-md-4">
+                            Disponib -/- Int:
+                            <strong class="pull-right">{{ fer0310m01.WDSPIN | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-4 col-md-offset-2">
+                            Débitos Hoy:
+                            <strong class="pull-right">{{ fer0310m01.SDBHOY | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                        <div class="col-md-4">
+                            Fecha Apertura:
+                            <strong class="pull-right">{{ fer0310m01.DMDOPN | formfechados }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-4 col-md-offset-2">
+                            Débitos Pendientes:
+                            <strong class="pull-right">{{ fer0310m01.SDBPEN | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                        <div class="col-md-4">
+                            Fecha Ult. Actividad:
+                            <strong class="pull-right">{{ fer0310m01.DMDLA | formfechados }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-4 col-md-offset-2">
+                            Saldo Hoy:
+                            <strong class="pull-right">{{ fer0310m01.WSDACT | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                        <div class="col-md-4">
+                            Fecha Ult. Extracto:
+                            <strong class="pull-right">{{ fer0310m01.DMDLST | formfechados }}</strong>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-4 col-md-offset-2">
+                            Límite Crédito + Citimas:
+                            <strong class="pull-right">{{ fer0310m01.MCCAW | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                        <div class="col-md-4">
+                            Saldo Ult. Extrac.:
+                            <strong class="pull-right">{{ fer0310m01.MPBAL | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-4 col-md-offset-2">
+                            Retenciones:
+                            <strong class="pull-right">{{ fer0310m01.RETEN | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                        <div class="col-md-4">
+                            Límite Propio....:
+                            <strong class="pull-right">{{ fer0310m01.DMIODL }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-4 col-md-offset-2">
+                            Saldo Inmovilizado:
+                            <strong class="pull-right">{{ fer0310m01.WSINMO | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                        <div class="col-md-4" *ngIf="dmacct>5000000000">
+                            {{ fer0310m01.TITU1 }}
+                            <strong class="pull-right">{{ fer0310m01.WQEXTR }}</strong>
+                        </div>
+                        <div class="col-md-4" *ngIf="dmacct<5000000000">
+                            {{ fer0310m01.TITU1 }}
+                            <strong class="pull-right">{{ fer0310m01.WQEXTR }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-4 col-md-offset-2">
+                            Disponibilidad:
+                            <strong class="pull-right">{{ fer0310m01.WSDISP | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                        <div class="col-md-4" *ngIf="dmacct>5000000000">
+                            Situación Fiscal:
+                            <strong class="pull-right">{{ fer0310m01.DMWHFG }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-md-4 col-md-offset-2">
+                            Créditos Pendientes:
+                            <strong class="pull-right">{{ fer0310m01.SCRPEN | formmonedacero:2:',':'.' }}</strong>
+                        </div>
+                        <div class="col-md-4" *ngIf="dmacct>5000000000">
+                            Vto Prox. Dep.:
+                            <strong class="pull-right">{{ fer0310m01.FECVTO | sinfecha }}</strong>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+        <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0310v2', ncuenta]">F3</a>
+
+        <!-- <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0310v3', ncuenta]">F6</a> -->
+    </div>
+</div>

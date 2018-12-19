@@ -1,0 +1,85 @@
+<div class="row  border-bottom white-bg dashboard-header">
+    <div class="row text-center">
+        <h2>{{ title }}</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                	<div class="row as400Table">
+		                <table class="table table-striped" [mfData]="fer0310m02.data" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+		                    <thead>
+		                        <tr>
+		                            <th>
+		                                <mfDefaultSorter by="NBR4">Nro</mfDefaultSorter>
+		                            </th>
+		                            <th>
+		                                <mfDefaultSorter by="TIPO">Tipo</mfDefaultSorter>
+		                            </th>
+		                            <th>
+		                                <mfDefaultSorter by="DSSER">Cheque</mfDefaultSorter>
+		                            </th>
+		                            <th>
+		                                <mfDefaultSorter by="DSCAMT">Importe</mfDefaultSorter>
+		                            </th>
+		                            <th>
+		                                <mfDefaultSorter by="SFEC">Fecha Vto</mfDefaultSorter>
+		                            </th>
+		                            <th>
+		                                <mfDefaultSorter by="WSDSC1">Descripción</mfDefaultSorter>
+		                            </th>
+		                            <th>
+		                                <mfDefaultSorter by="ESTADO">Estado</mfDefaultSorter>
+		                            </th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+		                        <tr *ngFor="let fer0310Item of mf.data">
+		                            <td>
+		                                {{ fer0310Item.NBR4 | lpad:5:true }}
+		                            </td>
+		                            <td>
+		                                {{ fer0310Item.TIPO }}
+		                            </td>
+		                            <td>
+		                                {{ fer0310Item.DSSER }}
+		                            </td>
+		                            <td>
+		                                {{ fer0310Item.DSCAMT | formmonedacero:2:',':'.' }}
+		                            </td>
+		                            <td>
+		                                {{ fer0310Item.SFEC | date:'dd/MM/yy' }}
+		                            </td>
+		                            <td>
+		                                {{ fer0310Item.WSDSC1 }}
+		                            </td>
+		                            <td>
+		                                {{ fer0310Item.ESTADO }}
+		                            </td>
+		                        </tr>
+		                    </tbody>
+		                    <tfoot>
+		                        <tr>
+		                            <td colspan="4">
+		                                <mfBootstrapPaginator></mfBootstrapPaginator>
+		                            </td>
+		                        </tr>
+		                    </tfoot>
+		                </table>
+		            </div>
+
+                
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row as400Footer">
+    <div class="col lg-12" style="text-align: center;">
+      <button class="btn btn-primary " type="button" (click)="backClicked()">
+        Regresar
+      </button>
+    </div>
+</div>

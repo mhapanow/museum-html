@@ -9,6 +9,9 @@ export class SinfechaPipe implements PipeTransform {
     if (!value) {
       return '0/00/00';
     }
+    if (value==0) {
+      return '0/00/00';
+    }
     return value;
   }
 

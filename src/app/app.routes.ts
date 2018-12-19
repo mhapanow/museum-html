@@ -38,6 +38,9 @@ import {
     Zrstreclview02Component,
     Zrstrecmview01Component,
     Zrstrecmview02Component,
+    Fer0310view01Component,
+    Fer0310view02Component,
+    Fer0310view03Component,
 } from './components/index.paginas';
 
 const app_routes: Routes = [
@@ -79,6 +82,9 @@ const app_routes: Routes = [
     { path: 'zrstreclv1/:meorg/:melogo/:mencct/:meyfac/:meaafc/:mecifa/:meagig/:cuerpo', component: Zrstreclview01Component },
     { path: 'zrstreclv2/:meorg/:melogo/:mencct/:meyfac/:meagig/:cuerpo', component: Zrstreclview02Component },
     { path: 'logout/:sure', component: LoginComponent },
+    { path: 'fer0310v1', component: Fer0310view01Component },
+    { path: 'fer0310v2/:ncuenta', component: Fer0310view02Component },
+    { path: 'fer0310v3/:ncuenta', component: Fer0310view03Component },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
