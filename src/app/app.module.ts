@@ -62,6 +62,14 @@ import { Fer0310view02Component } from './components/inf1/fer0310/fer0310view02/
 import { Fer0310view03Component } from './components/inf1/fer0310/fer0310view03/fer0310view03.component';
 import { FormnumcuentaPipe } from './pipes/formnumcuenta.pipe';
 import { FormfechadosPipe } from './pipes/formfechados.pipe';
+import { Fer0320view01Component } from './components/inf1/fer0320/fer0320view01/fer0320view01.component';
+import { Fer0320view02Component } from './components/inf1/fer0320/fer0320view02/fer0320view02.component';
+import { Fer0330view01Component } from './components/inf1/fer0330/fer0330view01/fer0330view01.component';
+import { Fer0330view02Component } from './components/inf1/fer0330/fer0330view02/fer0330view02.component';
+import { Cgrrcrecview01Component } from './components/inf1/cgrrcrec/cgrrcrecview01/cgrrcrecview01.component';
+import { Cgrrcrecview02Component } from './components/inf1/cgrrcrec/cgrrcrecview02/cgrrcrecview02.component';
+import { Cgrrcrecview03Component } from './components/inf1/cgrrcrec/cgrrcrecview03/cgrrcrecview03.component';
+import { Cgrrcrecview04Component } from './components/inf1/cgrrcrec/cgrrcrecview04/cgrrcrecview04.component';
 
 @NgModule({
   declarations: [
@@ -116,6 +124,14 @@ import { FormfechadosPipe } from './pipes/formfechados.pipe';
     Fer0310view03Component,
     FormnumcuentaPipe,
     FormfechadosPipe,
+    Fer0320view01Component,
+    Fer0320view02Component,
+    Fer0330view01Component,
+    Fer0330view02Component,
+    Cgrrcrecview01Component,
+    Cgrrcrecview02Component,
+    Cgrrcrecview03Component,
+    Cgrrcrecview04Component,
   ],
   imports: [
     BrowserModule,

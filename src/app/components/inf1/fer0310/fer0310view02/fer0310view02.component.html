@@ -23,7 +23,7 @@
 		                                <mfDefaultSorter by="DSCAMT">Importe</mfDefaultSorter>
 		                            </th>
 		                            <th>
-		                                <mfDefaultSorter by="SFEC">Fecha Vto</mfDefaultSorter>
+		                                <mfDefaultSorter by="DSCKDT">Fecha Vto</mfDefaultSorter>
 		                            </th>
 		                            <th>
 		                                <mfDefaultSorter by="WSDSC1">Descripción</mfDefaultSorter>
@@ -48,7 +48,7 @@
 		                                {{ fer0310Item.DSCAMT | formmonedacero:2:',':'.' }}
 		                            </td>
 		                            <td>
-		                                {{ fer0310Item.SFEC | date:'dd/MM/yy' }}
+		                                {{ fer0310Item.DSCKDT | formfechados:true }}
 		                            </td>
 		                            <td>
 		                                {{ fer0310Item.WSDSC1 }}

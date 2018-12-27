@@ -1,7 +1,19 @@
 import { calcBindingFlags } from '@angular/core/src/view/util';
 export const GLOBAL = {
-  url: 'http://192.168.1.20:8080/museum/api/',
+  url: 'http://192.168.1.4:8080/museum/api/',
   auth: 'auth',
+    // INF-1
+  fer0310view1: 'legacy/fer0310/view1',
+  fer0310view2: 'legacy/fer0310/view2',
+  fer0310view3: 'legacy/fer0310/view3',
+  fer0320view1: 'legacy/fer0320/view1',
+  fer0320view2: 'legacy/fer0320/view2',
+  fer0330view1: 'legacy/fer0330/view1',
+  fer0330view2: 'legacy/fer0330/view2',
+  cgrrcrecview1: 'legacy/cgrrcrec/view1',
+  cgrrcrecview2: 'legacy/cgrrcrec/view2',
+  cgrrcrecview3: 'legacy/cgrrcrec/view3',
+  cgrrcrecview4: 'legacy/cgrrcrec/view4',
   // INF-5
   tar0030view1: 'legacy/tar0030/view1',
   tar0030view2: 'legacy/tar0030/view2',

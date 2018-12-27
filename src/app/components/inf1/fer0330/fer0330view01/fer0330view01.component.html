@@ -1,0 +1,75 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center">
+    <h2>{{ title }}</h2>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <div class="row ">
+            <div class="col-md-3 col-md-offset-2">
+              Número de cuenta:
+              <strong>{{ fer0330m01.WNCTA | formnumcuenta }}</strong>
+            </div>
+            <div class="col-md-3">
+              Fecha desde:
+              <strong>{{ fer0330m01.WFECH }}</strong>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-md-2 col-md-offset-2">
+              Banco:
+              <strong>{{ fer0330m01.CODECO }}</strong>
+            </div>
+            <div class="col-md-2">
+              Sucursal:
+              <strong>{{ fer0330m01.DMBRCH }}</strong>
+            </div>
+            <div class="col-md-2">
+              Moneda:
+              <strong>{{ fer0330m01.DMCMCN }}</strong>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-md-6 col-md-offset-2">
+              Denominación:
+              <strong>{{ fer0330m01.WNOMB1 }}</strong>
+              <strong>{{ fer0330m01.WNOMB2 }}</strong>
+              <strong>{{ fer0330m01.WNOMB3 }}</strong>
+            </div>
+          </div>
+
+          <div class="row as400Table">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>
+
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row as400Footer">
+  <div class="col lg-12" style="text-align: center;">
+    <button class="btn btn-primary " type="button" (click)="backClicked()">
+      Regresar
+    </button>
+  </div>
+</div>

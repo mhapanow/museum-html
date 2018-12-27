@@ -1,3 +1,100 @@
-<p>
-  fer0310view03 works!
-</p>
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center">
+    <h2>{{ title }}</h2>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <div class="row ">
+            <div class="col-md-2 col-md-offset-2">
+              <strong>{{ fer0310m03.DMACCT | formnumcuenta }}</strong>
+            </div>
+            <div class="col-md-2">
+              HASTA:
+              <strong>{{ fer0310m03.PRDATE }}</strong>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-md-3 col-md-offset-2">
+              <strong>{{ fer0310m03.NA1 }}</strong>
+            </div>
+            <div class="col-md-3">
+              Saldo al:
+              <strong>{{ fer0310m03.DMDLST }}</strong>
+            </div>
+            <div class="col-md-2">
+              <strong>{{ fer0310m03.DMPBAL | formmonedacero:2:',':'.'}}</strong>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-md-3 col-md-offset-7">
+              Saldo Contable
+              <strong>{{ fer0310m03.DMPBAL | formmonedacero:2:',':'.' }}</strong>
+            </div>
+          </div>
+
+          <div class="row as400Table">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>
+                    Fecha
+                  </th>
+                  <th>
+                    Tr N. de Batch
+                  </th>
+                  <th>
+                    Referencia
+                  </th>
+                  <th>
+                    Debitos
+                  </th>
+                  <th>
+                    Créditos
+                  </th>
+                  <th>
+                    Saldo
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    {{ fer0310m03.DMDLST }}
+                  </td>
+                  <td>
+                    {{ fer0310m03.DMDRI }}
+                  </td>
+                  <td>
+                    {{ fer0310m03.NA4 }}
+                  </td>
+                  <td>
+                    {{ fer0310m03.DMSCST | formmonedacero:2:',':'.' | vacio }}
+                  </td>
+                  <td>
+                    {{ fer0310m03.DMINTS | formmonedacero:2:',':'.' | vacio }}
+                  </td>
+                  <td>
+                    {{ fer0310m03.DMCBAL | formmonedacero:2:',':'.' }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row as400Footer">
+  <div class="col lg-12" style="text-align: center;">
+    <button class="btn btn-primary " type="button" (click)="backClicked()">
+      Regresar
+    </button>
+  </div>
+</div>

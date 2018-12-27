@@ -75,6 +75,11 @@
                                     <strong>{{ fer0310m01.TPBLOQ }}</strong>
                                 </div>
                             </div>
+                            <div class="row " *ngIf="fer0310m01.TEXTOF3 == '1'">
+                                <div class="col-md-12" >
+                                    <strong>Tiene cheuqes con St '' Payment</strong>
+                                </div>
+                            </div>
                             
                             
                         </div>
@@ -232,6 +237,12 @@
     <div class="col lg-12" style="text-align: center;">
         <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0310v2', ncuenta]">F3</a>
 
-        <!-- <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0310v3', ncuenta]">F6</a> -->
+        <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0310v3', ncuenta]">F6</a>
+
+        <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0320v1', ncuenta]">F7</a>
+        <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0320v2', ncuenta]">F7</a>
+
+        <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0330v1', ncuenta]">F5</a>
+        <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0330v2', ncuenta]">F5</a>
     </div>
 </div>

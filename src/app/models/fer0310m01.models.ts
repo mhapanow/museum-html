@@ -45,6 +45,7 @@ export class Fer0310m01Model {
                     public WSWAVS: string,
                     public AMTAMX: string,
                     public FECAME: string,
-                    public WSHMES: string
+                    public WSHMES: string,
+                    public TEXTOF3: string
     ) { }
 }

@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FormfechadosPipe implements PipeTransform {
 
-  transform(value: any): string {
+  transform(value: any, dma?: boolean): string {
     let values: string = value.toString();
     let resultado: string = values;
     if (values.length == 7) {
@@ -21,6 +21,13 @@ export class FormfechadosPipe implements PipeTransform {
         resultado += values.substring(2, 4);
         resultado += '/';
         resultado += values.substring(0, 2);
+     }
+     if (values.length == 6 && dma == true) {
+        resultado = values.substring(0, 2);
+        resultado += '/';
+        resultado += values.substring(2, 4);
+        resultado += '/';
+        resultado += values.substring(4, 6);
      }
     return resultado;
   }

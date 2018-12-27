@@ -6,6 +6,17 @@ export { Fer0310view01Component } from './inf1/fer0310/fer0310view01/fer0310view
 export { Fer0310view02Component } from './inf1/fer0310/fer0310view02/fer0310view02.component';
 export { Fer0310view03Component } from './inf1/fer0310/fer0310view03/fer0310view03.component';
 
+export { Fer0320view01Component } from './inf1/fer0320/fer0320view01/fer0320view01.component';
+export { Fer0320view02Component } from './inf1/fer0320/fer0320view02/fer0320view02.component';
+
+export { Fer0330view01Component } from './inf1/fer0330/fer0330view01/fer0330view01.component';
+export { Fer0330view02Component } from './inf1/fer0330/fer0330view02/fer0330view02.component';
+
+export { Cgrrcrecview01Component } from './inf1/cgrrcrec/cgrrcrecview01/cgrrcrecview01.component';
+export { Cgrrcrecview02Component } from './inf1/cgrrcrec/cgrrcrecview02/cgrrcrecview02.component';
+export { Cgrrcrecview03Component } from './inf1/cgrrcrec/cgrrcrecview03/cgrrcrecview03.component';
+export { Cgrrcrecview04Component } from './inf1/cgrrcrec/cgrrcrecview04/cgrrcrecview04.component';
+
 export { Tar0030view01Component } from './inf5/tar0030/tar0030view01/tar0030view01.component';
 export { Tar0030view02Component } from './inf5/tar0030/tar0030view02/tar0030view02.component';
 

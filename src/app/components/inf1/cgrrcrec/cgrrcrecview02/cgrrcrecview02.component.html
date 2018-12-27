@@ -1,0 +1,103 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center">
+    <h2>{{ title }}</h2>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+          <div class="row ">
+            <div class="col-md-12 text-center">
+              BÚSQUEDA DE CLIENTES - CONSULTA
+            </div>
+          </div>
+
+          <div class="row as400Table">
+            <table class="table table-striped" [mfData]="cgrrcrecm02.data" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+              <thead>
+                <tr>
+                  <th>
+                    <mfDefaultSorter by="SHRT03">Short Name</mfDefaultSorter>
+                  </th>
+                  <th>
+                    <mfDefaultSorter by="DOC103">DNI</mfDefaultSorter>
+                  </th>
+                  <th>
+                    <mfDefaultSorter by="DOC203">CI</mfDefaultSorter>
+                  </th>
+                  <th>
+                    <mfDefaultSorter by="DOC303">Pasap.</mfDefaultSorter>
+                  </th>
+                  <th>
+                    <mfDefaultSorter by="IMPU03">C.U.I.T.</mfDefaultSorter>
+                  </th>
+                  <th>
+                    <mfDefaultSorter by="PRODUC">Pr</mfDefaultSorter>
+                  </th>
+                  <th>
+                    <mfDefaultSorter by="CUXACT">Número</mfDefaultSorter>
+                  </th>
+                  <th>
+                    <mfDefaultSorter by="SUC">Su</mfDefaultSorter>
+                  </th>
+                  <th>
+                    <mfDefaultSorter by="STA">S</mfDefaultSorter>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    {{ cgrrcrecm02.SHRT03 }}
+                  </td>
+                  <td>
+                    {{ cgrrcrecm02.DOC103 }}
+                  </td>
+                  <td>
+                    {{ cgrrcrecm02.DOC203 }}
+                  </td>
+                  <td>
+                    {{ cgrrcrecm02.DOC303 }}
+                  </td>
+                  <td>
+                    {{ cgrrcrecm02.IMPU03 }}
+                  </td>
+                  <td>
+                    {{ cgrrcrecm02.PRODUC }}
+                  </td>
+                  <td>
+                    {{ cgrrcrecm02.CUXACT }}
+                  </td>
+                  <td>
+                    {{ cgrrcrecm02.SUC }}
+                  </td>
+                  <td>
+                    {{ cgrrcrecm02.STA }}
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4">
+                    <mfBootstrapPaginator></mfBootstrapPaginator>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row as400Footer">
+  <div class="col lg-12" style="text-align: center;">
+    <button class="btn btn-primary " type="button" (click)="backClicked()">
+      Regresar
+    </button>
+  </div>
+</div>

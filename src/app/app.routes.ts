@@ -41,6 +41,14 @@ import {
     Fer0310view01Component,
     Fer0310view02Component,
     Fer0310view03Component,
+    Fer0320view01Component,
+    Fer0320view02Component,
+    Fer0330view01Component,
+    Fer0330view02Component,
+    Cgrrcrecview01Component,
+    Cgrrcrecview02Component,
+    Cgrrcrecview03Component,
+    Cgrrcrecview04Component,
 } from './components/index.paginas';
 
 const app_routes: Routes = [
@@ -85,6 +93,14 @@ const app_routes: Routes = [
     { path: 'fer0310v1', component: Fer0310view01Component },
     { path: 'fer0310v2/:ncuenta', component: Fer0310view02Component },
     { path: 'fer0310v3/:ncuenta', component: Fer0310view03Component },
+    { path: 'fer0320v1/:ncuenta', component: Fer0320view01Component },
+    { path: 'fer0320v2/:ncuenta', component: Fer0320view02Component },
+    { path: 'fer0330v1/:ncuenta', component: Fer0330view01Component },
+    { path: 'fer0330v2/:ncuenta', component: Fer0330view02Component },
+    { path: 'cgrrcrecv1/:ncuenta', component: Cgrrcrecview01Component },
+    { path: 'cgrrcrecv2/:ncuenta', component: Cgrrcrecview02Component },
+    { path: 'cgrrcrecv3/:ncuenta', component: Cgrrcrecview03Component },
+    { path: 'cgrrcrecv4/:ncuenta', component: Cgrrcrecview04Component },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

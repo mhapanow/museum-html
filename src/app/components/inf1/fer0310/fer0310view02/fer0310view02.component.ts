@@ -27,10 +27,10 @@ export class Fer0310view02Component implements OnInit {
     private _toastr: ToastrService,
     private _Fer0310Service: Fer0310Service,
     private _location: Location) { 
-  	this.identity = this._userService.getIdentity();
- 	this.token = this._userService.getToken();
-	this.fer0310m02 = new Fer0310m02Model('', '', '', '', '', '', '', '', '', '',
-										'' );
+			this.identity = this._userService.getIdentity();
+			this.token = this._userService.getToken();
+			this.fer0310m02 = new Fer0310m02Model('', '', '', '', '', '', '', '', '', '',
+												'' );
   }
 
   ngOnInit() {

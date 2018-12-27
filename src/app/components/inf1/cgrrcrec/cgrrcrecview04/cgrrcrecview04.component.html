@@ -1,0 +1,272 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center">
+    <h2>{{ title }}</h2>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+
+          <div class="row ">
+            <div class="col-md-12">
+              DETALLE DE CHEQUES RECHAZADOS
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-md-2 col-md-offset-2">
+              Cuenta Corriente.:
+              <strong>{{ fer0310m01.CTACTE }}</strong>
+            </div>
+          
+            <div class="col-md-2">
+              Nro. de Cheque:
+              <strong>{{ fer0310m01.NUMCHQ }}</strong>
+            </div>
+          </div>
+          <hr>
+
+          
+          <div class="row">
+            <div class="col-md-6 col-md-offset-2">
+              <div class="row">
+                <div class="col-md-12">
+                  Número de Sec:
+                  <strong>{{ fer0310m01.NSEC }}</strong>
+                </div>
+              </div>
+              <div class="row ">
+                <div class="col-md-6">
+                  Nro Sucursal:
+                  <strong>{{ fer0310m01.NUMSUC }}</strong>
+                </div>
+                <div class="col-md-6">
+                  Causal de Rechazo:
+                  <strong>{{ fer0310m01.CAUSA }}</strong>
+                </div>
+              </div>
+              <div class="row ">
+                <div class="col-md-12">
+                  Tipo reg. BCRA:
+                  <strong>{{ fer0310m01.TIPOR }}</strong>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-md-2">
+              <div class="row">
+                <div class="col-md-12">
+                  1 = Sin Fondos
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  2 = Motivo Formal
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  3 = Rechaz.registración
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-12">
+              <strong></strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              Importe: $
+              <strong>{{ fer0310m01.IMPORT | formmonedacero:2:',':'.' }}</strong>
+            </div>
+
+            <div class="col-md-4">
+              Fecha de Rechazo:
+              <strong>{{ fer0310m01.FECREC }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              Fecha Diferimiento:
+              <strong>{{ fer0310m01.FECREG }}</strong>
+            </div>
+
+            <div class="col-md-4">
+              Plazo Diferimiento:
+              <strong>{{ fer0310m01.PLADIF }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              Fecha Pago Cheque:
+              <strong class="pull-right">{{ fer0310m01.FECPCH }}</strong>
+            </div>
+
+            <div class="col-md-4">
+              Fecha de Debito :
+              <strong class="pull-right">{{ fer0310m01.FECDBT }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              Fecha Pago Multa :
+              <strong class="pull-right">{{ fer0310m01.FECPM }}</strong>
+            </div>
+            <div class="col-md-4">
+              Importe Multa:
+              <strong class="pull-right">{{ fer0310m01.IMPMUL | formmonedacero:2:',':'.' }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              Fecha Devol. Multa:
+              <strong class="pull-right">{{ fer0310m01.FCDEVO  }}</strong>
+            </div>
+            <div class="col-md-4">
+              Imp. Devuelto Multa:
+              <strong class="pull-right">{{ fer0310m01.DEVMUL }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              Número Referencia:
+              <strong class="pull-right">{{ fer0310m01.NUMREF }}</strong>
+            </div>
+            <div class="col-md-4">
+              Fecha Cierre Cuenta:
+              <strong class="pull-right">{{ fer0310m01.FECCIE }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-12">
+              <strong>CUIT - CUIL - Nro Identificatorio Asociado</strong>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 col-md-offset-2">
+              <div class="row">
+                <div class="col-md-12">
+                  Nro. 1:
+                  <strong>{{ fer0310m01.CUITL1 }}</strong>
+                </div>
+              </div>
+              <div class="row ">
+                <div class="col-md-6">
+                  Nro 4:
+                  <strong>{{ fer0310m01.CUITL4 }}</strong>
+                </div>
+              </div>
+              <div class="row ">
+                <div class="col-md-12">
+                  Nro 7:
+                  <strong>{{ fer0310m01.CUITL7 }}</strong>
+                </div>
+              </div>
+              <div class="row ">
+                <div class="col-md-12">
+                  Nro. 10:
+                  <strong>{{ fer0310m01.CUITL0 }}</strong>
+                </div>
+              </div>
+          
+            </div>
+          
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-12">
+                  Nro. 2:
+                  <strong class="pull-right">{{ fer0310m01.CUITL2 }}</strong>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  Nro. 5:
+                  <strong class="pull-right">{{ fer0310m01.CUITL5 }}</strong>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  Nro. 8:
+                  <strong class="pull-right">{{ fer0310m01.CUITL8 }}</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-md-12">
+                  Nro. 3:
+                  <strong class="pull-right">{{ fer0310m01.CUITL3 }}</strong>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  Nro. 6:
+                  <strong class="pull-right">{{ fer0310m01.CUITL6 }}</strong>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  Nro. 9:
+                  <strong class="pull-right">{{ fer0310m01.CUITL9 }}</strong>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row ">
+            <div class="col-md-3 col-md-offset-2">
+              Envio BCRA:
+              <strong class="pull-right">{{ fer0310m01.FECENV }}</strong>
+            </div>
+            <div class="col-md-3">
+              Ingresado.:
+              <strong class="pull-right">{{ fer0310m01.USERI }}</strong>
+            </div>
+            <div class="col-md-3">
+              Ult. Cambio:
+              <strong class="pull-right">{{ fer0310m01.FECULT }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-3 col-md-offset-2">
+            </div>
+            <div class="col-md-3">
+              Autorizado:
+              <strong class="pull-right">{{ fer0310m01.USERAU }}</strong>
+            </div>
+            <div class="col-md-3">
+              Fecha Autor:
+              <strong class="pull-right">{{ fer0310m01.FECAUT }}</strong>
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row as400Footer">
+  <div class="col lg-12" style="text-align: center;">
+    <button class="btn btn-primary " type="button" (click)="backClicked()">
+      Regresar
+    </button>
+  </div>
+</div>

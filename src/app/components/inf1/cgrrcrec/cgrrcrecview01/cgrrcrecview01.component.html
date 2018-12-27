@@ -1,0 +1,89 @@
+<div class="row  border-bottom white-bg dashboard-header">
+  <div class="row text-center">
+    <h2>{{ title }}</h2>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content">
+
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              Pers. Físicas (F) o Juridicas (J):
+            </div>
+            <div class="col-md-4">
+              <strong>{{ cgrrcrecm01.TIPO }}</strong>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              Short Name:
+            </div>
+            <div class="col-md-4">
+              <strong class="pull-right">{{ cgrrcrecm01.SHORTN }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              DNI/LE/LC :
+            </div>
+            <div class="col-md-4">
+              <strong class="pull-right">{{ cgrrcrecm01.DOC102  }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              CI:
+            </div>
+            <div class="col-md-4">
+              <strong class="pull-right">{{ cgrrcrecm01.DOC202 }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              Pasaporte/Doc.Extr:
+            </div>
+            <div class="col-md-4">
+              <strong class="pull-right">{{ cgrrcrecm01.DOC302 }}</strong>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              C.U.I.T.:
+            </div>
+            <div class="col-md-4">
+              <strong class="pull-right">{{ cgrrcrecm01.CUIT }}</strong>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-md-4 col-md-offset-2">
+              Número de Cuenta Corriente:
+            </div>
+            <div class="col-md-4">
+              <strong class="pull-right">{{ cgrrcrecm01.NUMCTA }}</strong>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row as400Footer">
+  <div class="col lg-12" style="text-align: center;">
+    <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0310v2', ncuenta]">F3</a>
+
+    <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0310v3', ncuenta]">F6</a>
+
+    <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0320v1', ncuenta]">F7</a>
+    <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0320v2', ncuenta]">F7</a>
+
+    <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0330v1', ncuenta]">F5</a>
+    <a class="btn btn-primary as400ButtonInTable" [routerLink]="['/fer0330v2', ncuenta]">F5</a>
+  </div>
+</div>
