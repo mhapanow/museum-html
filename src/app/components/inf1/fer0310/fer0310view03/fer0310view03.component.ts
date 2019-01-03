@@ -18,6 +18,8 @@ export class Fer0310view03Component implements OnInit {
   public token;
   public fer0310m03: Fer0310m03Model;
 
+  public rowsOnPage = 5;
+
   constructor(
     private _userService: UserService,
     private _route: ActivatedRoute,
@@ -28,7 +30,7 @@ export class Fer0310view03Component implements OnInit {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
     this.fer0310m03 = new Fer0310m03Model('', '', '', '', '', '', '', '', '', '',
-      '', '', '', '', '', '', '');
+      '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 
    }

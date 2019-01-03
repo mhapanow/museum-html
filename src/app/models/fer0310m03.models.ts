@@ -17,6 +17,14 @@ export class Fer0310m03Model {
                     public DMINTS: string,
                     public NA6: string,
                     public DMCBAL: string,
+
+                    public WSDATE: string,
+                    public DHITC: string,
+                    public WBATCH: string,
+                    public DHSER: string,
+                    public WKDR: string,
+                    public WKCR: string,
+                    public WKBAL: string,
                     
     ) { }
 }
