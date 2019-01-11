@@ -28,11 +28,11 @@ export class CgrrcrecService {
   }
 
   getCgrrcrecView03(token, cgrrcrecCuenta): Observable<any> {
-    return this._http.get(this.url + this.endpoint03 + '?authToken=' + token + '&acctno=' + cgrrcrecCuenta);
+    return this._http.get(this.url + this.endpoint03 + '?authToken=' + token + '&aamcue=' + cgrrcrecCuenta);
   }
 
-  getCgrrcrecView04(token, cgrrcrecCuenta): Observable<any> {
-    return this._http.get(this.url + this.endpoint03 + '?authToken=' + token + '&acctno=' + cgrrcrecCuenta);
+  getCgrrcrecView04(token, Ccte, Numch, Imp, Nrtr): Observable<any> {
+    return this._http.get(this.url + this.endpoint04 + '?authToken=' + token + '&ccte=' + Ccte + '&numch=' + Numch + '&imp=' + Imp + '&nrtr=' + Nrtr);
   }
 
 

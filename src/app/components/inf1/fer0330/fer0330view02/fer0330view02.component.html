@@ -67,27 +67,27 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr *ngFor="let fer0330Item of mf.data">
                   <td>
-                    {{ fer0330m02.FECVAL }}
+                    {{ fer0330Item.FECVAL | lpad:6:true | formfechados:true }}
                   </td>
                   <td>
-                    {{ fer0330m02.CTRAEX }}
+                    {{ fer0330Item.CTRAEX }}
                   </td>
                   <td>
-                    {{ fer0330m02.WBATCH }}
+                    {{ fer0330Item.WBATCH }}
                   </td>
                   <td>
-                    {{ fer0330m02.CREF1 }}
+                    {{ fer0330Item.CREF1 }}
                   </td>
                   <td>
-                    {{ fer0330m02.WSDEBI | formmonedacero:2:',':'.' }}
+                    {{ fer0330Item.WSDEBI | formmonedacero:2:',':'.' }}
                   </td>
                   <td>
-                    {{ fer0330m02.WSCRED | formmonedacero:2:',':'.' }}
+                    {{ fer0330Item.WSCRED | formmonedacero:2:',':'.' }}
                   </td>
                   <td>
-                    {{ fer0330m02.WSSALD | formmonedacero:2:',':'.' }}
+                    {{ fer0330Item.WSSALD | formmonedacero:2:',':'.' }}
                   </td>
                 </tr>
               </tbody>

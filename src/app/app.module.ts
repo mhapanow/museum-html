@@ -70,6 +70,8 @@ import { Cgrrcrecview01Component } from './components/inf1/cgrrcrec/cgrrcrecview
 import { Cgrrcrecview02Component } from './components/inf1/cgrrcrec/cgrrcrecview02/cgrrcrecview02.component';
 import { Cgrrcrecview03Component } from './components/inf1/cgrrcrec/cgrrcrecview03/cgrrcrecview03.component';
 import { Cgrrcrecview04Component } from './components/inf1/cgrrcrec/cgrrcrecview04/cgrrcrecview04.component';
+import { FormatocuitPipe } from './pipes/formatocuit.pipe';
+import { FormatocuilPipe } from './pipes/formatocuil.pipe';
 
 @NgModule({
   declarations: [
@@ -132,6 +134,8 @@ import { Cgrrcrecview04Component } from './components/inf1/cgrrcrec/cgrrcrecview
     Cgrrcrecview02Component,
     Cgrrcrecview03Component,
     Cgrrcrecview04Component,
+    FormatocuitPipe,
+    FormatocuilPipe,
   ],
   imports: [
     BrowserModule,

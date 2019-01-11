@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-2">
               Moneda:
-              <strong>{{ fer0320m02.DMCMCN }}</strong>
+              <strong>{{ fer0320m02.DMCMCN | lpad:3:true }}</strong>
             </div>
           </div>
           <div class="row ">
@@ -71,27 +71,27 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr *ngFor="let fer0320Item of mf.data">
                   <td>
-                    {{ fer0320m02.AFECVA }}
+                    {{ fer0320Item.AFECVA | lpad:6:true | formfechados:true  }}
                   </td>
                   <td>
-                    {{ fer0320m02.CTRAEX }}
+                    {{ fer0320Item.CTRAEX }}
                   </td>
                   <td>
-                    {{ fer0320m02.WBATCH }}
+                    {{ fer0320Item.WBATCH }}
                   </td>
                   <td>
-                    {{ fer0320m02.CREF1 }}
+                    {{ fer0320Item.CREF1 }}
                   </td>
                   <td>
-                    {{ fer0320m02.WSDEBI | formmonedacero:2:',':'.' }}
+                    {{ fer0320Item.WSDEBI | formmonedacero:2:',':'.' }}
                   </td>
                   <td>
-                    {{ fer0320m02.WSCRED | formmonedacero:2:',':'.' }}
+                    {{ fer0320Item.WSCRED | formmonedacero:2:',':'.' }}
                   </td>
                   <td>
-                    {{ fer0320m02.WSSALD | formmonedacero:2:',':'.' }}
+                    {{ fer0320Item.WSSALD | formmonedacero:2:',':'.' }}
                   </td>
                 </tr>
               </tbody>

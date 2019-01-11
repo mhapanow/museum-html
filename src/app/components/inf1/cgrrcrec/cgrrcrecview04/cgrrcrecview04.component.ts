@@ -39,10 +39,30 @@ export class Cgrrcrecview04Component implements OnInit {
   }
 
   ngOnInit() {
+    this.getCgrrcrecv4();
   }
 
   backClicked() {
     this._location.back();
+  }
+
+  getCgrrcrecv4() {
+    this._route.params.subscribe(params => {
+      this._cgrrcrecService.getCgrrcrecView04(this.token, params['ccte'], params['numch'], params['imp'], params['nrtr']).subscribe(
+        response => {
+          if (response.error_message == null) {
+            this.cgrrcrecm04 = response;
+          } else {
+            this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
+          }
+        },
+        error => {
+          console.log(<any>error);
+          this._toastr.warning(<any>error, 'Error', { timeOut: 3000 });
+        }
+
+      );
+    });
   }
 
 

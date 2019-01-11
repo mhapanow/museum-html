@@ -9,5 +9,6 @@ export class Cgrrcrecm03Model {
                 public COMPU: string,
                 public REVI: string,
                 public CUIT: string,
+                public NRTR: string,
     ) { }
 }

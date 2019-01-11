@@ -34,14 +34,39 @@ export class Cgrrcrecview03Component implements OnInit {
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
-    this.cgrrcrecm03 = new Cgrrcrecm03Model('', '', '', '', '', '', '', '', '');
+    this.cgrrcrecm03 = new Cgrrcrecm03Model('', '', '', '', '', '', '', '', '','');
   }
 
   ngOnInit() {
+    this.getCgrrcrecv3();
   }
 
   backClicked() {
     this._location.back();
   }
+
+   getCgrrcrecv3() {
+    this._route.params.subscribe(params => {
+      this._cgrrcrecService.getCgrrcrecView03(this.token, params['ncuenta']).subscribe(
+        response => {
+          if (response.error_message == null) {
+            this.cgrrcrecm03 = response;
+          } else {
+            this._toastr.warning(response.error_message, 'Se ha producido un error:', { timeOut: 3000 });
+          }
+        },
+        error => {
+          console.log(<any>error);
+          this._toastr.warning(<any>error, 'Error', { timeOut: 3000 });
+        }
+
+      );
+    });
+  }
+
+
+
+
+
 
 }

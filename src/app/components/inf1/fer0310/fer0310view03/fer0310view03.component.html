@@ -59,24 +59,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let fer0310Item of mf.data">
                                     <td>
-                                        {{ fer0310m03.WSDATE }}
+                                        {{ fer0310Item.WSDATE }}
                                     </td>
                                     <td>
-                                        {{ fer0310m03.WBATCH }}
+                                        {{ fer0310Item.WBATCH }}
                                     </td>
                                     <td>
-                                        {{ fer0310m03.DHSER }}
+                                        {{ fer0310Item.DHSER }}
                                     </td>
                                     <td>
-                                        {{ fer0310m03.WKDR | formmonedacero:2:',':'.' | vacio }}
+                                        {{ fer0310Item.WKDR | formmonedacero:2:',':'.' | vacio }}
                                     </td>
                                     <td>
-                                        {{ fer0310m03.WKCR | formmonedacero:2:',':'.' | vacio }}
+                                        {{ fer0310Item.WKCR | formmonedacero:2:',':'.' | vacio }}
                                     </td>
                                     <td>
-                                        {{ fer0310m03.WKBAL | formmonedacero:2:',':'.' }}
+                                        {{ fer0310Item.WKBAL | formmonedacero:2:',':'.' }}
                                     </td>
                                 </tr>
                             </tbody>

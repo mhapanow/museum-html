@@ -29,7 +29,8 @@ export class Fer0320view02Component implements OnInit {
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
-    this.fer0320m02 = new Fer0320m02Model('', '', '', '', '', '', '');
+    this.fer0320m02 = new Fer0320m02Model('', '', '', '', '', '', '', '', ''
+                                          , '', '', '', '', '', '', '');
   }
 
   ngOnInit() {

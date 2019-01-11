@@ -100,7 +100,7 @@ const app_routes: Routes = [
     { path: 'cgrrcrecv1/:ncuenta', component: Cgrrcrecview01Component },
     { path: 'cgrrcrecv2/:ncuenta', component: Cgrrcrecview02Component },
     { path: 'cgrrcrecv3/:ncuenta', component: Cgrrcrecview03Component },
-    { path: 'cgrrcrecv4/:ncuenta', component: Cgrrcrecview04Component },
+    { path: 'cgrrcrecv4/:ccte/:numch/:imp/:nrtr', component: Cgrrcrecview04Component },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

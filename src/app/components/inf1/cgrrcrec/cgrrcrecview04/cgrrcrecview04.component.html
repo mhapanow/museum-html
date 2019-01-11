@@ -15,12 +15,12 @@
           <div class="row ">
             <div class="col-md-2 col-md-offset-2">
               Cuenta Corriente.:
-              <strong>{{ fer0310m01.CTACTE }}</strong>
+              <strong>{{ cgrrcrecm04.CTACTE }}</strong>
             </div>
           
             <div class="col-md-2">
               Nro. de Cheque:
-              <strong>{{ fer0310m01.NUMCHQ }}</strong>
+              <strong>{{ cgrrcrecm04.NUMCHQ }}</strong>
             </div>
           </div>
           <hr>
@@ -31,23 +31,23 @@
               <div class="row">
                 <div class="col-md-12">
                   Número de Sec:
-                  <strong>{{ fer0310m01.NSEC }}</strong>
+                  <strong>{{ cgrrcrecm04.NSEC }}</strong>
                 </div>
               </div>
               <div class="row ">
                 <div class="col-md-6">
                   Nro Sucursal:
-                  <strong>{{ fer0310m01.NUMSUC }}</strong>
+                  <strong>{{ cgrrcrecm04.NUMSUC }}</strong>
                 </div>
                 <div class="col-md-6">
                   Causal de Rechazo:
-                  <strong>{{ fer0310m01.CAUSA }}</strong>
+                  <strong>{{ cgrrcrecm04.CAUSA }}</strong>
                 </div>
               </div>
               <div class="row ">
                 <div class="col-md-12">
                   Tipo reg. BCRA:
-                  <strong>{{ fer0310m01.TIPOR }}</strong>
+                  <strong>{{ cgrrcrecm04.TIPOR }}</strong>
                 </div>
               </div>
 
@@ -81,74 +81,74 @@
           <div class="row ">
             <div class="col-md-4 col-md-offset-2">
               Importe: $
-              <strong>{{ fer0310m01.IMPORT | formmonedacero:2:',':'.' }}</strong>
+              <strong  class="pull-right">{{ cgrrcrecm04.IMPORT | formmonedacero:2:',':'.' }}</strong>
             </div>
 
             <div class="col-md-4">
               Fecha de Rechazo:
-              <strong>{{ fer0310m01.FECREC }}</strong>
+              <strong>{{ cgrrcrecm04.FECREC | lpad:6:true | formfechados:true }}</strong>
             </div>
           </div>
 
           <div class="row ">
             <div class="col-md-4 col-md-offset-2">
               Fecha Diferimiento:
-              <strong>{{ fer0310m01.FECREG }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.FECREG | lpad:6:true | formfechados:true }}</strong>
             </div>
 
             <div class="col-md-4">
               Plazo Diferimiento:
-              <strong>{{ fer0310m01.PLADIF }}</strong>
+              <strong>{{ cgrrcrecm04.PLADIF }}</strong>
             </div>
           </div>
 
           <div class="row ">
             <div class="col-md-4 col-md-offset-2">
               Fecha Pago Cheque:
-              <strong class="pull-right">{{ fer0310m01.FECPCH }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.FECPCH | lpad:6:true | formfechados:true }}</strong>
             </div>
 
             <div class="col-md-4">
               Fecha de Debito :
-              <strong class="pull-right">{{ fer0310m01.FECDBT }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.FECDBT | lpad:6:true | formfechados:true }}</strong>
             </div>
           </div>
 
           <div class="row ">
             <div class="col-md-4 col-md-offset-2">
               Fecha Pago Multa :
-              <strong class="pull-right">{{ fer0310m01.FECPM }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.FECPM | lpad:6:true | formfechados:true }}</strong>
             </div>
             <div class="col-md-4">
               Importe Multa:
-              <strong class="pull-right">{{ fer0310m01.IMPMUL | formmonedacero:2:',':'.' }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.IMPMUL | formmonedacero:2:',':'.' }}</strong>
             </div>
           </div>
 
           <div class="row ">
             <div class="col-md-4 col-md-offset-2">
               Fecha Devol. Multa:
-              <strong class="pull-right">{{ fer0310m01.FCDEVO  }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.FCDEVO | lpad:6:true | formfechados:true  }}</strong>
             </div>
             <div class="col-md-4">
               Imp. Devuelto Multa:
-              <strong class="pull-right">{{ fer0310m01.DEVMUL }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.DEVMUL | formmonedacero:2:',':'.' }}</strong>
             </div>
           </div>
 
           <div class="row ">
             <div class="col-md-4 col-md-offset-2">
               Número Referencia:
-              <strong class="pull-right">{{ fer0310m01.NUMREF }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.NUMREF }}</strong>
             </div>
             <div class="col-md-4">
               Fecha Cierre Cuenta:
-              <strong class="pull-right">{{ fer0310m01.FECCIE }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.FECCIE | lpad:6:true | formfechados:true }}</strong>
             </div>
           </div>
 
           <div class="row ">
-            <div class="col-md-12">
+            <div class="col-md-12 text-center">
               <strong>CUIT - CUIL - Nro Identificatorio Asociado</strong>
             </div>
           </div>
@@ -158,25 +158,25 @@
               <div class="row">
                 <div class="col-md-12">
                   Nro. 1:
-                  <strong>{{ fer0310m01.CUITL1 }}</strong>
+                  <strong>{{ cgrrcrecm04.CUITL1 | formatocuil }}</strong>
                 </div>
               </div>
               <div class="row ">
                 <div class="col-md-6">
                   Nro 4:
-                  <strong>{{ fer0310m01.CUITL4 }}</strong>
+                  <strong>{{ cgrrcrecm04.CUITL4 | formatocuil }}</strong>
                 </div>
               </div>
               <div class="row ">
                 <div class="col-md-12">
                   Nro 7:
-                  <strong>{{ fer0310m01.CUITL7 }}</strong>
+                  <strong>{{ cgrrcrecm04.CUITL7 | formatocuil }}</strong>
                 </div>
               </div>
               <div class="row ">
                 <div class="col-md-12">
                   Nro. 10:
-                  <strong>{{ fer0310m01.CUITL0 }}</strong>
+                  <strong>{{ cgrrcrecm04.CUITL0 | formatocuil }}</strong>
                 </div>
               </div>
           
@@ -186,19 +186,19 @@
               <div class="row">
                 <div class="col-md-12">
                   Nro. 2:
-                  <strong class="pull-right">{{ fer0310m01.CUITL2 }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL2 | formatocuil }}</strong>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
                   Nro. 5:
-                  <strong class="pull-right">{{ fer0310m01.CUITL5 }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL5 | formatocuil }}</strong>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
                   Nro. 8:
-                  <strong class="pull-right">{{ fer0310m01.CUITL8 }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL8 | formatocuil }}</strong>
                 </div>
               </div>
             </div>
@@ -207,19 +207,19 @@
               <div class="row">
                 <div class="col-md-12">
                   Nro. 3:
-                  <strong class="pull-right">{{ fer0310m01.CUITL3 }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL3 | formatocuil }}</strong>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
                   Nro. 6:
-                  <strong class="pull-right">{{ fer0310m01.CUITL6 }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL6 | formatocuil }}</strong>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
                   Nro. 9:
-                  <strong class="pull-right">{{ fer0310m01.CUITL9 }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL9 | formatocuil }}</strong>
                 </div>
               </div>
             </div>
@@ -229,15 +229,15 @@
           <div class="row ">
             <div class="col-md-3 col-md-offset-2">
               Envio BCRA:
-              <strong class="pull-right">{{ fer0310m01.FECENV }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.FECENV | lpad:6:true | formfechados:true }}</strong>
             </div>
             <div class="col-md-3">
               Ingresado.:
-              <strong class="pull-right">{{ fer0310m01.USERI }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.USERI }}</strong>
             </div>
             <div class="col-md-3">
               Ult. Cambio:
-              <strong class="pull-right">{{ fer0310m01.FECULT }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.FECULT | lpad:6:true | formfechados:true }}</strong>
             </div>
           </div>
 
@@ -246,17 +246,13 @@
             </div>
             <div class="col-md-3">
               Autorizado:
-              <strong class="pull-right">{{ fer0310m01.USERAU }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.USERAU }}</strong>
             </div>
             <div class="col-md-3">
               Fecha Autor:
-              <strong class="pull-right">{{ fer0310m01.FECAUT }}</strong>
+              <strong class="pull-right">{{ cgrrcrecm04.FECAUT | lpad:6:true | formfechados:true }}</strong>
             </div>
           </div>
-
-
-
-
         </div>
 
       </div>
