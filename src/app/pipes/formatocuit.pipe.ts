@@ -7,7 +7,11 @@ export class FormatocuitPipe implements PipeTransform {
 
   transform(value: any): string {
   	let values: string = value.toString();
-  	let resultado: string = values;
+     if (values == "00000000000") {
+       values = "";
+     }
+    let resultado: string = values;
+
 
     if (values.length == 11) {
         resultado = values.substring(0, 2);

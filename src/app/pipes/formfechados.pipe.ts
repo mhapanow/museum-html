@@ -7,6 +7,9 @@ export class FormfechadosPipe implements PipeTransform {
 
   transform(value: any, dma?: boolean): string {
     let values: string = value.toString();
+    if (values == "000000" && dma == true) {
+       values = "";
+     }
     let resultado: string = values;
     if (values.length == 7) {
         resultado = values.substring(5, 7);

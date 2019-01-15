@@ -8,8 +8,8 @@
         <div class="ibox-content">
 
           <div class="row ">
-            <div class="col-md-12">
-              DETALLE DE CHEQUES RECHAZADOS
+            <div class="col-md-12 text-center">
+              <strong>DETALLE DE CHEQUES RECHAZADOS</strong>
             </div>
           </div>
           <div class="row ">
@@ -45,9 +45,12 @@
                 </div>
               </div>
               <div class="row ">
-                <div class="col-md-12">
+                <div class="col-md-6">
                   Tipo reg. BCRA:
                   <strong>{{ cgrrcrecm04.TIPOR }}</strong>
+                </div>
+                <div class="col-md-6">
+                  <strong>{{ cgrrcrecm04.MENSA }}</strong>
                 </div>
               </div>
 
@@ -98,7 +101,7 @@
 
             <div class="col-md-4">
               Plazo Diferimiento:
-              <strong>{{ cgrrcrecm04.PLADIF }}</strong>
+              <strong>{{ cgrrcrecm04.PLADIF }}  (días) </strong>
             </div>
           </div>
 
@@ -158,25 +161,25 @@
               <div class="row">
                 <div class="col-md-12">
                   Nro. 1:
-                  <strong>{{ cgrrcrecm04.CUITL1 | formatocuil }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL1 | formatocuit }}</strong>
                 </div>
               </div>
               <div class="row ">
-                <div class="col-md-6">
+                <div class="col-md-12">
                   Nro 4:
-                  <strong>{{ cgrrcrecm04.CUITL4 | formatocuil }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL4 | formatocuit }}</strong>
                 </div>
               </div>
               <div class="row ">
                 <div class="col-md-12">
                   Nro 7:
-                  <strong>{{ cgrrcrecm04.CUITL7 | formatocuil }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL7 | formatocuit }}</strong>
                 </div>
               </div>
               <div class="row ">
                 <div class="col-md-12">
                   Nro. 10:
-                  <strong>{{ cgrrcrecm04.CUITL0 | formatocuil }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL0 | formatocuit }}</strong>
                 </div>
               </div>
           
@@ -186,19 +189,19 @@
               <div class="row">
                 <div class="col-md-12">
                   Nro. 2:
-                  <strong class="pull-right">{{ cgrrcrecm04.CUITL2 | formatocuil }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL2 | formatocuit }}</strong>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
                   Nro. 5:
-                  <strong class="pull-right">{{ cgrrcrecm04.CUITL5 | formatocuil }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL5 | formatocuit }}</strong>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
                   Nro. 8:
-                  <strong class="pull-right">{{ cgrrcrecm04.CUITL8 | formatocuil }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL8 | formatocuit }}</strong>
                 </div>
               </div>
             </div>
@@ -207,19 +210,19 @@
               <div class="row">
                 <div class="col-md-12">
                   Nro. 3:
-                  <strong class="pull-right">{{ cgrrcrecm04.CUITL3 | formatocuil }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL3 | formatocuit }}</strong>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
                   Nro. 6:
-                  <strong class="pull-right">{{ cgrrcrecm04.CUITL6 | formatocuil }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL6 | formatocuit }}</strong>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
                   Nro. 9:
-                  <strong class="pull-right">{{ cgrrcrecm04.CUITL9 | formatocuil }}</strong>
+                  <strong class="pull-right">{{ cgrrcrecm04.CUITL9 | formatocuit }}</strong>
                 </div>
               </div>
             </div>
